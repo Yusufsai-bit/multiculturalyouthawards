@@ -1,0 +1,195 @@
+ import { useState } from "react";
+ import { Link } from "react-router-dom";
+ import { Button } from "@/components/ui/button";
+ import { Input } from "@/components/ui/input";
+ import { Textarea } from "@/components/ui/textarea";
+ import { Label } from "@/components/ui/label";
+ import { siteContent } from "@/lib/siteContent";
+ 
+ const PartnersPage = () => {
+   const [form, setForm] = useState({
+     organisation: "",
+     contactName: "",
+     email: "",
+     phone: "",
+     message: "",
+   });
+   const [isSubmitting, setIsSubmitting] = useState(false);
+   const [submitted, setSubmitted] = useState(false);
+ 
+   const handleSubmit = async (e: React.FormEvent) => {
+     e.preventDefault();
+     setIsSubmitting(true);
+     
+     // TODO: Connect to form service (Formspree, Airtable, Google Sheets, or email delivery)
+     // Example: await fetch('/api/sponsor-enquiry', { method: 'POST', body: JSON.stringify(form) })
+     
+     await new Promise(resolve => setTimeout(resolve, 1500));
+     setSubmitted(true);
+     setIsSubmitting(false);
+   };
+ 
+   const PartnerGrid = ({ partners, title }: { partners: typeof siteContent.partners2026; title: string }) => (
+     <div className="mb-12">
+       <h3 className="font-display text-xl font-semibold text-foreground mb-6 text-center">{title}</h3>
+       <div className="flex flex-wrap justify-center gap-6">
+         {partners.map((partner, index) => (
+           <div
+             key={index}
+             className="w-32 h-32 rounded-xl bg-secondary flex items-center justify-center border border-border hover:border-gold/30 transition-colors"
+           >
+             {partner.logo ? (
+               <img src={partner.logo} alt={partner.name} className="max-w-full max-h-full p-4" />
+             ) : (
+               <span className="text-gold font-display text-3xl font-bold">
+                 {partner.name.charAt(0)}
+               </span>
+             )}
+           </div>
+         ))}
+       </div>
+     </div>
+   );
+ 
+   return (
+     <div className="min-h-screen bg-background pt-32">
+       {/* Hero Section */}
+       <section className="py-16 hero-gradient">
+         <div className="container mx-auto px-4">
+           <div className="max-w-3xl mx-auto text-center">
+             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
+               Partners
+             </span>
+             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+               Be Part of the <span className="text-gold-gradient">Change</span>
+             </h1>
+             <p className="text-muted-foreground text-lg mb-8">
+               Join us in celebrating and empowering Australia's multicultural youth leaders
+             </p>
+             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+               <Button variant="gold" size="lg" asChild>
+                 <a href="#sponsor-form">Sponsor</a>
+               </Button>
+               <Button variant="goldOutline" size="lg" asChild>
+                 <Link to="/contact">Contact us</Link>
+               </Button>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
+       {/* Partner Logos */}
+       <section className="py-24 bg-background">
+         <div className="container mx-auto px-4">
+           <PartnerGrid partners={siteContent.partners2026} title="2026 Partners" />
+           <div className="section-divider my-12" />
+           <PartnerGrid partners={siteContent.sponsors} title="Sponsors" />
+           <div className="section-divider my-12" />
+           <PartnerGrid partners={siteContent.supporters} title="Supporters" />
+         </div>
+       </section>
+ 
+       <div className="section-divider" />
+ 
+       {/* Sponsor Enquiry Form */}
+       <section id="sponsor-form" className="py-24 bg-secondary/30">
+         <div className="container mx-auto px-4">
+           <div className="max-w-xl mx-auto">
+             {submitted ? (
+               <div className="glass-card rounded-2xl p-12 border-gold-glow text-center">
+                 <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
+                   <span className="text-gold text-3xl">✓</span>
+                 </div>
+                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                   Enquiry Received
+                 </h2>
+                 <p className="text-muted-foreground mb-8">
+                   Thank you for your interest in partnering with us. A member of our team will be in touch shortly.
+                 </p>
+                 <Button variant="goldOutline" asChild>
+                   <Link to="/">Return Home</Link>
+                 </Button>
+               </div>
+             ) : (
+               <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 border-gold-glow">
+                 <h2 className="font-display text-2xl font-bold text-foreground mb-2 text-center">
+                   Sponsor Enquiry
+                 </h2>
+                 <p className="text-muted-foreground text-center mb-8">
+                   Interested in becoming a sponsor or partner? Get in touch with us.
+                 </p>
+ 
+                 <div className="space-y-4">
+                   <div>
+                     <Label htmlFor="organisation">Organisation *</Label>
+                     <Input
+                       id="organisation"
+                       value={form.organisation}
+                       onChange={(e) => setForm({...form, organisation: e.target.value})}
+                       required
+                       className="bg-background border-border mt-1"
+                     />
+                   </div>
+                   <div>
+                     <Label htmlFor="contactName">Contact name *</Label>
+                     <Input
+                       id="contactName"
+                       value={form.contactName}
+                       onChange={(e) => setForm({...form, contactName: e.target.value})}
+                       required
+                       className="bg-background border-border mt-1"
+                     />
+                   </div>
+                   <div>
+                     <Label htmlFor="email">Email *</Label>
+                     <Input
+                       id="email"
+                       type="email"
+                       value={form.email}
+                       onChange={(e) => setForm({...form, email: e.target.value})}
+                       required
+                       className="bg-background border-border mt-1"
+                     />
+                   </div>
+                   <div>
+                     <Label htmlFor="phone">Phone</Label>
+                     <Input
+                       id="phone"
+                       type="tel"
+                       value={form.phone}
+                       onChange={(e) => setForm({...form, phone: e.target.value})}
+                       className="bg-background border-border mt-1"
+                     />
+                   </div>
+                   <div>
+                     <Label htmlFor="message">Message</Label>
+                     <Textarea
+                       id="message"
+                       value={form.message}
+                       onChange={(e) => setForm({...form, message: e.target.value})}
+                       rows={4}
+                       className="bg-background border-border mt-1"
+                       placeholder="Tell us about your interest in partnering..."
+                     />
+                   </div>
+                 </div>
+ 
+                 <Button 
+                   type="submit" 
+                   variant="gold" 
+                   size="lg" 
+                   className="w-full mt-8"
+                   disabled={isSubmitting}
+                 >
+                   {isSubmitting ? "Submitting..." : "Submit Enquiry"}
+                 </Button>
+               </form>
+             )}
+           </div>
+         </div>
+       </section>
+     </div>
+   );
+ };
+ 
+ export default PartnersPage;
