@@ -32,20 +32,56 @@
    const PartnerGrid = ({ partners, title }: { partners: typeof siteContent.partners2026; title: string }) => (
      <div className="mb-12">
        <h3 className="font-display text-xl font-semibold text-foreground mb-6 text-center">{title}</h3>
-       <div className="flex flex-wrap justify-center gap-6">
+     <div className="flex flex-wrap justify-center gap-8">
          {partners.map((partner, index) => (
+         partner.url ? (
+           <a
+             key={index}
+             href={partner.url}
+             target="_blank"
+             rel="noopener noreferrer"
+             className="group flex flex-col items-center"
+           >
+             <div className="w-40 h-24 rounded-xl bg-white flex items-center justify-center border border-border group-hover:border-gold/50 transition-all group-hover:shadow-lg group-hover:shadow-gold/10">
+               {partner.logo ? (
+                 <img 
+                   src={partner.logo} 
+                   alt={partner.name} 
+                   className="max-w-[80%] max-h-[70%] object-contain" 
+                 />
+               ) : (
+                 <span className="text-gold font-display text-3xl font-bold">
+                   {partner.name.charAt(0)}
+                 </span>
+               )}
+             </div>
+             <span className="text-muted-foreground text-xs mt-2 text-center max-w-[140px] group-hover:text-gold transition-colors">
+               {partner.name}
+             </span>
+           </a>
+         ) : (
            <div
              key={index}
-             className="w-32 h-32 rounded-xl bg-secondary flex items-center justify-center border border-border hover:border-gold/30 transition-colors"
+             className="flex flex-col items-center"
            >
-             {partner.logo ? (
-               <img src={partner.logo} alt={partner.name} className="max-w-full max-h-full p-4" />
-             ) : (
-               <span className="text-gold font-display text-3xl font-bold">
-                 {partner.name.charAt(0)}
-               </span>
-             )}
+             <div className="w-40 h-24 rounded-xl bg-white flex items-center justify-center border border-border">
+               {partner.logo ? (
+                 <img 
+                   src={partner.logo} 
+                   alt={partner.name} 
+                   className="max-w-[80%] max-h-[70%] object-contain" 
+                 />
+               ) : (
+                 <span className="text-gold font-display text-3xl font-bold">
+                   {partner.name.charAt(0)}
+                 </span>
+               )}
+             </div>
+             <span className="text-muted-foreground text-xs mt-2 text-center max-w-[140px]">
+               {partner.name}
+             </span>
            </div>
+         )
          ))}
        </div>
      </div>
@@ -81,11 +117,11 @@
        {/* Partner Logos */}
        <section className="py-24 bg-background">
          <div className="container mx-auto px-4">
-           <PartnerGrid partners={siteContent.partners2026} title="2026 Partners" />
+           <PartnerGrid partners={siteContent.partners2026} title="Major Partners" />
            <div className="section-divider my-12" />
-           <PartnerGrid partners={siteContent.sponsors} title="Sponsors" />
+           <PartnerGrid partners={siteContent.sponsors} title="MYA Sponsors" />
            <div className="section-divider my-12" />
-           <PartnerGrid partners={siteContent.supporters} title="Supporters" />
+           <PartnerGrid partners={siteContent.supporters} title="MYA Supporters" />
          </div>
        </section>
  
