@@ -35,9 +35,9 @@ import SectionHeading from "@/components/SectionHeading";
               </span>
 
               {/* Main Title */}
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-8 animate-fade-in" style={{ animationDelay: '0.15s' }}>
+            <h1 className="font-numeral uppercase text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-8 animate-fade-in" style={{ animationDelay: '0.15s' }}>
                 <span className="text-foreground">Celebrating Australia's </span>
-                <span className="italic text-gold">multicultural youth</span>
+                <span className="text-gold">multicultural youth</span>
               </h1>
 
               {/* Tagline */}
