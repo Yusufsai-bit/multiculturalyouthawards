@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useYears, useResultsByYear } from "@/lib/queries";
+import PageHero from "@/components/PageHero";
 
 const WinnersPage = () => {
   const { data: years = [] } = useYears();
@@ -25,32 +26,24 @@ const WinnersPage = () => {
 
   return (
     <div className="min-h-screen bg-background pt-32">
-      <section className="py-16 hero-gradient">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-              Winners{selectedYear ? ` ${selectedYear.year}` : ""}
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Celebrating Our <span className="text-gold-gradient">Champions</span>
-            </h1>
-            <p className="text-muted-foreground text-lg mb-8">
-              Meet the exceptional young people recognised at the Multicultural Youth Awards
-            </p>
-            {years.length > 0 && (
-              <select
-                value={yearId}
-                onChange={(e) => setYearId(e.target.value)}
-                className="bg-background border border-border rounded-lg px-4 py-2 text-foreground"
-              >
-                {years.map((y) => (
-                  <option key={y.id} value={y.id}>{y.year}</option>
-                ))}
-              </select>
-            )}
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={`Winners${selectedYear ? ` ${selectedYear.year}` : ""}`}
+        title={<>Celebrating our <span className="italic text-gold">champions</span></>}
+        subtitle="Meet the exceptional young people recognised at the Multicultural Youth Awards"
+        numeral={selectedYear ? String(selectedYear.year) : undefined}
+      >
+        {years.length > 0 && (
+          <select
+            value={yearId}
+            onChange={(e) => setYearId(e.target.value)}
+            className="bg-background border border-border rounded-lg px-4 py-2 text-foreground"
+          >
+            {years.map((y) => (
+              <option key={y.id} value={y.id}>{y.year}</option>
+            ))}
+          </select>
+        )}
+      </PageHero>
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">

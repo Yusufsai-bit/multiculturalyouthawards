@@ -8,6 +8,7 @@
  import { siteContent } from "@/lib/siteContent";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import PageHero from "@/components/PageHero";
  
  const ContactPage = () => {
    const [form, setForm] = useState({
@@ -46,22 +47,11 @@ import { toast } from "sonner";
  
    return (
      <div className="min-h-screen bg-background pt-32">
-       {/* Hero Section */}
-       <section className="py-16 hero-gradient">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto text-center">
-             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               Contact
-             </span>
-             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-               Get in <span className="text-gold-gradient">Touch</span>
-             </h1>
-             <p className="text-muted-foreground text-lg">
-               Have questions about nominations, sponsorship, or volunteering? We would love to hear from you.
-             </p>
-           </div>
-         </div>
-       </section>
+       <PageHero
+         eyebrow="Contact"
+         title={<>Get in <span className="italic text-gold">touch</span></>}
+         subtitle="Have questions about nominations, sponsorship, or volunteering? We would love to hear from you."
+       />
  
        {/* Contact Content */}
        <section className="py-24 bg-background">

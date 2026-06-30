@@ -7,6 +7,7 @@
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useSponsors, usePartners } from "@/lib/queries";
+import PageHero from "@/components/PageHero";
  
  const PartnersPage = () => {
   const { data: sponsors = [] } = useSponsors();
@@ -105,30 +106,20 @@ import { useSponsors, usePartners } from "@/lib/queries";
  
    return (
      <div className="min-h-screen bg-background pt-32">
-       {/* Hero Section */}
-       <section className="py-16 hero-gradient">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto text-center">
-             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               Partners
-             </span>
-             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-               Be Part of the <span className="text-gold-gradient">Change</span>
-             </h1>
-             <p className="text-muted-foreground text-lg mb-8">
-               Join us in celebrating and empowering Australia's multicultural youth leaders
-             </p>
-             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <Button variant="gold" size="lg" asChild>
-                 <a href="#sponsor-form">Sponsor</a>
-               </Button>
-               <Button variant="goldOutline" size="lg" asChild>
-                 <Link to="/contact">Contact us</Link>
-               </Button>
-             </div>
-           </div>
+       <PageHero
+         eyebrow="Partners"
+         title={<>Be part of the <span className="italic text-gold">change</span></>}
+         subtitle="Join us in celebrating and empowering Australia's multicultural youth leaders"
+       >
+         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+           <Button variant="gold" size="lg" className="min-w-[180px] tracking-[0.2em] uppercase text-xs font-bold" asChild>
+             <a href="#sponsor-form">Sponsor</a>
+           </Button>
+           <Button variant="goldOutline" size="lg" className="min-w-[180px] tracking-[0.2em] uppercase text-xs font-bold" asChild>
+             <Link to="/contact">Contact us</Link>
+           </Button>
          </div>
-       </section>
+       </PageHero>
  
        {/* Partner Logos */}
        <section className="py-24 bg-background">

@@ -1,6 +1,8 @@
  import { Link } from "react-router-dom";
  import { Button } from "@/components/ui/button";
  import { Award, Globe, Users, Calendar, ArrowRight } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import SectionHeading from "@/components/SectionHeading";
  
  const AboutPage = () => {
    const impactStats = [
@@ -11,23 +13,12 @@
    ];
  
    return (
-     <div className="min-h-screen bg-background pt-32">
-       {/* Hero Section */}
-       <section className="py-16 hero-gradient">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto text-center">
-             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               About Us
-             </span>
-             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-               Celebrating <span className="text-gold-gradient">Multicultural Excellence</span>
-             </h1>
-             <p className="text-muted-foreground text-lg">
-               Recognising the outstanding achievements and contributions of Australia's diverse young leaders
-             </p>
-           </div>
-         </div>
-       </section>
+    <div className="min-h-screen bg-background pt-32">
+      <PageHero
+        eyebrow="About Us"
+        title={<>Celebrating <span className="italic text-gold">multicultural excellence</span></>}
+        subtitle="Recognising the outstanding achievements and contributions of Australia's diverse young leaders"
+      />
  
        {/* Mission & Vision */}
        <section className="py-24 bg-background">
@@ -58,9 +49,11 @@
        <section className="py-24 bg-background">
          <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto">
-             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
-               Our <span className="text-gold-gradient">Story</span>
-             </h2>
+            <SectionHeading
+              eyebrow="Our Journey"
+              title={<>Our <span className="italic text-gold">story</span></>}
+              className="mb-10"
+            />
              <div className="prose prose-lg prose-invert mx-auto">
                <p className="text-muted-foreground leading-relaxed mb-6">
                  The Multicultural Youth Awards was established to address a gap in recognition 
@@ -90,9 +83,11 @@
        <section className="py-24 bg-secondary/30">
          <div className="container mx-auto px-4">
            <div className="max-w-4xl mx-auto">
-             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-                How the <span className="text-gold-gradient">Awards Work</span>
-             </h2>
+            <SectionHeading
+              eyebrow="The Process"
+              title={<>How the <span className="italic text-gold">awards work</span></>}
+              className="mb-12"
+            />
              
              <div className="grid md:grid-cols-3 gap-8">
                <div className="text-center">
@@ -135,11 +130,11 @@
        {/* Impact Highlights */}
        <section className="py-24 bg-background">
          <div className="container mx-auto px-4">
-           <div className="text-center mb-12">
-             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-               Our <span className="text-gold-gradient">Impact</span>
-             </h2>
-           </div>
+          <SectionHeading
+            eyebrow="By the Numbers"
+            title={<>Our <span className="italic text-gold">impact</span></>}
+            className="mb-12"
+          />
  
            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
              {impactStats.map((stat, index) => (
@@ -162,9 +157,11 @@
        <section className="py-24 bg-secondary/30">
          <div className="container mx-auto px-4">
            <div className="max-w-2xl mx-auto text-center">
-             <h2 className="font-display text-3xl font-bold text-foreground mb-6">
-               Ready to Get Involved?
-             </h2>
+            <SectionHeading
+              eyebrow="Join Us"
+              title={<>Ready to <span className="italic text-gold">get involved?</span></>}
+              className="mb-6"
+            />
              <p className="text-muted-foreground mb-8">
                Whether you want to nominate someone, become a sponsor, or volunteer, 
                there are many ways to be part of the Multicultural Youth Awards.
