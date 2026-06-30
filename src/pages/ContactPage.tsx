@@ -6,6 +6,8 @@
  import { Label } from "@/components/ui/label";
  import { Mail, MapPin, Facebook, Linkedin, Instagram } from "lucide-react";
  import { siteContent } from "@/lib/siteContent";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
  
  const ContactPage = () => {
    const [form, setForm] = useState({
@@ -20,13 +22,20 @@
    const handleSubmit = async (e: React.FormEvent) => {
      e.preventDefault();
      setIsSubmitting(true);
-     
-     // TODO: Connect to form service (Formspree, Airtable, Google Sheets, or email delivery)
-     // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(form) })
-     
-     await new Promise(resolve => setTimeout(resolve, 1500));
-     setSubmitted(true);
-     setIsSubmitting(false);
+
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: form.fullName,
+      email: form.email,
+      subject: form.subject,
+      message: form.message,
+    });
+
+    setIsSubmitting(false);
+    if (error) {
+      toast.error("Something went wrong. Please try again.");
+      return;
+    }
+    setSubmitted(true);
    };
  
    const socialLinks = [

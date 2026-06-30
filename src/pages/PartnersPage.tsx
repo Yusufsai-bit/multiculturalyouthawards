@@ -4,9 +4,15 @@
  import { Input } from "@/components/ui/input";
  import { Textarea } from "@/components/ui/textarea";
  import { Label } from "@/components/ui/label";
- import { siteContent } from "@/lib/siteContent";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import { useSponsors, usePartners } from "@/lib/queries";
  
  const PartnersPage = () => {
+  const { data: sponsors = [] } = useSponsors();
+  const { data: allPartners = [] } = usePartners();
+  const majorPartners = allPartners.filter((p) => p.tier === "major_partner");
+  const supporters = allPartners.filter((p) => p.tier === "supporter");
    const [form, setForm] = useState({
      organisation: "",
      contactName: "",
@@ -20,16 +26,25 @@
    const handleSubmit = async (e: React.FormEvent) => {
      e.preventDefault();
      setIsSubmitting(true);
-     
-     // TODO: Connect to form service (Formspree, Airtable, Google Sheets, or email delivery)
-     // Example: await fetch('/api/sponsor-enquiry', { method: 'POST', body: JSON.stringify(form) })
-     
-     await new Promise(resolve => setTimeout(resolve, 1500));
-     setSubmitted(true);
-     setIsSubmitting(false);
+
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: form.contactName,
+      email: form.email,
+      phone: form.phone,
+      subject: `Sponsor enquiry: ${form.organisation}`,
+      message: form.message,
+    });
+
+    setIsSubmitting(false);
+    if (error) {
+      toast.error("Something went wrong. Please try again.");
+      return;
+    }
+    setSubmitted(true);
    };
  
-   const PartnerGrid = ({ partners, title }: { partners: typeof siteContent.partners2026; title: string }) => (
+  const PartnerGrid = ({ partners, title }: { partners: { name: string; logo_url: string | null; url: string | null }[]; title: string }) => (
+    partners.length === 0 ? null : (
      <div className="mb-12">
        <h3 className="font-display text-xl font-semibold text-foreground mb-6 text-center">{title}</h3>
      <div className="flex flex-wrap justify-center gap-8">
@@ -43,9 +58,9 @@
              className="group flex flex-col items-center"
            >
              <div className="w-40 h-24 rounded-xl bg-white flex items-center justify-center border border-border group-hover:border-gold/50 transition-all group-hover:shadow-lg group-hover:shadow-gold/10">
-               {partner.logo ? (
+              {partner.logo_url ? (
                  <img 
-                   src={partner.logo} 
+                  src={partner.logo_url} 
                    alt={partner.name} 
                    className="max-w-[80%] max-h-[70%] object-contain" 
                  />
@@ -65,9 +80,9 @@
              className="flex flex-col items-center"
            >
              <div className="w-40 h-24 rounded-xl bg-white flex items-center justify-center border border-border">
-               {partner.logo ? (
+              {partner.logo_url ? (
                  <img 
-                   src={partner.logo} 
+                  src={partner.logo_url} 
                    alt={partner.name} 
                    className="max-w-[80%] max-h-[70%] object-contain" 
                  />
@@ -85,6 +100,7 @@
          ))}
        </div>
      </div>
+    )
    );
  
    return (
@@ -117,11 +133,11 @@
        {/* Partner Logos */}
        <section className="py-24 bg-background">
          <div className="container mx-auto px-4">
-           <PartnerGrid partners={siteContent.partners2026} title="Major Partners" />
-           <div className="section-divider my-12" />
-           <PartnerGrid partners={siteContent.sponsors} title="MYA Sponsors" />
-           <div className="section-divider my-12" />
-           <PartnerGrid partners={siteContent.supporters} title="MYA Supporters" />
+          <PartnerGrid partners={majorPartners} title="Major Partners" />
+          <div className="section-divider my-12" />
+          <PartnerGrid partners={sponsors} title="MYA Sponsors" />
+          <div className="section-divider my-12" />
+          <PartnerGrid partners={supporters} title="MYA Supporters" />
          </div>
        </section>
  
