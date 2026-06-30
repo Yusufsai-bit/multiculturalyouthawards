@@ -6,6 +6,9 @@
  import { siteContent } from "@/lib/siteContent";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import myaLogo from "@/assets/mya-logo.png.asset.json";
+import aboriginalFlag from "@/assets/aboriginal-flag.png.asset.json";
+import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
  
  const Footer = () => {
    const [newsletterName, setNewsletterName] = useState("");
