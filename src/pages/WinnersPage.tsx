@@ -1,97 +1,132 @@
- import { Trophy } from "lucide-react";
- import {
-   Accordion,
-   AccordionContent,
-   AccordionItem,
-   AccordionTrigger,
- } from "@/components/ui/accordion";
- import { siteContent } from "@/lib/siteContent";
- 
- const WinnersPage = () => {
-   const categories = Object.entries(siteContent.winners2025);
- 
-   return (
-     <div className="min-h-screen bg-background pt-32">
-       {/* Hero Section */}
-       <section className="py-16 hero-gradient">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto text-center">
-             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-              Winners 2024
-             </span>
-             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Celebrating Our <span className="text-gold-gradient">2024 Champions</span>
-             </h1>
-             <p className="text-muted-foreground text-lg">
-              Meet the exceptional young people who were recognised at the 2024 Multicultural Youth Awards
-             </p>
-           </div>
-         </div>
-       </section>
- 
-       {/* Winners Accordion */}
-       <section className="py-24 bg-background">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto">
-             <Accordion type="single" collapsible className="space-y-4">
-               {categories.map(([categoryName, winner], index) => (
-                 <AccordionItem 
-                   key={categoryName} 
-                   value={`category-${index}`}
-                   className="glass-card rounded-xl border-gold-glow px-6"
-                 >
-                   <AccordionTrigger className="text-foreground font-semibold hover:text-gold py-6">
-                     <div className="flex items-center gap-4">
-                       <Trophy className="w-5 h-5 text-gold flex-shrink-0" />
-                       <span className="text-left">{categoryName}</span>
-                     </div>
-                   </AccordionTrigger>
-                   <AccordionContent className="pb-6">
-                     <div className="pl-9">
-                       {/* Winner */}
-                       <div className="mb-6">
-                         <div className="flex items-center gap-3 mb-2">
-                           <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center">
-                             <Trophy className="w-6 h-6 text-gold" />
-                           </div>
-                           <div>
-                             <p className="text-gold text-sm font-medium">Winner</p>
-                             <h4 className="font-display text-lg font-semibold text-foreground">
-                               {winner.name}
-                             </h4>
-                           </div>
-                         </div>
-                         <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
-                           {winner.bio}
-                         </p>
-                       </div>
- 
-                      {/* Finalists */}
-                      {winner.finalists.length > 0 && (
+import { useState, useEffect } from "react";
+import { Trophy } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { useYears, useResultsByYear } from "@/lib/queries";
+
+const WinnersPage = () => {
+  const { data: years = [] } = useYears();
+  const [yearId, setYearId] = useState<string>("");
+
+  useEffect(() => {
+    if (!yearId && years.length) {
+      const withResults = years.find((y) => !y.is_current) ?? years[0];
+      setYearId(withResults.id);
+    }
+  }, [years, yearId]);
+
+  const { data: results = [], isLoading } = useResultsByYear(yearId);
+  const selectedYear = years.find((y) => y.id === yearId);
+  const categoriesWithWinners = results.filter((c) => c.winners.length > 0);
+
+  return (
+    <div className="min-h-screen bg-background pt-32">
+      <section className="py-16 hero-gradient">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
+              Winners{selectedYear ? ` ${selectedYear.year}` : ""}
+            </span>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Celebrating Our <span className="text-gold-gradient">Champions</span>
+            </h1>
+            <p className="text-muted-foreground text-lg mb-8">
+              Meet the exceptional young people recognised at the Multicultural Youth Awards
+            </p>
+            {years.length > 0 && (
+              <select
+                value={yearId}
+                onChange={(e) => setYearId(e.target.value)}
+                className="bg-background border border-border rounded-lg px-4 py-2 text-foreground"
+              >
+                {years.map((y) => (
+                  <option key={y.id} value={y.id}>{y.year}</option>
+                ))}
+              </select>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            {isLoading && <p className="text-center text-muted-foreground">Loading...</p>}
+            {!isLoading && categoriesWithWinners.length === 0 && (
+              <p className="text-center text-muted-foreground">
+                Winners for this year have not been published yet.
+              </p>
+            )}
+            <Accordion type="single" collapsible className="space-y-4">
+              {categoriesWithWinners.map((category, index) => (
+                <AccordionItem
+                  key={category.id}
+                  value={`category-${index}`}
+                  className="glass-card rounded-xl border-gold-glow px-6"
+                >
+                  <AccordionTrigger className="text-foreground font-semibold hover:text-gold py-6">
+                    <div className="flex items-center gap-4">
+                      <Trophy className="w-5 h-5 text-gold flex-shrink-0" />
+                      <span className="text-left">{category.name}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6">
+                    <div className="pl-9">
+                      {category.winners.map((winner) => (
+                        <div className="mb-6" key={winner.id}>
+                          <div className="flex items-center gap-3 mb-2">
+                            {winner.image_url ? (
+                              <img src={winner.image_url} alt={winner.name}
+                                className="w-12 h-12 rounded-full object-cover" />
+                            ) : (
+                              <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center">
+                                <Trophy className="w-6 h-6 text-gold" />
+                              </div>
+                            )}
+                            <div>
+                              <p className="text-gold text-sm font-medium">Winner</p>
+                              <h4 className="font-display text-lg font-semibold text-foreground">
+                                {winner.name}
+                              </h4>
+                            </div>
+                          </div>
+                          {winner.bio && (
+                            <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
+                              {winner.bio}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+
+                      {category.finalists.length > 0 && (
                         <div>
                           <p className="text-sm font-medium text-muted-foreground mb-2">
-                            {winner.finalists.length === 1 ? "Finalist" : "Finalists"}
+                            {category.finalists.length === 1 ? "Finalist" : "Finalists"}
                           </p>
                           <ul className="space-y-1">
-                            {winner.finalists.map((finalist, i) => (
-                              <li key={i} className="text-foreground text-sm flex items-center gap-2">
+                            {category.finalists.map((finalist) => (
+                              <li key={finalist.id} className="text-foreground text-sm flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
-                                {finalist}
+                                {finalist.name}
                               </li>
                             ))}
                           </ul>
                         </div>
                       )}
-                     </div>
-                   </AccordionContent>
-                 </AccordionItem>
-               ))}
-             </Accordion>
-           </div>
-         </div>
-       </section>
-     </div>
-   );
- };
- 
- export default WinnersPage;
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default WinnersPage;
