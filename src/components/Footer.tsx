@@ -55,8 +55,8 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <h3 className="font-display text-2xl font-bold text-foreground">Stay up to date</h3>
-          <h3 className="font-display text-2xl font-bold text-foreground">Get social</h3>
+          <h3 className="font-sans text-[28px] font-semibold text-foreground">Stay up to date</h3>
+          <h3 className="font-sans text-[28px] font-semibold text-foreground">Get social</h3>
         </div>
       </div>
 
