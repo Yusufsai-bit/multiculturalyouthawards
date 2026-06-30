@@ -40,6 +40,11 @@
          isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
        }`}
      >
+      {/* Gold announcement banner */}
+      <div className="bg-gold text-foreground text-center text-[10px] md:text-xs font-semibold tracking-[0.08em] uppercase py-2 px-4">
+        Diverse talents, shared achievements — honouring the brilliance of multicultural youth
+      </div>
+
        <div className="container mx-auto px-4">
          {/* Centered Logo */}
          <div className="flex justify-center py-4">
