@@ -21,7 +21,6 @@ const AboutPage = () => {
               alt="Multicultural Youth Awards finalists and winners at Victorian Parliament House"
               className="w-full h-auto rounded-sm object-cover"
             />
-            <p className="text-background/90 text-lg leading-relaxed">
             <p className="font-sans text-background text-xl md:text-[23px] leading-[1.5]">
               The Multicultural Youth Awards is a national event devoted to showcasing the
               outstanding achievements of multicultural youth. Steering away from current
