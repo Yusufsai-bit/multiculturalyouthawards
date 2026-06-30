@@ -103,24 +103,70 @@ import { useSponsors, usePartners } from "@/lib/queries";
     )
    );
  
-   return (
-     <div className="min-h-screen bg-background pt-32">
-       <PageHero
-         eyebrow="Partners"
-         title={<>Be part of the <span className="italic text-gold">change</span></>}
-         subtitle="Join us in celebrating and empowering Australia's multicultural youth leaders"
-       >
-         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-           <Button variant="gold" size="lg" className="min-w-[180px] tracking-[0.2em] uppercase text-xs font-bold" asChild>
-             <a href="#sponsor-form">Sponsor</a>
-           </Button>
-           <Button variant="goldOutline" size="lg" className="min-w-[180px] tracking-[0.2em] uppercase text-xs font-bold" asChild>
-             <Link to="/contact">Contact us</Link>
-           </Button>
-         </div>
-       </PageHero>
- 
-       {/* Partner Logos */}
+    return (
+      <div className="min-h-screen bg-background">
+        {/* Navy editorial hero — matches the live site */}
+        <section className="bg-navy pt-40 pb-20">
+          <div className="container mx-auto px-4">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-background text-center leading-tight">
+              Empowering youth through <span className="italic text-gold">meaningful</span> partnerships.
+            </h1>
+
+            {/* Brand video poster */}
+            <div className="mt-12 max-w-3xl mx-auto">
+              <div className="relative aspect-video bg-navy-light/60 flex flex-col items-center justify-center overflow-hidden">
+                <div className="relative flex flex-col items-center">
+                  <div className="relative w-28 h-28 flex items-center justify-center">
+                    <span className="absolute inset-0 rounded-full border border-gold/70" />
+                    <span className="font-display text-5xl text-gold">M</span>
+                  </div>
+                  <div className="-mt-6 w-16 h-16 rounded-full border border-background/60 bg-navy/40 flex items-center justify-center">
+                    <span className="ml-1 border-y-[8px] border-y-transparent border-l-[14px] border-l-background/80" />
+                  </div>
+                  <p className="mt-3 font-display tracking-[0.25em] text-background/80 text-sm uppercase text-center leading-relaxed">
+                    Multicultural<br />Youth Awards
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="section-divider my-16 max-w-3xl mx-auto" />
+
+            <div className="max-w-2xl mx-auto text-center space-y-6">
+              <p className="text-background/80 leading-relaxed">
+                The Multicultural Youth Awards wouldn't be possible without the support of incredible partners and sponsors who believe in the power of young people from multicultural backgrounds.
+              </p>
+              <p className="text-background/80 leading-relaxed">
+                We're currently finalising our 2025 partners and are excited to share them with you soon.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Be part of the change CTA */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="font-numeral text-4xl md:text-6xl uppercase tracking-tight text-foreground">
+              Be part of the <span className="text-gold">change.</span>
+            </h2>
+            <div className="flex flex-wrap gap-4 justify-center mt-10">
+              <a
+                href="#sponsor-form"
+                className="border border-foreground/30 px-8 py-3 text-xs tracking-[0.2em] uppercase font-semibold text-foreground hover:border-gold hover:text-gold transition-colors"
+              >
+                Sponsor
+              </a>
+              <Link
+                to="/contact"
+                className="border border-foreground/30 px-8 py-3 text-xs tracking-[0.2em] uppercase font-semibold text-foreground hover:border-gold hover:text-gold transition-colors"
+              >
+                Contact us
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Partner Logos */}
        <section className="py-24 bg-background">
          <div className="container mx-auto px-4">
           <PartnerGrid partners={majorPartners} title="Major Partners" />
