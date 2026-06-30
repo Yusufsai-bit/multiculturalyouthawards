@@ -1,495 +1,171 @@
- import { useState } from "react";
- import { Link } from "react-router-dom";
- import { Button } from "@/components/ui/button";
- import { Input } from "@/components/ui/input";
- import { Textarea } from "@/components/ui/textarea";
- import { Checkbox } from "@/components/ui/checkbox";
- import { Label } from "@/components/ui/label";
- import {
-   Accordion,
-   AccordionContent,
-   AccordionItem,
-   AccordionTrigger,
- } from "@/components/ui/accordion";
- import {
-   Select,
-   SelectContent,
-   SelectItem,
-   SelectTrigger,
-   SelectValue,
- } from "@/components/ui/select";
- import { siteContent, areNominationsOpen } from "@/lib/siteContent";
- 
- const NominationsPage = () => {
-   const nominationsOpen = areNominationsOpen(siteContent.nominationsStatus);
-   
-   // Nomination form state
-   const [nominationForm, setNominationForm] = useState({
-     nominatorName: "",
-     nominatorEmail: "",
-     nominatorPhone: "",
-     nomineeName: "",
-     nomineeContact: "",
-     nomineeSuburb: "",
-     nomineeState: "",
-     category: "",
-     whyNominating: "",
-     impactExamples: "",
-     consentContact: false,
-     consentPublicity: false,
-   });
- 
-   // Register interest form state
-   const [interestForm, setInterestForm] = useState({
-     name: "",
-     email: "",
-     categoryInterest: "",
-   });
- 
-   const [isSubmitting, setIsSubmitting] = useState(false);
-   const [submitted, setSubmitted] = useState(false);
- 
-   const handleNominationSubmit = async (e: React.FormEvent) => {
-     e.preventDefault();
-     setIsSubmitting(true);
-     
-     // TODO: Connect to form service (Formspree, Airtable, Google Sheets, or email delivery)
-     // Example: await fetch('/api/nominations', { method: 'POST', body: JSON.stringify(nominationForm) })
-     
-     await new Promise(resolve => setTimeout(resolve, 1500));
-     setSubmitted(true);
-     setIsSubmitting(false);
-   };
- 
-   const handleInterestSubmit = async (e: React.FormEvent) => {
-     e.preventDefault();
-     setIsSubmitting(true);
-     
-     // TODO: Connect to form service
-     // Example: await fetch('/api/register-interest', { method: 'POST', body: JSON.stringify(interestForm) })
-     
-     await new Promise(resolve => setTimeout(resolve, 1500));
-     setSubmitted(true);
-     setIsSubmitting(false);
-   };
- 
-   const australianStates = [
-     "Australian Capital Territory",
-     "New South Wales",
-     "Northern Territory",
-     "Queensland",
-     "South Australia",
-     "Tasmania",
-     "Victoria",
-     "Western Australia",
-   ];
- 
-   return (
-     <div className="min-h-screen bg-background pt-32">
-       {/* Hero Section */}
-       <section className="py-16 hero-gradient">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto text-center">
-             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               Nominations
-             </span>
-             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-               {nominationsOpen ? (
-                 <>Nominate a <span className="text-gold-gradient">Young Leader</span></>
-               ) : (
-                 <>Nominations <span className="text-gold-gradient">Opening Soon</span></>
-               )}
-             </h1>
-             <p className="text-muted-foreground text-lg">
-               {nominationsOpen 
-                 ? "Know an inspiring young person making a difference? Nominate them for recognition."
-                : "Nominations for the 2024 awards are now closed. Register your interest to be notified when nominations reopen."
-               }
-             </p>
-           </div>
-         </div>
-       </section>
- 
-       {/* Info Section */}
-       <section className="py-16 bg-background">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto">
-             <div className="glass-card rounded-2xl p-8 border-gold-glow mb-8">
-               <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                 How Nominations Work
-               </h2>
-               <p className="text-muted-foreground leading-relaxed">
-                  Individuals and organisations can nominate a young person from a multicultural
-                  background who has demonstrated excellence, leadership or made a positive
-                  contribution to their community, and self nominations are encouraged. Nominees
-                  must be aged between 16 and 30 years at the time of nomination.
-               </p>
-             </div>
- 
-             <Accordion type="single" collapsible className="space-y-4">
-               <AccordionItem value="how-to" className="glass-card rounded-xl border-gold-glow px-6">
-                 <AccordionTrigger className="text-foreground font-semibold hover:text-gold">
-                   How to nominate
-                 </AccordionTrigger>
-                 <AccordionContent className="text-muted-foreground">
-                   <ol className="list-decimal list-inside space-y-2">
-                     <li>Choose the most appropriate award category for your nominee</li>
-                     <li>Complete the nomination form with your details and the nominee's details</li>
-                     <li>Provide a compelling explanation of why they deserve recognition</li>
-                     <li>Include specific examples of their achievements and impact</li>
-                     <li>Ensure you have consent to share their information</li>
-                     <li>Submit your nomination before the closing date</li>
-                   </ol>
-                 </AccordionContent>
-               </AccordionItem>
- 
-               <AccordionItem value="eligibility" className="glass-card rounded-xl border-gold-glow px-6">
-                 <AccordionTrigger className="text-foreground font-semibold hover:text-gold">
-                   Eligibility
-                 </AccordionTrigger>
-                 <AccordionContent className="text-muted-foreground">
-                   <ul className="list-disc list-inside space-y-2">
-                      <li>Nominees must have a culturally diverse background</li>
-                      <li>Nominees must be aged between 16 and 30 years old</li>
-                      <li>Individuals must reside in Australia</li>
-                      <li>Organisations may be nominated for a project, program or initiative that benefits Australians</li>
-                      <li>Self nominations are encouraged</li>
-                      <li>Two independent referees are required to verify the nomination</li>
-                   </ul>
-                 </AccordionContent>
-               </AccordionItem>
- 
-               <AccordionItem value="judging" className="glass-card rounded-xl border-gold-glow px-6">
-                 <AccordionTrigger className="text-foreground font-semibold hover:text-gold">
-                   Screening and judging
-                 </AccordionTrigger>
-                 <AccordionContent className="text-muted-foreground">
-                   <p className="mb-4">
-                     All nominations undergo a thorough review process:
-                   </p>
-                   <ol className="list-decimal list-inside space-y-2">
-                     <li>Initial screening for eligibility and completeness</li>
-                     <li>Assessment by category-specific judges</li>
-                     <li>Shortlisting of finalists</li>
-                     <li>Final judging panel determines winners</li>
-                   </ol>
-                 </AccordionContent>
-               </AccordionItem>
- 
-               <AccordionItem value="criteria" className="glass-card rounded-xl border-gold-glow px-6">
-                 <AccordionTrigger className="text-foreground font-semibold hover:text-gold">
-                   Scoring criteria
-                 </AccordionTrigger>
-                 <AccordionContent className="text-muted-foreground">
-                   <p className="mb-4">Nominations are assessed against the following criteria:</p>
-                   <ul className="list-disc list-inside space-y-2">
-                     <li><strong>Impact:</strong> The significance and reach of their contribution</li>
-                     <li><strong>Leadership:</strong> Demonstrated leadership qualities and influence</li>
-                     <li><strong>Innovation:</strong> Creative approaches and new ideas</li>
-                     <li><strong>Community benefit:</strong> Positive outcomes for the community</li>
-                     <li><strong>Resilience:</strong> Overcoming challenges and inspiring others</li>
-                   </ul>
-                 </AccordionContent>
-               </AccordionItem>
- 
-               <AccordionItem value="dates" className="glass-card rounded-xl border-gold-glow px-6">
-                 <AccordionTrigger className="text-foreground font-semibold hover:text-gold">
-                    Important dates
-                 </AccordionTrigger>
-                 <AccordionContent className="text-muted-foreground">
-                   <ul className="space-y-3">
-                     <li className="flex justify-between">
-                       <span>Nominations open</span>
-                       <span className="text-gold">To be confirmed</span>
-                     </li>
-                     <li className="flex justify-between">
-                       <span>Nominations close</span>
-                       <span className="text-gold">To be confirmed</span>
-                     </li>
-                     <li className="flex justify-between">
-                       <span>Finalists announced</span>
-                       <span className="text-gold">To be confirmed</span>
-                     </li>
-                     <li className="flex justify-between">
-                       <span>Awards ceremony</span>
-                       <span className="text-gold">To be confirmed</span>
-                     </li>
-                   </ul>
-                 </AccordionContent>
-               </AccordionItem>
-             </Accordion>
-           </div>
-         </div>
-       </section>
- 
-       <div className="section-divider" />
- 
-       {/* Form Section */}
-       <section className="py-24 bg-secondary/30">
-         <div className="container mx-auto px-4">
-           <div className="max-w-2xl mx-auto">
-             {submitted ? (
-               <div className="glass-card rounded-2xl p-12 border-gold-glow text-center">
-                 <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
-                   <span className="text-gold text-3xl">✓</span>
-                 </div>
-                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                   {nominationsOpen ? "Nomination Submitted" : "Interest Registered"}
-                 </h2>
-                 <p className="text-muted-foreground mb-8">
-                   {nominationsOpen 
-                     ? "Thank you for your nomination. We will be in touch once the review process is complete."
-                     : "Thank you for registering your interest. We will notify you when nominations open."
-                   }
-                 </p>
-                 <Button variant="goldOutline" asChild>
-                   <Link to="/">Return Home</Link>
-                 </Button>
-               </div>
-             ) : nominationsOpen ? (
-               /* Nomination Form */
-               <form onSubmit={handleNominationSubmit} className="glass-card rounded-2xl p-8 border-gold-glow">
-                 <h2 className="font-display text-2xl font-bold text-foreground mb-8 text-center">
-                   Nomination Form
-                 </h2>
- 
-                 {/* Nominator Details */}
-                 <div className="mb-8">
-                   <h3 className="font-semibold text-gold mb-4">Your Details (Nominator)</h3>
-                   <div className="grid md:grid-cols-2 gap-4">
-                     <div>
-                       <Label htmlFor="nominatorName">Your name *</Label>
-                       <Input
-                         id="nominatorName"
-                         value={nominationForm.nominatorName}
-                         onChange={(e) => setNominationForm({...nominationForm, nominatorName: e.target.value})}
-                         required
-                         className="bg-background border-border mt-1"
-                       />
-                     </div>
-                     <div>
-                       <Label htmlFor="nominatorEmail">Your email *</Label>
-                       <Input
-                         id="nominatorEmail"
-                         type="email"
-                         value={nominationForm.nominatorEmail}
-                         onChange={(e) => setNominationForm({...nominationForm, nominatorEmail: e.target.value})}
-                         required
-                         className="bg-background border-border mt-1"
-                       />
-                     </div>
-                     <div className="md:col-span-2">
-                       <Label htmlFor="nominatorPhone">Your phone</Label>
-                       <Input
-                         id="nominatorPhone"
-                         type="tel"
-                         value={nominationForm.nominatorPhone}
-                         onChange={(e) => setNominationForm({...nominationForm, nominatorPhone: e.target.value})}
-                         className="bg-background border-border mt-1"
-                       />
-                     </div>
-                   </div>
-                 </div>
- 
-                 {/* Nominee Details */}
-                 <div className="mb-8">
-                   <h3 className="font-semibold text-gold mb-4">Nominee Details</h3>
-                   <div className="grid md:grid-cols-2 gap-4">
-                     <div>
-                       <Label htmlFor="nomineeName">Nominee name *</Label>
-                       <Input
-                         id="nomineeName"
-                         value={nominationForm.nomineeName}
-                         onChange={(e) => setNominationForm({...nominationForm, nomineeName: e.target.value})}
-                         required
-                         className="bg-background border-border mt-1"
-                       />
-                     </div>
-                     <div>
-                       <Label htmlFor="nomineeContact">Nominee email or phone *</Label>
-                       <Input
-                         id="nomineeContact"
-                         value={nominationForm.nomineeContact}
-                         onChange={(e) => setNominationForm({...nominationForm, nomineeContact: e.target.value})}
-                         required
-                         className="bg-background border-border mt-1"
-                       />
-                     </div>
-                     <div>
-                       <Label htmlFor="nomineeSuburb">Suburb *</Label>
-                       <Input
-                         id="nomineeSuburb"
-                         value={nominationForm.nomineeSuburb}
-                         onChange={(e) => setNominationForm({...nominationForm, nomineeSuburb: e.target.value})}
-                         required
-                         className="bg-background border-border mt-1"
-                       />
-                     </div>
-                     <div>
-                       <Label htmlFor="nomineeState">State *</Label>
-                       <Select
-                         value={nominationForm.nomineeState}
-                         onValueChange={(value) => setNominationForm({...nominationForm, nomineeState: value})}
-                       >
-                         <SelectTrigger className="bg-background border-border mt-1">
-                           <SelectValue placeholder="Select state" />
-                         </SelectTrigger>
-                         <SelectContent>
-                           {australianStates.map((state) => (
-                             <SelectItem key={state} value={state}>{state}</SelectItem>
-                           ))}
-                         </SelectContent>
-                       </Select>
-                     </div>
-                   </div>
-                 </div>
- 
-                 {/* Category Selection */}
-                 <div className="mb-8">
-                   <Label htmlFor="category">Award category *</Label>
-                   <Select
-                     value={nominationForm.category}
-                     onValueChange={(value) => setNominationForm({...nominationForm, category: value})}
-                   >
-                     <SelectTrigger className="bg-background border-border mt-1">
-                       <SelectValue placeholder="Select a category" />
-                     </SelectTrigger>
-                     <SelectContent>
-                       {siteContent.categories.map((cat) => (
-                         <SelectItem key={cat.id} value={cat.name}>{cat.name}</SelectItem>
-                       ))}
-                     </SelectContent>
-                   </Select>
-                 </div>
- 
-                 {/* Nomination Details */}
-                 <div className="mb-8">
-                   <Label htmlFor="whyNominating">Why are you nominating them? *</Label>
-                   <Textarea
-                     id="whyNominating"
-                     value={nominationForm.whyNominating}
-                     onChange={(e) => setNominationForm({...nominationForm, whyNominating: e.target.value})}
-                     required
-                     rows={5}
-                     className="bg-background border-border mt-1"
-                     placeholder="Describe why this person deserves recognition..."
-                   />
-                 </div>
- 
-                 <div className="mb-8">
-                   <Label htmlFor="impactExamples">Examples of their impact *</Label>
-                   <Textarea
-                     id="impactExamples"
-                     value={nominationForm.impactExamples}
-                     onChange={(e) => setNominationForm({...nominationForm, impactExamples: e.target.value})}
-                     required
-                     rows={5}
-                     className="bg-background border-border mt-1"
-                     placeholder="Provide specific examples of their achievements and impact..."
-                   />
-                 </div>
- 
-                 {/* Consent */}
-                 <div className="space-y-4 mb-8">
-                   <div className="flex items-start gap-3">
-                     <Checkbox
-                       id="consentContact"
-                       checked={nominationForm.consentContact}
-                       onCheckedChange={(checked) => setNominationForm({...nominationForm, consentContact: checked as boolean})}
-                       required
-                     />
-                     <Label htmlFor="consentContact" className="text-sm text-muted-foreground leading-relaxed">
-                       I confirm that I have permission to share the nominee's contact details and they are aware of this nomination. *
-                     </Label>
-                   </div>
-                   <div className="flex items-start gap-3">
-                     <Checkbox
-                       id="consentPublicity"
-                       checked={nominationForm.consentPublicity}
-                       onCheckedChange={(checked) => setNominationForm({...nominationForm, consentPublicity: checked as boolean})}
-                     />
-                     <Label htmlFor="consentPublicity" className="text-sm text-muted-foreground leading-relaxed">
-                       I consent to the nominee's details being used for publicity purposes if they are shortlisted or win an award.
-                     </Label>
-                   </div>
-                 </div>
- 
-                 <Button 
-                   type="submit" 
-                   variant="gold" 
-                   size="lg" 
-                   className="w-full"
-                   disabled={isSubmitting || !nominationForm.consentContact}
-                 >
-                   {isSubmitting ? "Submitting..." : "Submit Nomination"}
-                 </Button>
-               </form>
-             ) : (
-               /* Register Interest Form */
-               <form onSubmit={handleInterestSubmit} className="glass-card rounded-2xl p-8 border-gold-glow">
-                 <h2 className="font-display text-2xl font-bold text-foreground mb-4 text-center">
-                   Register Your Interest
-                 </h2>
-                 <p className="text-muted-foreground text-center mb-8">
-                    Be the first to know when nominations reopen.
-                 </p>
- 
-                 <div className="space-y-4">
-                   <div>
-                     <Label htmlFor="interestName">Your name *</Label>
-                     <Input
-                       id="interestName"
-                       value={interestForm.name}
-                       onChange={(e) => setInterestForm({...interestForm, name: e.target.value})}
-                       required
-                       className="bg-background border-border mt-1"
-                     />
-                   </div>
-                   <div>
-                     <Label htmlFor="interestEmail">Your email *</Label>
-                     <Input
-                       id="interestEmail"
-                       type="email"
-                       value={interestForm.email}
-                       onChange={(e) => setInterestForm({...interestForm, email: e.target.value})}
-                       required
-                       className="bg-background border-border mt-1"
-                     />
-                   </div>
-                   <div>
-                     <Label htmlFor="categoryInterest">Category of interest</Label>
-                     <Select
-                       value={interestForm.categoryInterest}
-                       onValueChange={(value) => setInterestForm({...interestForm, categoryInterest: value})}
-                     >
-                       <SelectTrigger className="bg-background border-border mt-1">
-                         <SelectValue placeholder="Select a category (optional)" />
-                       </SelectTrigger>
-                       <SelectContent>
-                         {siteContent.categories.map((cat) => (
-                           <SelectItem key={cat.id} value={cat.name}>{cat.name}</SelectItem>
-                         ))}
-                       </SelectContent>
-                     </Select>
-                   </div>
-                 </div>
- 
-                 <Button 
-                   type="submit" 
-                   variant="gold" 
-                   size="lg" 
-                   className="w-full mt-8"
-                   disabled={isSubmitting}
-                 >
-                   {isSubmitting ? "Submitting..." : "Register Interest"}
-                 </Button>
-               </form>
-             )}
-           </div>
-         </div>
-       </section>
-     </div>
-   );
- };
- 
- export default NominationsPage;
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { UserRound, CheckCircle2, CalendarCheck, CalendarX } from "lucide-react";
+import { siteContent } from "@/lib/siteContent";
+
+const NominationsPage = () => {
+  const info = [
+    {
+      icon: UserRound,
+      label: "Who can apply:",
+      value: "Individuals, Organisations, Self nominations are encouraged",
+    },
+    { icon: CheckCircle2, label: "Status:", value: "Closed" },
+    {
+      icon: CalendarCheck,
+      label: "Nominations Open:",
+      value: siteContent.nominationsOpenDate,
+    },
+    {
+      icon: CalendarX,
+      label: "Nominations Close:",
+      value: siteContent.nominationsCloseDate,
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background pt-40 pb-24">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="font-sans font-bold text-navy text-4xl md:text-5xl mb-8">
+            Multicultural Youth Awards
+          </h1>
+
+          {/* Info list */}
+          <ul className="space-y-4 mb-8">
+            {info.map((item) => (
+              <li key={item.label} className="flex items-start gap-3 text-foreground">
+                <item.icon className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
+                <span>
+                  <span className="font-semibold">{item.label}</span> {item.value}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            disabled
+            className="border border-navy/40 text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14 cursor-not-allowed"
+          >
+            Nominations Opening Soon
+          </button>
+
+          {/* Accordion */}
+          <Accordion type="single" collapsible defaultValue="how-to" className="border-t border-border">
+            <AccordionItem value="how-to" className="border-b border-border">
+              <AccordionTrigger className="font-sans font-semibold text-navy text-lg py-5 hover:no-underline">
+                How to Nominate
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed space-y-4 pb-6">
+                <p>
+                  Step 1: Read through the nomination guide, along with the terms and
+                  conditions, and understand the entry requirements for the awards.
+                </p>
+                <p>
+                  Step 2: Choose a nominee, either an individual or a team, ensuring they
+                  meet the eligibility criteria for the award category. Make sure to obtain
+                  their consent before proceeding with the nomination.
+                </p>
+                <p>
+                  Step 3: Visit www.multiculturalyouthawards.com.au/nominations to access
+                  the nomination form. Fill out all necessary details accurately. Include
+                  the contact information of two independent referees who can confirm the
+                  accuracy of the submission and verify the nominee&rsquo;s eligibility.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="eligibility" className="border-b border-border">
+              <AccordionTrigger className="font-sans font-semibold text-navy text-lg py-5 hover:no-underline">
+                Eligibility for nominees of all award categories
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <p className="mb-3">A nominee is eligible if they:</p>
+                <ol className="list-decimal list-inside space-y-2">
+                  <li>have a culturally diverse background.</li>
+                  <li>are within the age range of 16 &ndash; 30 years old.</li>
+                  <li>reside in Australia (for individuals); or</li>
+                  <li>
+                    are part of a community or volunteer organisation, service provider,
+                    government agency or business nominated for a specific project, program
+                    or initiative that benefits Australians.
+                  </li>
+                </ol>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="judging" className="border-b border-border">
+              <AccordionTrigger className="font-sans font-semibold text-navy text-lg py-5 hover:no-underline">
+                Screening and Judging
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed space-y-4 pb-6">
+                <p>
+                  <strong className="text-foreground">Judging Panel</strong>
+                  <br />
+                  There will be a dedicated judging panel of members representing peak
+                  bodies, grass-roots level expertise/stakeholders and government
+                  departments. All panel members have relevant experience and expertise to
+                  assess each category. The panels usually consist of three members per
+                  award category (nine members in total) excluding the Minister for Youth
+                  Award. Attention is taken to ensure a balance of genders and backgrounds
+                  make up the panel groups.
+                </p>
+                <p>
+                  <strong className="text-foreground">Screening</strong>
+                  <br />
+                  Prior to reaching the judging panel, all nominations for the Multicultural
+                  Youth Awards will undergo a comprehensive pre-evaluation and screening led
+                  by the MYG team and relevant stakeholders. This assessment will adhere to
+                  strict eligibility requirements to determine the nominees eligible to
+                  proceed to the shortlisting stage. The evaluation process ensures a
+                  comprehensive and impartial consideration of each nomination.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="scoring" className="border-b border-border">
+              <AccordionTrigger className="font-sans font-semibold text-navy text-lg py-5 hover:no-underline">
+                Scoring Metrix
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <p className="mb-3">
+                  All judges will use the following scoring matrix for each selection
+                  criterion, with a scale out of 10:
+                </p>
+                <ul className="space-y-2">
+                  <li><strong className="text-foreground">1&ndash;2: Not Demonstrated</strong> &mdash; Limited or no evidence of the nominee displaying outstanding qualities in the given criterion.</li>
+                  <li><strong className="text-foreground">3&ndash;4: Satisfactory but Needs Improvement</strong> &mdash; Adequate, but there is room for more clarity or detail.</li>
+                  <li><strong className="text-foreground">5&ndash;6: Good</strong> &mdash; The nominee has demonstrated proficiency in the criterion.</li>
+                  <li><strong className="text-foreground">7&ndash;8: Very Clearly Demonstrated</strong> &mdash; The nominee has explicitly showcased excellence in the given criterion.</li>
+                  <li><strong className="text-foreground">9&ndash;10: Outstandingly Demonstrated</strong> &mdash; Exceptional demonstration, exceeding expectations in the criterion.</li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="categories" className="border-b border-border">
+              <AccordionTrigger className="font-sans font-semibold text-navy text-lg py-5 hover:no-underline">
+                Award Categories
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <div className="space-y-5">
+                  {siteContent.categories.map((cat) => (
+                    <div key={cat.id}>
+                      <strong className="text-foreground block mb-1">{cat.name}</strong>
+                      <p>{cat.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default NominationsPage;
