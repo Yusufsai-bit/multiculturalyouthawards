@@ -6,7 +6,7 @@
    const impactStats = [
      { icon: Award, value: "13", label: "Award Categories" },
      { icon: Globe, value: "National", label: "Australia-wide Reach" },
-     { icon: Calendar, value: "2025", label: "Last Event" },
+    { icon: Calendar, value: "2024", label: "Last Event" },
      { icon: Users, value: "100+", label: "Young Leaders Recognised" },
    ];
  
@@ -36,19 +36,16 @@
              <div className="glass-card rounded-2xl p-8 border-gold-glow">
                <h2 className="font-display text-2xl font-bold text-gold mb-4">Our Mission</h2>
                <p className="text-muted-foreground leading-relaxed">
-                 To recognise, celebrate and elevate the achievements of multicultural young people 
-                 across Australia. We believe in the power of recognition to inspire confidence, 
-                 build community connections and showcase the incredible contributions of diverse 
-                 young Australians.
+                  Celebrate the rich diversity of talents, resilience and positive impacts of
+                  multicultural youth, fostering inclusivity and showcasing their accomplishments
+                  on a national stage.
                </p>
              </div>
              <div className="glass-card rounded-2xl p-8 border-gold-glow">
                <h2 className="font-display text-2xl font-bold text-gold mb-4">Our Vision</h2>
                <p className="text-muted-foreground leading-relaxed">
-                 A society where the talents, leadership and positive contributions of multicultural 
-                 youth are widely recognised and celebrated. We envision a future where every young 
-                 person from a diverse background has the opportunity to be acknowledged for their 
-                 excellence.
+                  Recognise excellence across 13 categories, highlighting the outstanding
+                  achievements and contributions of young individuals from diverse backgrounds.
                </p>
              </div>
            </div>
@@ -89,12 +86,12 @@
  
        <div className="section-divider" />
  
-       {/* What to Expect in 2026 */}
+        {/* How the Awards Work */}
        <section className="py-24 bg-secondary/30">
          <div className="container mx-auto px-4">
            <div className="max-w-4xl mx-auto">
              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-               What to Expect in <span className="text-gold-gradient">2026</span>
+                How the <span className="text-gold-gradient">Awards Work</span>
              </h2>
              
              <div className="grid md:grid-cols-3 gap-8">
@@ -104,8 +101,8 @@
                  </div>
                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">Nominations</h3>
                  <p className="text-muted-foreground text-sm">
-                   Nominations will open in early 2026. Anyone can nominate a deserving young person 
-                   across our thirteen award categories.
+                    Individuals and organisations can nominate a deserving young person, and self
+                    nominations are encouraged, across our thirteen award categories.
                  </p>
                </div>
                <div className="text-center">
@@ -124,8 +121,8 @@
                  </div>
                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">Celebration</h3>
                  <p className="text-muted-foreground text-sm">
-                   Join us for the 2026 Awards Ceremony where we will celebrate all finalists 
-                   and announce the winners in a prestigious event.
+                    Finalists and winners are celebrated at the Awards Ceremony at Victorian
+                    Parliament House, a prestigious event honouring their achievements.
                  </p>
                </div>
              </div>

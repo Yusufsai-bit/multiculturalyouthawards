@@ -84,12 +84,6 @@
                  </p>
                </div>
  
-               <div className="pt-4 border-t border-border">
-                 <p className="text-muted-foreground text-sm italic">
-                   This is a placeholder privacy policy. Please consult with a legal professional 
-                   to ensure your privacy policy meets all applicable legal requirements.
-                 </p>
-               </div>
              </div>
            </div>
          </div>

@@ -17,13 +17,13 @@
          <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto text-center">
              <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               Winners 2025
+              Winners 2024
              </span>
              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-               Celebrating Our <span className="text-gold-gradient">2025 Champions</span>
+              Celebrating Our <span className="text-gold-gradient">2024 Champions</span>
              </h1>
              <p className="text-muted-foreground text-lg">
-               Meet the exceptional young people who were recognised at the 2025 Multicultural Youth Awards
+              Meet the exceptional young people who were recognised at the 2024 Multicultural Youth Awards
              </p>
            </div>
          </div>
@@ -66,30 +66,22 @@
                          </p>
                        </div>
  
-                       {/* Finalists */}
-                       <div>
-                         <p className="text-sm font-medium text-muted-foreground mb-2">Finalists</p>
-                         <ul className="space-y-1">
-                           {winner.finalists.map((finalist, i) => (
-                             <li key={i} className="text-foreground text-sm flex items-center gap-2">
-                               <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
-                               {finalist}
-                             </li>
-                           ))}
-                         </ul>
-                       </div>
- 
-                       {/* QR Code Placeholder */}
-                       <div className="mt-6 pt-6 border-t border-border">
-                         <div className="flex items-center gap-4">
-                           <div className="w-16 h-16 rounded bg-secondary flex items-center justify-center">
-                             <span className="text-muted-foreground text-xs">QR</span>
-                           </div>
-                           <p className="text-muted-foreground text-sm">
-                             Scan to learn more about this winner
-                           </p>
-                         </div>
-                       </div>
+                      {/* Finalists */}
+                      {winner.finalists.length > 0 && (
+                        <div>
+                          <p className="text-sm font-medium text-muted-foreground mb-2">
+                            {winner.finalists.length === 1 ? "Finalist" : "Finalists"}
+                          </p>
+                          <ul className="space-y-1">
+                            {winner.finalists.map((finalist, i) => (
+                              <li key={i} className="text-foreground text-sm flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
+                                {finalist}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                      </div>
                    </AccordionContent>
                  </AccordionItem>

@@ -41,7 +41,7 @@
          <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto text-center">
              <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               Awards 2026
+              The Awards
              </span>
              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
                13 Categories of <span className="text-gold-gradient">Excellence</span>
