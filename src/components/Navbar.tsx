@@ -20,10 +20,10 @@
    const navLinks = [
      { name: "Home", href: "/" },
      { name: "About", href: "/about" },
-     { name: "Awards 2026", href: "/awards" },
+    { name: "Awards", href: "/awards" },
      { name: "Nominations", href: "/nominations" },
      { name: "Partners", href: "/partners" },
-     { name: "Winners 2025", href: "/winners" },
+    { name: "Winners 2024", href: "/winners" },
      { name: "Contact", href: "/contact" },
    ];
  

@@ -40,7 +40,7 @@
              Stay Updated
            </h3>
            <p className="text-muted-foreground">
-             Subscribe to receive updates about the 2026 awards, nominations and events.
+            Subscribe to receive updates about the awards, nominations and events.
            </p>
          </div>
          
@@ -98,10 +98,10 @@
          <div className="flex flex-wrap justify-center gap-6 text-sm mb-8">
            <Link to="/" className="text-muted-foreground hover:text-gold transition-colors">Home</Link>
            <Link to="/about" className="text-muted-foreground hover:text-gold transition-colors">About</Link>
-           <Link to="/awards" className="text-muted-foreground hover:text-gold transition-colors">Awards 2026</Link>
+          <Link to="/awards" className="text-muted-foreground hover:text-gold transition-colors">Awards</Link>
            <Link to="/nominations" className="text-muted-foreground hover:text-gold transition-colors">Nominations</Link>
            <Link to="/partners" className="text-muted-foreground hover:text-gold transition-colors">Partners</Link>
-           <Link to="/winners" className="text-muted-foreground hover:text-gold transition-colors">Winners 2025</Link>
+          <Link to="/winners" className="text-muted-foreground hover:text-gold transition-colors">Winners 2024</Link>
            <Link to="/contact" className="text-muted-foreground hover:text-gold transition-colors">Contact</Link>
            <Link to="/privacy" className="text-muted-foreground hover:text-gold transition-colors">Privacy</Link>
            <Link to="/copyright" className="text-muted-foreground hover:text-gold transition-colors">Copyright and disclaimer</Link>
@@ -151,7 +151,7 @@
        {/* Copyright */}
        <div className="container mx-auto px-4 py-6">
          <p className="text-center text-muted-foreground text-sm">
-           © 2026 Multicultural Youth Awards. All rights reserved.
+          © 2024 Multicultural Youth Awards. All rights reserved.
          </p>
        </div>
      </footer>
