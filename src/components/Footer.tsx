@@ -50,14 +50,8 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
     <footer className="bg-background">
       {/* Top: Logo + section headers */}
       <div className="container mx-auto px-4 pt-12">
-        <Link to="/" className="inline-flex items-center gap-3 mb-10">
-          <div className="w-10 h-10 flex items-center justify-center">
-            <span className="text-gold-gradient text-3xl font-display font-bold">M</span>
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-foreground font-display text-sm tracking-wide">Multicultural</span>
-            <span className="text-gold font-display text-sm tracking-wide">Youth Awards</span>
-          </div>
+        <Link to="/" className="inline-flex items-center mb-10">
+          <img src={myaLogo.url} alt="Multicultural Youth Awards" className="h-16 w-auto" />
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8">
