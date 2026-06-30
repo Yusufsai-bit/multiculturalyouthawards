@@ -10,31 +10,24 @@ interface PageHeroProps {
 }
 
 /**
- * Editorial Prestige hero used across every inner page for a cohesive feel:
- * vertical gold rule, tracked uppercase eyebrow, serif headline with italic
- * gold accents, concentric frames and an optional faded edition numeral.
+ * Navy hero band matching the live site: a deep navy field with a tracked gold
+ * eyebrow, a large bold uppercase Anton headline (white with gold accents) and
+ * an optional faded edition numeral. Used across every inner page for cohesion.
  */
 const PageHero = ({ eyebrow, title, subtitle, numeral, children }: PageHeroProps) => {
   return (
-    <section className="relative overflow-hidden hero-gradient pt-16 pb-20">
+    <section className="relative overflow-hidden bg-navy pt-40 pb-20">
       {numeral && (
         <div
           aria-hidden="true"
-          className="pointer-events-none select-none absolute -bottom-8 left-1/2 -translate-x-1/2 font-numeral leading-none text-[26vw] md:text-[16rem] text-foreground/[0.035]"
+          className="pointer-events-none select-none absolute inset-x-0 -bottom-10 text-center font-numeral leading-none text-[24vw] md:text-[15rem] text-background/[0.04]"
         >
           {numeral}
         </div>
       )}
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="relative max-w-3xl mx-auto text-center">
-          {/* Concentric editorial frames */}
-          <div className="absolute -inset-x-10 -inset-y-10 border border-gold/10 pointer-events-none hidden lg:block" />
-          <div className="absolute -inset-x-14 -inset-y-14 border border-gold/5 pointer-events-none hidden lg:block" />
-
-          {/* Vertical gold rule */}
-          <div className="mx-auto w-px h-14 bg-gradient-to-b from-transparent via-gold to-transparent mb-7 animate-fade-in" />
-
+        <div className="relative max-w-4xl mx-auto text-center">
           {/* Eyebrow */}
           <span className="block text-gold text-[11px] tracking-[0.4em] uppercase font-semibold mb-6 animate-fade-in">
             {eyebrow}
@@ -42,7 +35,7 @@ const PageHero = ({ eyebrow, title, subtitle, numeral, children }: PageHeroProps
 
           {/* Headline */}
           <h1
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.15] mb-6 animate-fade-in"
+            className="font-numeral uppercase text-background text-5xl md:text-7xl lg:text-8xl leading-[0.95] animate-fade-in"
             style={{ animationDelay: "0.15s" }}
           >
             {title}
@@ -50,7 +43,7 @@ const PageHero = ({ eyebrow, title, subtitle, numeral, children }: PageHeroProps
 
           {subtitle && (
             <p
-              className="text-muted-foreground text-lg font-light max-w-xl mx-auto leading-relaxed animate-fade-in"
+              className="text-background/70 text-lg font-light max-w-2xl mx-auto leading-relaxed mt-8 animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
               {subtitle}
