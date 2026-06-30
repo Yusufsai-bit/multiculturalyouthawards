@@ -128,12 +128,15 @@ import { toast } from "sonner";
            <h4 className="font-display text-lg font-semibold text-foreground mb-4">
              Acknowledgement of Country
            </h4>
-           <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-             The Multicultural Youth Awards acknowledges the Traditional Owners of the lands on which we 
-             live, work and gather. We pay our respects to Elders past and present and extend that respect 
-             to all Aboriginal and Torres Strait Islander peoples. We recognise that sovereignty was never 
-             ceded and that this land always was and always will be Aboriginal land.
-           </p>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              The Multicultural Youth Awards would like to acknowledge the Traditional Owners of the
+              Aboriginal land, on which we all live, work, and play.
+            </p>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+              We pay our deepest respect to Elders past and present, and any First Nations members who
+              are part of the Multicultural Youth Group Industry. We acknowledge that sovereignty has
+              never been ceded. This land always was and always will be Aboriginal land.
+            </p>
            <div className="flex justify-center gap-4">
              {/* Aboriginal Flag */}
              <div className="w-12 h-8 rounded overflow-hidden flex flex-col relative">
