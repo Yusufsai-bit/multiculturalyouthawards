@@ -3,6 +3,7 @@
  import { Button } from "@/components/ui/button";
  import { Menu, X } from "lucide-react";
  import { siteContent, getNominationButtonText } from "@/lib/siteContent";
+import myaLogo from "@/assets/mya-logo.png.asset.json";
  
  const Navbar = () => {
    const [isScrolled, setIsScrolled] = useState(false);
@@ -48,14 +49,8 @@
        <div className="container mx-auto px-4">
          {/* Centered Logo */}
          <div className="flex justify-center py-4">
-           <Link to="/" className="flex items-center gap-3">
-             <div className="w-12 h-12 flex items-center justify-center">
-               <span className="text-gold-gradient text-4xl font-display font-bold">M</span>
-             </div>
-             <div className="flex flex-col">
-               <span className="text-foreground font-display text-lg leading-tight">Multicultural</span>
-               <span className="text-gold font-display text-lg leading-tight">Youth Awards</span>
-             </div>
+           <Link to="/" className="flex items-center">
+             <img src={myaLogo.url} alt="Multicultural Youth Awards" className="h-14 md:h-16 w-auto" />
            </Link>
          </div>
  

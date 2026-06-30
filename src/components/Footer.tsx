@@ -6,6 +6,9 @@
  import { siteContent } from "@/lib/siteContent";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import myaLogo from "@/assets/mya-logo.png.asset.json";
+import aboriginalFlag from "@/assets/aboriginal-flag.png.asset.json";
+import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
  
  const Footer = () => {
    const [newsletterName, setNewsletterName] = useState("");
@@ -47,14 +50,8 @@ import { toast } from "sonner";
     <footer className="bg-background">
       {/* Top: Logo + section headers */}
       <div className="container mx-auto px-4 pt-12">
-        <Link to="/" className="inline-flex items-center gap-3 mb-10">
-          <div className="w-10 h-10 flex items-center justify-center">
-            <span className="text-gold-gradient text-3xl font-display font-bold">M</span>
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-foreground font-display text-sm tracking-wide">Multicultural</span>
-            <span className="text-gold font-display text-sm tracking-wide">Youth Awards</span>
-          </div>
+        <Link to="/" className="inline-flex items-center mb-10">
+          <img src={myaLogo.url} alt="Multicultural Youth Awards" className="h-16 w-auto" />
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -149,27 +146,8 @@ import { toast } from "sonner";
           <div className="text-center">
             <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-6">Acknowledgement of Country</h4>
             <div className="flex justify-center gap-4 mb-5">
-              {/* Torres Strait Islander Flag */}
-              <div className="w-14 h-9 rounded overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 flex flex-col">
-                  <div className="h-1/5 bg-[#009933]" />
-                  <div className="h-1/5 bg-white" />
-                  <div className="h-1/5 bg-[#0000CC]" />
-                  <div className="h-1/5 bg-white" />
-                  <div className="h-1/5 bg-[#009933]" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-4 h-4 bg-white rounded-full" />
-                </div>
-              </div>
-              {/* Aboriginal Flag */}
-              <div className="w-14 h-9 rounded overflow-hidden flex flex-col relative shadow-sm">
-                <div className="h-1/2 bg-[#000000]" />
-                <div className="h-1/2 bg-[#CC0000]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-3.5 h-3.5 rounded-full bg-[#FFCD00]" />
-                </div>
-              </div>
+              <img src={torresStraitFlag.url} alt="Torres Strait Islander Flag" className="h-9 w-auto rounded shadow-sm" />
+              <img src={aboriginalFlag.url} alt="Australian Aboriginal Flag" className="h-9 w-auto rounded shadow-sm" />
             </div>
             <p className="text-muted-foreground text-xs leading-relaxed mb-3">
               The Multicultural Youth Awards would like to acknowledge the Traditional Owners of the
