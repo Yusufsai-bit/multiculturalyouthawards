@@ -146,27 +146,8 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
           <div className="text-center">
             <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-6">Acknowledgement of Country</h4>
             <div className="flex justify-center gap-4 mb-5">
-              {/* Torres Strait Islander Flag */}
-              <div className="w-14 h-9 rounded overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 flex flex-col">
-                  <div className="h-1/5 bg-[#009933]" />
-                  <div className="h-1/5 bg-white" />
-                  <div className="h-1/5 bg-[#0000CC]" />
-                  <div className="h-1/5 bg-white" />
-                  <div className="h-1/5 bg-[#009933]" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-4 h-4 bg-white rounded-full" />
-                </div>
-              </div>
-              {/* Aboriginal Flag */}
-              <div className="w-14 h-9 rounded overflow-hidden flex flex-col relative shadow-sm">
-                <div className="h-1/2 bg-[#000000]" />
-                <div className="h-1/2 bg-[#CC0000]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-3.5 h-3.5 rounded-full bg-[#FFCD00]" />
-                </div>
-              </div>
+              <img src={torresStraitFlag.url} alt="Torres Strait Islander Flag" className="h-9 w-auto rounded shadow-sm" />
+              <img src={aboriginalFlag.url} alt="Australian Aboriginal Flag" className="h-9 w-auto rounded shadow-sm" />
             </div>
             <p className="text-muted-foreground text-xs leading-relaxed mb-3">
               The Multicultural Youth Awards would like to acknowledge the Traditional Owners of the
