@@ -7,7 +7,6 @@
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useSponsors, usePartners } from "@/lib/queries";
-import PageHero from "@/components/PageHero";
  
  const PartnersPage = () => {
   const { data: sponsors = [] } = useSponsors();
