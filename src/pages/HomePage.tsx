@@ -6,56 +6,67 @@
  const HomePage = () => {
    return (
      <div className="min-h-screen bg-background">
-       {/* Hero Section */}
-       <section className="relative min-h-screen hero-gradient flex items-center justify-center overflow-hidden pt-32">
-         {/* Decorative elements */}
-         <div className="absolute inset-0 overflow-hidden">
-           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-float" />
-           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-         </div>
- 
-         {/* Grid pattern overlay */}
-         <div className="absolute inset-0 opacity-5" style={{
-           backgroundImage: 'linear-gradient(hsl(var(--gold) / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold) / 0.3) 1px, transparent 1px)',
-           backgroundSize: '60px 60px'
-         }} />
- 
-         <div className="container mx-auto px-4 relative z-10">
-           <div className="max-w-4xl mx-auto text-center">
-             {/* Main Title */}
-             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-               <span className="text-foreground">Celebrating the incredible talents and leadership of Australia's </span>
-               <span className="text-gold-gradient">multicultural youth</span>
-             </h1>
- 
-             {/* Tagline */}
-             <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-               A national awards platform recognising diverse achievements, resilience, community impact and emerging leadership
-             </p>
- 
-             {/* CTA Buttons */}
-             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-               <Button 
-                 variant="gold" 
-                 size="xl" 
-                 className="min-w-[220px]"
-                 asChild
-                 disabled={siteContent.nominationsStatus === 'closed'}
-               >
-                 <Link to="/nominations">
-                   {getNominationButtonText(siteContent.nominationsStatus)}
-                 </Link>
-               </Button>
-               <Button variant="goldOutline" size="xl" className="min-w-[220px]" asChild>
-                 <Link to="/partners">Become a partner</Link>
-               </Button>
-             </div>
-           </div>
-         </div>
- 
-         {/* Bottom gradient fade */}
-         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
-       </section>
+      {/* Hero Section — Editorial Prestige */}
+        <section className="relative min-h-screen bg-background flex items-center justify-center overflow-hidden pt-32 pb-24">
+          {/* Radial gold glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,hsl(var(--gold)/0.08),transparent_70%)]" />
+
+          {/* Large faded edition numeral */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none select-none absolute bottom-6 left-1/2 -translate-x-1/2 font-display font-black leading-none text-[28vw] md:text-[20rem] text-foreground/[0.04]"
+          >
+            2024
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="relative max-w-4xl mx-auto text-center">
+              {/* Concentric editorial frames */}
+              <div className="absolute -inset-x-12 -inset-y-12 border border-gold/10 pointer-events-none hidden lg:block" />
+              <div className="absolute -inset-x-16 -inset-y-16 border border-gold/5 pointer-events-none hidden lg:block" />
+
+              {/* Pre-header vertical rule */}
+              <div className="mx-auto w-px h-16 bg-gradient-to-b from-transparent via-gold to-transparent mb-8 animate-fade-in" />
+
+              {/* Eyebrow */}
+              <span className="block text-gold text-[11px] tracking-[0.4em] uppercase font-semibold mb-6 animate-fade-in">
+                {siteContent.eventLocation}
+              </span>
+
+              {/* Main Title */}
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] mb-8 animate-fade-in" style={{ animationDelay: '0.15s' }}>
+                <span className="text-foreground">Celebrating Australia's </span>
+                <span className="italic text-gold">multicultural youth</span>
+              </h1>
+
+              {/* Tagline */}
+              <p className="text-muted-foreground text-lg md:text-xl font-light max-w-xl mx-auto leading-relaxed mb-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                Honouring the brilliance, resilience and leadership of young Australians shaping our shared future across every community.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in" style={{ animationDelay: '0.45s' }}>
+                <Button
+                  variant="gold"
+                  size="xl"
+                  className="min-w-[220px] tracking-[0.2em] uppercase text-xs font-bold"
+                  asChild
+                  disabled={siteContent.nominationsStatus === 'closed'}
+                >
+                  <Link to="/nominations">
+                    {getNominationButtonText(siteContent.nominationsStatus)}
+                  </Link>
+                </Button>
+                <Button variant="goldOutline" size="xl" className="min-w-[220px] tracking-[0.2em] uppercase text-xs font-bold" asChild>
+                  <Link to="/partners">Become a partner</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom gradient fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        </section>
  
        {/* Key Info Strip */}
        <section className="py-12 bg-secondary/30">
