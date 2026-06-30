@@ -25,7 +25,7 @@ import SectionHeading from "@/components/SectionHeading";
          <div className="container mx-auto px-4">
            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
              <div className="glass-card rounded-2xl p-8 border-gold-glow">
-               <h2 className="font-display text-2xl font-bold text-gold mb-4">Our Mission</h2>
+                <h2 className="font-numeral uppercase text-3xl md:text-4xl text-gold mb-4 leading-none">Mission</h2>
                <p className="text-muted-foreground leading-relaxed">
                   Celebrate the rich diversity of talents, resilience and positive impacts of
                   multicultural youth, fostering inclusivity and showcasing their accomplishments
@@ -33,7 +33,7 @@ import SectionHeading from "@/components/SectionHeading";
                </p>
              </div>
              <div className="glass-card rounded-2xl p-8 border-gold-glow">
-               <h2 className="font-display text-2xl font-bold text-gold mb-4">Our Vision</h2>
+                <h2 className="font-numeral uppercase text-3xl md:text-4xl text-gold mb-4 leading-none">Vision</h2>
                <p className="text-muted-foreground leading-relaxed">
                   Recognise excellence across 13 categories, highlighting the outstanding
                   achievements and contributions of young individuals from diverse backgrounds.
