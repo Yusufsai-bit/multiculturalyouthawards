@@ -38,7 +38,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div>
-              <h2 className="font-sans font-bold lowercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
+              <h2 className="font-sans font-bold uppercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
                 Mission
               </h2>
               <p className="font-sans text-background text-xl md:text-[23px] leading-[1.5] mb-5">
@@ -51,7 +51,7 @@ const AboutPage = () => {
               </p>
             </div>
             <div>
-              <h2 className="font-sans font-bold lowercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
+              <h2 className="font-sans font-bold uppercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
                 Vision
               </h2>
               <p className="font-sans text-background text-xl md:text-[23px] leading-[1.5] mb-5">
