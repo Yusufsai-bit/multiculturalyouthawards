@@ -2,6 +2,7 @@
  import { Button } from "@/components/ui/button";
  import { Calendar, MapPin, Award, Users, Heart, Megaphone, ArrowRight } from "lucide-react";
  import { siteContent, getNominationButtonText, areNominationsOpen } from "@/lib/siteContent";
+import SectionHeading from "@/components/SectionHeading";
  
  const HomePage = () => {
    return (
@@ -14,7 +15,7 @@
           {/* Large faded edition numeral */}
           <div
             aria-hidden="true"
-            className="pointer-events-none select-none absolute bottom-6 left-1/2 -translate-x-1/2 font-display font-black leading-none text-[28vw] md:text-[20rem] text-foreground/[0.04]"
+            className="pointer-events-none select-none absolute bottom-6 left-1/2 -translate-x-1/2 font-numeral leading-none text-[28vw] md:text-[20rem] text-foreground/[0.04]"
           >
             2024
           </div>
@@ -34,7 +35,7 @@
               </span>
 
               {/* Main Title */}
-              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] mb-8 animate-fade-in" style={{ animationDelay: '0.15s' }}>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-8 animate-fade-in" style={{ animationDelay: '0.15s' }}>
                 <span className="text-foreground">Celebrating Australia's </span>
                 <span className="italic text-gold">multicultural youth</span>
               </h1>
@@ -95,13 +96,11 @@
        <section className="py-24 bg-background">
          <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto text-center">
-             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               About The Awards
-             </span>
-             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-               Honouring the Brilliance of{" "}
-               <span className="text-gold-gradient">Multicultural Youth</span>
-             </h2>
+            <SectionHeading
+              eyebrow="About The Awards"
+              title={<>Honouring the brilliance of <span className="italic text-gold">multicultural youth</span></>}
+              className="mb-6"
+            />
              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                The Multicultural Youth Awards is a prestigious national event devoted to showcasing 
                the outstanding achievements of multicultural youth across Australia. Steering away 
@@ -124,14 +123,11 @@
        {/* Get Involved Section */}
        <section className="py-24 bg-background">
          <div className="container mx-auto px-4">
-           <div className="text-center mb-12">
-             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               Get Involved
-             </span>
-             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-               Be Part of the <span className="text-gold-gradient">Celebration</span>
-             </h2>
-           </div>
+          <SectionHeading
+            eyebrow="Get Involved"
+            title={<>Be part of the <span className="italic text-gold">celebration</span></>}
+            className="mb-12"
+          />
  
            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
              {/* Sponsor Card */}
@@ -189,14 +185,11 @@
        {/* Partners Preview */}
        <section className="py-24 bg-secondary/30">
          <div className="container mx-auto px-4">
-           <div className="text-center mb-12">
-             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               Our Partners
-             </span>
-             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-               Proudly Supported By
-             </h2>
-           </div>
+          <SectionHeading
+            eyebrow="Our Partners"
+            title={<>Proudly <span className="italic text-gold">supported by</span></>}
+            className="mb-12"
+          />
  
            {/* Partner logos placeholder */}
            <div className="flex flex-wrap justify-center gap-8 mb-12">

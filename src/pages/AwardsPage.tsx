@@ -5,6 +5,8 @@ import {
   GraduationCap, HandHeart, Trophy, Palette, Rocket, Award,
 } from "lucide-react";
 import { useCurrentYear, useCategories } from "@/lib/queries";
+import PageHero from "@/components/PageHero";
+import SectionHeading from "@/components/SectionHeading";
 
 const iconCycle: React.ElementType[] = [
   Megaphone, Sparkles, Heart, Users, User, Wrench, Feather,
@@ -24,24 +26,15 @@ const AwardsPage = () => {
 
   return (
     <div className="min-h-screen bg-background pt-32">
-      <section className="py-16 hero-gradient">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-              The Awards
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {categories.length || 13} Categories of <span className="text-gold-gradient">Excellence</span>
-            </h1>
-            <p className="text-muted-foreground text-lg mb-8">
-              Recognising outstanding achievements across diverse fields of talent, leadership and contribution
-            </p>
-            <Button variant="gold" size="xl" asChild disabled={closed}>
-              <Link to="/nominations">{nominationLabel(currentYear?.nominations_status)}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="The Awards"
+        title={<>{categories.length || 13} categories of <span className="italic text-gold">excellence</span></>}
+        subtitle="Recognising outstanding achievements across diverse fields of talent, leadership and contribution"
+      >
+        <Button variant="gold" size="xl" className="min-w-[220px] tracking-[0.2em] uppercase text-xs font-bold" asChild disabled={closed}>
+          <Link to="/nominations">{nominationLabel(currentYear?.nominations_status)}</Link>
+        </Button>
+      </PageHero>
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
@@ -76,9 +69,11 @@ const AwardsPage = () => {
       <section className="py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-display text-3xl font-bold text-foreground mb-6">
-              Know Someone Deserving?
-            </h2>
+            <SectionHeading
+              eyebrow="Make a Nomination"
+              title={<>Know someone <span className="italic text-gold">deserving?</span></>}
+              className="mb-6"
+            />
             <p className="text-muted-foreground mb-8">
               Nominate an outstanding young person who is making a difference in their community.
             </p>
