@@ -4,6 +4,8 @@
  import { Input } from "@/components/ui/input";
  import { Facebook, Linkedin, Instagram } from "lucide-react";
  import { siteContent } from "@/lib/siteContent";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
  
  const Footer = () => {
    const [newsletterName, setNewsletterName] = useState("");
@@ -14,15 +16,25 @@
    const handleNewsletterSubmit = async (e: React.FormEvent) => {
      e.preventDefault();
      setIsSubmitting(true);
-     
-     // TODO: Connect to form service (Formspree, Airtable, etc.)
-     // Example endpoint: await fetch('/api/newsletter', { method: 'POST', body: JSON.stringify({ name: newsletterName, email: newsletterEmail }) })
-     
-     await new Promise(resolve => setTimeout(resolve, 1000));
-     setSubmitted(true);
-     setIsSubmitting(false);
-     setNewsletterName("");
-     setNewsletterEmail("");
+
+    const { error } = await supabase.from("newsletter_subscribers").insert({
+      name: newsletterName || null,
+      email: newsletterEmail,
+    });
+
+    setIsSubmitting(false);
+    if (error) {
+      if (error.code === "23505") {
+        toast.success("You are already subscribed.");
+        setSubmitted(true);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+      return;
+    }
+    setSubmitted(true);
+    setNewsletterName("");
+    setNewsletterEmail("");
    };
  
    const socialLinks = [
