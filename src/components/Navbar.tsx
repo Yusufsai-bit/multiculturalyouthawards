@@ -3,6 +3,7 @@
  import { Button } from "@/components/ui/button";
  import { Menu, X } from "lucide-react";
  import { siteContent, getNominationButtonText } from "@/lib/siteContent";
+import myaLogo from "@/assets/mya-logo.png.asset.json";
  
  const Navbar = () => {
    const [isScrolled, setIsScrolled] = useState(false);
