@@ -3,6 +3,10 @@
  import { TooltipProvider } from "@/components/ui/tooltip";
  import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
  import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "@/hooks/useAuth";
+import AdminGuard from "@/components/admin/AdminGuard";
+import Auth from "@/pages/Auth";
+import AdminDashboard from "@/pages/AdminDashboard";
  import Layout from "@/components/Layout";
  import HomePage from "@/pages/HomePage";
  import AboutPage from "@/pages/AboutPage";
@@ -23,7 +27,8 @@
        <Toaster />
        <Sonner />
        <BrowserRouter>
-         <Routes>
+        <AuthProvider>
+        <Routes>
            <Route path="/" element={<Layout><HomePage /></Layout>} />
            <Route path="/about" element={<Layout><AboutPage /></Layout>} />
            <Route path="/awards" element={<Layout><AwardsPage /></Layout>} />
@@ -33,8 +38,11 @@
            <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
            <Route path="/privacy" element={<Layout><PrivacyPage /></Layout>} />
            <Route path="/copyright" element={<Layout><CopyrightPage /></Layout>} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<AdminGuard><AdminDashboard /></AdminGuard>} />
            <Route path="*" element={<NotFound />} />
-         </Routes>
+        </Routes>
+        </AuthProvider>
        </BrowserRouter>
      </TooltipProvider>
    </QueryClientProvider>
