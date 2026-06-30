@@ -23,7 +23,7 @@
                <div>
                  <h2 className="font-display text-xl font-bold text-gold mb-4">Copyright Notice</h2>
                  <p className="text-muted-foreground leading-relaxed">
-                   © 2026 Multicultural Youth Awards. All rights reserved. The content, design, graphics, 
+                  © 2024 Multicultural Youth Awards. All rights reserved. The content, design, graphics, 
                    and other materials on this website are protected by copyright and other intellectual 
                    property laws.
                  </p>
@@ -92,13 +92,7 @@
                  </p>
                </div>
  
-               <div className="pt-4 border-t border-border">
-                 <p className="text-muted-foreground text-sm italic">
-                   This is a placeholder copyright and disclaimer page. Please consult with a legal 
-                   professional to ensure it meets all applicable legal requirements.
-                 </p>
-               </div>
-             </div>
+              </div>
            </div>
          </div>
        </section>
