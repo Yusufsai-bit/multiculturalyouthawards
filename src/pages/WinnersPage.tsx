@@ -17,13 +17,13 @@
          <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto text-center">
              <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
-               Winners 2025
+              Winners 2024
              </span>
              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-               Celebrating Our <span className="text-gold-gradient">2025 Champions</span>
+              Celebrating Our <span className="text-gold-gradient">2024 Champions</span>
              </h1>
              <p className="text-muted-foreground text-lg">
-               Meet the exceptional young people who were recognised at the 2025 Multicultural Youth Awards
+              Meet the exceptional young people who were recognised at the 2024 Multicultural Youth Awards
              </p>
            </div>
          </div>
