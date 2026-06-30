@@ -26,6 +26,8 @@
    nominationsStatus: 'open' | 'closed' | 'coming_soon';
    eventDate: string;
    eventLocation: string;
+  nominationsOpenDate: string;
+  nominationsCloseDate: string;
    
    // Contact information
    contactEmail: string;
@@ -55,8 +57,10 @@
    // SITE-WIDE SETTINGS
    // ============================================
   nominationsStatus: 'closed', // 'open' | 'closed' | 'coming_soon'
-  eventDate: 'Saturday, 5 October 2024',
-  eventLocation: 'Victorian Parliament House',
+ eventDate: 'Saturday 3rd October 2026',
+ eventLocation: 'Victorian Parliament House',
+ nominationsOpenDate: '13 July 2026',
+ nominationsCloseDate: '31 August 2026',
    
    // ============================================
    // CONTACT INFORMATION
