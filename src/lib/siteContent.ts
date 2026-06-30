@@ -54,15 +54,15 @@
    // ============================================
    // SITE-WIDE SETTINGS
    // ============================================
-   nominationsStatus: 'coming_soon', // 'open' | 'closed' | 'coming_soon'
-   eventDate: 'To be confirmed for 2026',
-   eventLocation: 'To be confirmed',
+  nominationsStatus: 'closed', // 'open' | 'closed' | 'coming_soon'
+  eventDate: 'Saturday, 5 October 2024',
+  eventLocation: 'Victorian Parliament House',
    
    // ============================================
    // CONTACT INFORMATION
    // ============================================
    contactEmail: 'info@multiculturalyouthawards.com.au',
-   contactLocation: 'Australia-wide',
+  contactLocation: '215 Bell St, Preston, VIC, 3072',
    
    // ============================================
    // SOCIAL LINKS
