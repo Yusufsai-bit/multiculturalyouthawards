@@ -103,7 +103,7 @@
              <p className="text-muted-foreground text-lg">
                {nominationsOpen 
                  ? "Know an inspiring young person making a difference? Nominate them for recognition."
-                 : "Register your interest to be notified when nominations open for the 2026 awards."
+                : "Nominations for the 2024 awards are now closed. Register your interest to be notified when nominations reopen."
                }
              </p>
            </div>
@@ -119,9 +119,10 @@
                  How Nominations Work
                </h2>
                <p className="text-muted-foreground leading-relaxed">
-                 Anyone can nominate a young person from a multicultural background who has demonstrated 
-                 excellence, leadership or made a positive contribution to their community. Nominees 
-                 must be aged between 15 and 30 years at the time of nomination.
+                  Individuals and organisations can nominate a young person from a multicultural
+                  background who has demonstrated excellence, leadership or made a positive
+                  contribution to their community, and self nominations are encouraged. Nominees
+                  must be aged between 16 and 30 years at the time of nomination.
                </p>
              </div>
  
@@ -148,12 +149,12 @@
                  </AccordionTrigger>
                  <AccordionContent className="text-muted-foreground">
                    <ul className="list-disc list-inside space-y-2">
-                     <li>Nominees must be aged 15-30 years at the time of nomination</li>
-                     <li>Nominees must identify as having a multicultural background</li>
-                     <li>Nominees must be Australian citizens or permanent residents</li>
-                     <li>Achievements must have occurred within the past two years</li>
-                     <li>Self-nominations are accepted</li>
-                     <li>Previous finalists may be nominated again</li>
+                      <li>Nominees must have a culturally diverse background</li>
+                      <li>Nominees must be aged between 16 and 30 years old</li>
+                      <li>Individuals must reside in Australia</li>
+                      <li>Organisations may be nominated for a project, program or initiative that benefits Australians</li>
+                      <li>Self nominations are encouraged</li>
+                      <li>Two independent referees are required to verify the nomination</li>
                    </ul>
                  </AccordionContent>
                </AccordionItem>
@@ -193,7 +194,7 @@
  
                <AccordionItem value="dates" className="glass-card rounded-xl border-gold-glow px-6">
                  <AccordionTrigger className="text-foreground font-semibold hover:text-gold">
-                   Important dates for 2026
+                    Important dates
                  </AccordionTrigger>
                  <AccordionContent className="text-muted-foreground">
                    <ul className="space-y-3">
@@ -430,7 +431,7 @@
                    Register Your Interest
                  </h2>
                  <p className="text-muted-foreground text-center mb-8">
-                   Be the first to know when nominations open for the 2026 awards.
+                    Be the first to know when nominations reopen.
                  </p>
  
                  <div className="space-y-4">
