@@ -25,7 +25,7 @@ const WinnersPage = () => {
   const categoriesWithWinners = results.filter((c) => c.winners.length > 0);
 
   return (
-    <div className="min-h-screen bg-background pt-32">
+    <div className="min-h-screen bg-background">
       <PageHero
         eyebrow={`Winners${selectedYear ? ` ${selectedYear.year}` : ""}`}
         title={<>Celebrating our <span className="italic text-gold">champions</span></>}

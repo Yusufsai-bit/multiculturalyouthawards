@@ -13,7 +13,7 @@ import SectionHeading from "@/components/SectionHeading";
    ];
  
    return (
-    <div className="min-h-screen bg-background pt-32">
+    <div className="min-h-screen bg-background">
       <PageHero
         eyebrow="About Us"
         title={<>Celebrating <span className="italic text-gold">multicultural excellence</span></>}

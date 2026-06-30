@@ -25,7 +25,7 @@ const AwardsPage = () => {
   const closed = currentYear?.nominations_status !== "open";
 
   return (
-    <div className="min-h-screen bg-background pt-32">
+    <div className="min-h-screen bg-background">
       <PageHero
         eyebrow="The Awards"
         title={<>{categories.length || 13} categories of <span className="italic text-gold">excellence</span></>}

@@ -46,7 +46,7 @@ import PageHero from "@/components/PageHero";
    ];
  
    return (
-     <div className="min-h-screen bg-background pt-32">
+     <div className="min-h-screen bg-background">
        <PageHero
          eyebrow="Contact"
          title={<>Get in <span className="italic text-gold">touch</span></>}
