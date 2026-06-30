@@ -137,7 +137,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
                 The Multicultural Youth Awards wouldn't be possible without the support of incredible partners and sponsors who believe in the power of young people from multicultural backgrounds.
               </p>
               <p className="text-background/80 leading-relaxed">
-                We're currently finalising our 2025 partners and are excited to share them with you soon.
+                We're currently finalising our 2026 partners and are excited to share them with you soon.
               </p>
             </div>
           </div>
