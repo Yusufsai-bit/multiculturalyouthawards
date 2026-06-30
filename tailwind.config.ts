@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         display: ['Ovo', 'serif'],
-        sans: ['Mulish', 'sans-serif'],
+        sans: ['"TT Commons Pro"', 'Mulish', 'sans-serif'],
         numeral: ['Anton', 'sans-serif'],
       },
       colors: {
