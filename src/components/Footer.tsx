@@ -134,7 +134,7 @@ import { toast } from "sonner";
               {siteContent.partners2026.slice(0, 2).map((partner) => (
                 <a
                   key={partner.name}
-                  href={partner.website || "#"}
+                  href={partner.url || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
