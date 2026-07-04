@@ -5,16 +5,23 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { UserRound, CheckCircle2, CalendarCheck, CalendarX } from "lucide-react";
-import { siteContent } from "@/lib/siteContent";
+import { siteContent, getNominationButtonText, areNominationsOpen } from "@/lib/siteContent";
 
 const NominationsPage = () => {
+  const statusLabel =
+    siteContent.nominationsStatus === "open"
+      ? "Open"
+      : siteContent.nominationsStatus === "closed"
+      ? "Closed"
+      : "Opening soon";
+
   const info = [
     {
       icon: UserRound,
       label: "Who can apply:",
       value: "Individuals, Organisations, Self nominations are encouraged",
     },
-    { icon: CheckCircle2, label: "Status:", value: "Closed" },
+    { icon: CheckCircle2, label: "Status:", value: statusLabel },
     {
       icon: CalendarCheck,
       label: "Nominations Open:",
@@ -47,12 +54,23 @@ const NominationsPage = () => {
             ))}
           </ul>
 
-          <button
-            disabled
-            className="border border-navy/40 text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14 cursor-not-allowed"
-          >
-            Nominations Opening Soon
-          </button>
+          {areNominationsOpen(siteContent.nominationsStatus) ? (
+            <a
+              href="https://forms.office.com/r/2eVszS9qWc?origin=lprLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gold text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14"
+            >
+              {getNominationButtonText(siteContent.nominationsStatus)}
+            </a>
+          ) : (
+            <button
+              disabled
+              className="border border-navy/40 text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14 cursor-not-allowed"
+            >
+              {getNominationButtonText(siteContent.nominationsStatus)}
+            </button>
+          )}
 
           {/* Accordion */}
           <Accordion type="single" collapsible defaultValue="how-to" className="border-t border-border">
@@ -155,7 +173,7 @@ const NominationsPage = () => {
                   {siteContent.categories.map((cat) => (
                     <div key={cat.id}>
                       <strong className="text-foreground block mb-1">{cat.name}</strong>
-                      <p>{cat.description}</p>
+                      <p>{cat.fullDescription ?? cat.description}</p>
                     </div>
                   ))}
                 </div>

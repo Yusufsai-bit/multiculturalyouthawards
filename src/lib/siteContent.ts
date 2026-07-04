@@ -7,6 +7,7 @@
    id: number;
    name: string;
    description: string;
+   fullDescription?: string;
  }
  
  export interface Finalist {
@@ -90,66 +91,79 @@
        id: 1,
        name: 'Young Influencer of the Year',
       description: 'Celebrates a young person who has used their platform or creative medium effectively to drive positive change and inspire others in the community.',
+      fullDescription: 'The Young Influencer of the Year Award celebrates a dynamic individual or organisation that has wielded a positive and influential impact on the community, especially among the youth. This award recognises those who have effectively used their platform, creativity, or leadership to inspire, motivate, and drive positive change. The recipient may have demonstrated exceptional advocacy, innovation, or community engagement that has contributed significantly to shaping a better future. Additionally, this award acknowledges the achievements of a young person who has utilised creative mediums such as social media, vlogging, podcasts, and TV/radio to be a positive role model and enhance the lives of others. This accolade highlights the power of influence in creating meaningful and positive transformations within the community.',
      },
      {
        id: 2,
        name: 'Inspirational Young Person of the Year',
       description: 'Honours a young person who has overcome challenges, led by example, and inspired others through their achievements and positive influence.',
+      fullDescription: 'The Inspirational Young Person of the Year Award is a tribute to a young individual or organisation that has made an extraordinary impact on others through their inspirational journey, resilience, and positive influence. This award recognises those who have overcome challenges, inspired change, and serve as a beacon of hope for others within the youth community. The awardee may have demonstrated exceptional youth leadership, advocacy, or achieved remarkable accomplishments that have inspired and uplifted their peers. This accolade honours the ability to motivate, empower, and positively influence other young individuals, leaving a lasting legacy of inspiration and motivation.',
      },
      {
        id: 3,
        name: 'Volunteer of the Year',
       description: 'Recognises a young volunteer who has shown exceptional dedication to community service, contributing significantly to the lives of others.',
+      fullDescription: 'The Volunteer of the Year Award is a heartfelt acknowledgement of an individual or organisation that has displayed an exceptional commitment to community service and volunteerism. This award recognises the profound impact of their selfless contributions, whether through dedicated hours of service, innovative volunteer projects, or initiatives that have significantly improved the well-being of others. The awardee exemplifies the spirit of generosity, compassion, and a strong dedication to creating positive change within their community. The Volunteer of the Year is a shining example of the transformative power of volunteer efforts, inspiring others to actively contribute to the betterment of society.',
      },
      {
        id: 4,
        name: 'Young Leader of the Year',
       description: 'Celebrates a young individual who has shown outstanding leadership and has driven positive changes, either in their community, workplace, or field.',
+      fullDescription: 'The Young Leader of the Year Award is a prestigious accolade presented to an outstanding young individual who has exhibited remarkable leadership qualities, initiative, and dedication to driving positive change. This award recognises the recipient\u2019s ability to inspire, motivate, and lead by example, fostering growth and development within their community or chosen field. The Young Leader of the Year is a visionary who demonstrates resilience, innovation, and a commitment to making a lasting impact on the lives of others. Through their leadership, the awardee serves as an inspiration for fellow youth, embodying the spirit of leadership, responsibility, and a passion for creating a better future.',
      },
      {
        id: 5,
        name: 'Young Woman of the Year',
       description: 'Honours a young woman who has demonstrated leadership, resilience, and a commitment to improving her community through advocacy or innovation.',
+      fullDescription: 'The Young Woman of the Year Award is a prestigious recognition bestowed upon an exceptional young woman who has demonstrated outstanding leadership, resilience, and positive contributions to her community. This award celebrates the recipient\u2019s achievements, advocacy, and commitment to making a significant impact in various aspects of her life. Whether through community service, leadership roles, or innovative initiatives, the Young Woman of the Year stands out as an inspiring figure who embodies the spirit of empowerment and serves as a role model for her peers. The awardee exemplifies the qualities of strength, compassion, and dedication, inspiring others to reach their full potential.',
      },
      {
        id: 6,
        name: 'Young Apprentice or Vocational Award',
       description: 'Awarded to a young person who has excelled in an apprenticeship or vocational program, showing skill, commitment, and potential in their chosen career.',
+      fullDescription: 'The Young Apprentice/Vocational Award is dedicated to honouring the remarkable achievements of a young individual who has shown outstanding dedication and skill in their chosen vocational or apprenticeship path. This award celebrates the recipient\u2019s commitment, innovation, and exceptional contributions to their field, reflecting their promise and potential as a rising star in the world of apprenticeship and vocational pursuits. The awardee serves as an inspiring example of excellence, embodying the values of hard work, determination, and continuous growth in their chosen profession.',
      },
      {
        id: 7,
        name: 'Implementing Aboriginal Self Determination Award',
       description: 'Recognises a young person or youth service dedicated to advancing the empowerment, cultural preservation, and well-being of Indigenous communities.',
+      fullDescription: 'The Young Indigenous Empowerment Award recognises the remarkable achievements and dedicated efforts of a young individual or youth service in championing the empowerment of Indigenous communities. This award acknowledges outstanding contributions toward fostering self-determination, preserving cultural heritage, and promoting the socio-economic well-being of Indigenous peoples. The recipient exemplifies a commitment to promoting equality, resilience, and empowerment within Indigenous communities, embodying the spirit of positive change and progress either at a young age or through exceptional service initiatives.',
      },
      {
        id: 8,
        name: 'Academic Excellence Award',
       description: 'Recognises a student who has demonstrated outstanding academic achievements and has been an active leader in their school or educational community.',
+      fullDescription: 'This distinguished award honours a student who has demonstrated outstanding academic excellence, remarkable dedication to their studies, and a commitment to the pursuit of knowledge. The recipient has not only excelled in their academic endeavours but has also showcased a passion for continuous learning, leadership within the academic community, and a positive influence on their peers. The Student of the Year/Academic Achievement Award recognises and celebrates the exceptional achievements and contributions of a student who embodies the spirit of academic excellence, curiosity, and a commitment to intellectual growth.',
      },
      {
        id: 9,
        name: 'Outstanding Contribution to the Community Award',
       description: 'Given to a young individual or group that has made a significant positive difference in their community through impactful volunteer work or projects.',
+      fullDescription: 'This prestigious award pays tribute to the extraordinary efforts of a young individual or service that has made a significant and positive impact on their community. The recipient, whether through volunteer work, community projects, or advocacy initiatives, stands out for their exceptional dedication to fostering positive change. The Youth Outstanding Contribution to the Community Award aims to acknowledge and honour a young leader or service who goes the extra mile to contribute to the well-being and development of their community, exemplifying the values of service, compassion, and active civic engagement.',
      },
      {
        id: 10,
        name: 'Sportsperson of the Year',
       description: 'Honours a young athlete who has achieved excellence in their sport, while also contributing to their community through mentorship or leadership roles.',
+      fullDescription: 'This award honours the remarkable achievements of a young sportsperson who has not only excelled in their chosen sport but has also made substantial contributions to the broader sports community. It recognises the individual\u2019s outstanding personal achievements, leadership qualities, or impactful service within the sports realm. From demonstrating exceptional skill and dedication to inspiring others, the Youth Sportsperson of the Year embodies the values of sportsmanship, leadership, and community service, setting a positive example for their peers and the broader multicultural youth community.',
      },
      {
        id: 11,
        name: 'Creative and Performing Arts Award',
       description: 'Celebrates a young individual who has shown exceptional talent in creative or performing arts, contributing uniquely to their cultural community.',
+      fullDescription: 'This award celebrates the outstanding achievements of a young individual who has demonstrated exceptional talent and creativity in the realm of creative arts. Whether through visual arts, performing arts, or other expressive mediums, the recipient of this award is recognised for their innovation, originality, and dedication to artistic pursuits. The Youth Creative Arts Award honours a young artist who has made a significant impact in the creative landscape, embodying the spirit of imagination, artistic exploration, and cultural expression.',
      },
      {
        id: 12,
        name: 'Entrepreneur of the Year',
       description: 'Awarded to a young entrepreneur who has successfully created and grown a business, demonstrating creativity, leadership, and a positive impact on their community.',
+      fullDescription: 'This prestigious award honours the exceptional young entrepreneur who has demonstrated remarkable vision, innovation, and business acumen. Recognising the spirit of entrepreneurship among the youth, this accolade celebrates those who have not only initiated successful ventures but have also made a positive impact on their community. From groundbreaking startups to innovative solutions, the Youth Entrepreneur of the Year award shines a spotlight on the individual whose entrepreneurial journey inspires and exemplifies the limitless potential of multicultural youth.',
      },
      {
        id: 13,
        name: 'Australian Youth Minister Award',
       description: 'Selected by the Federal Minister for Youth, recognising an individual or organisation dedicated to improving the well-being of young people and the youth sector.',
+      fullDescription: 'This distinguished award, selected by the Federal Minister for Youth, honours an individual or organisation that has demonstrated exceptional passion and commitment to enhancing the well-being and conditions for young people. The recipient showcases a proven track record of significantly improving outcomes for young individuals, highlighting their unwavering dedication to fostering positive change in the youth sector. This accolade recognises a profound commitment to upholding high professional standards, adhering to youth work principles, and contributing to the overall advancement of the youth sector.',
      },
    ],
    
