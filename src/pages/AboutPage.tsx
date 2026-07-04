@@ -1,6 +1,7 @@
 import { Calendar, MapPin, List } from "lucide-react";
 import aboutGroup from "@/assets/about-group.jpg";
 import parliamentHouse from "@/assets/parliament-house.jpg";
+import { siteContent } from "@/lib/siteContent";
 
 const AboutPage = () => {
   return (
@@ -73,11 +74,11 @@ const AboutPage = () => {
             <div className="space-y-7">
               <div className="flex items-center gap-4">
                 <Calendar className="w-7 h-7 text-background shrink-0" strokeWidth={1.5} />
-                <span className="text-background text-lg">Friday, October 3 2024</span>
+                <span className="text-background text-lg">{siteContent.eventDate}</span>
               </div>
               <div className="flex items-center gap-4">
                 <MapPin className="w-7 h-7 text-background shrink-0" strokeWidth={1.5} />
-                <span className="text-background text-lg">Victorian Parliament House</span>
+                <span className="text-background text-lg">{siteContent.eventLocation}</span>
               </div>
               <div className="flex items-center gap-4">
                 <List className="w-7 h-7 text-background shrink-0" strokeWidth={1.5} />
