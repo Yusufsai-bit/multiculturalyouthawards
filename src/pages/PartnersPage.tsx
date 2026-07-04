@@ -169,7 +169,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
         {/* Partner Logos */}
        <section className="py-24 bg-background">
          <div className="container mx-auto px-4">
-          <PartnerGrid partners={majorPartners} title="Major Partners" />
+          <PartnerGrid partners={majorPartners} title="2025 Partners" />
           <div className="section-divider my-12" />
           <PartnerGrid partners={sponsors} title="MYA Sponsors" />
           <div className="section-divider my-12" />
