@@ -147,7 +147,7 @@ const NominationsPage = () => {
 
             <AccordionItem value="scoring" className="border-b border-border">
               <AccordionTrigger className="font-sans font-semibold text-navy text-lg py-5 hover:no-underline">
-                Scoring Metrix
+                Scoring Matrix
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
                 <p className="mb-3">
