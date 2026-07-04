@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { useYears, useResultsByYear } from "@/lib/queries";
 import PageHero from "@/components/PageHero";
+import { siteContent } from "@/lib/siteContent";
 
 const WinnersPage = () => {
   const { data: years = [] } = useYears();
@@ -22,7 +23,21 @@ const WinnersPage = () => {
 
   const { data: results = [], isLoading } = useResultsByYear(yearId);
   const selectedYear = years.find((y) => y.id === yearId);
-  const categoriesWithWinners = results.filter((c) => c.winners.length > 0);
+  const dbCategories = results.filter((c) => c.winners.length > 0);
+
+  // Fallback: when the database has no published results for the selected
+  // year, render the 2025 cohort from siteContent so the page matches the
+  // live site. Database results always take precedence once published.
+  const useFallback = !isLoading && dbCategories.length === 0;
+  const fallbackCategories = useFallback
+    ? Object.entries(siteContent.winners2025).map(([categoryName, w], i) => ({
+        id: `sc-${i}`,
+        name: categoryName,
+        winners: [{ id: `sc-w-${i}`, name: w.name, bio: w.bio, image_url: null as string | null }],
+        finalists: w.finalists.map((f, j) => ({ id: `sc-f-${i}-${j}`, name: f.name, bio: f.bio })),
+      }))
+    : [];
+  const categoriesWithWinners = useFallback ? fallbackCategories : dbCategories;
 
   return (
     <div className="min-h-screen bg-background">
@@ -102,9 +117,14 @@ const WinnersPage = () => {
                           </p>
                           <ul className="space-y-1">
                             {category.finalists.map((finalist) => (
-                              <li key={finalist.id} className="text-foreground text-sm flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
-                                {finalist.name}
+                              <li key={finalist.id} className="text-foreground text-sm">
+                                <span className="flex items-center gap-2">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
+                                  {finalist.name}
+                                </span>
+                                {"bio" in finalist && finalist.bio && (
+                                  <p className="text-muted-foreground mt-1 leading-relaxed pl-3.5">{finalist.bio}</p>
+                                )}
                               </li>
                             ))}
                           </ul>
