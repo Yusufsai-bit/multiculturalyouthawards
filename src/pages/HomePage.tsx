@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Award, ArrowRight } from "lucide-react";
-import { siteContent } from "@/lib/siteContent";
+import { siteContent, getNominationButtonText } from "@/lib/siteContent";
 import SectionHeading from "@/components/SectionHeading";
 
 const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
@@ -31,7 +31,7 @@ const HomePage = () => {
               multicultural youth
             </h1>
             <Button variant="gold" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold" asChild>
-              <Link to="/nominations">Nominations Opening Soon</Link>
+              <Link to="/nominations">{getNominationButtonText(siteContent.nominationsStatus)}</Link>
             </Button>
           </div>
         </div>
@@ -117,7 +117,7 @@ const HomePage = () => {
           </div>
           <div className="text-center mt-12">
             <Button variant="gold" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold" asChild>
-              <Link to="/nominations">Nominations Closed</Link>
+              <Link to="/nominations">{getNominationButtonText(siteContent.nominationsStatus)}</Link>
             </Button>
           </div>
         </div>
