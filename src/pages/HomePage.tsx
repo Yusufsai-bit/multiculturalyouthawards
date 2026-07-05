@@ -4,6 +4,8 @@ import { Calendar, MapPin, Award, ArrowRight } from "lucide-react";
 import { siteContent, getNominationButtonText } from "@/lib/siteContent";
 import { useSiteStatus } from "@/hooks/useSiteStatus";
 import SectionHeading from "@/components/SectionHeading";
+import videoAsset from "@/assets/mya-2025.mp4.asset.json";
+import videoPoster from "@/assets/mya-2025-poster.jpg.asset.json";
 
 const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
 
@@ -12,23 +14,25 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative bg-background flex items-center justify-center overflow-hidden pt-44 pb-28 min-h-[80vh]">
-        {/* Large faded backdrop wordmark */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute inset-0 flex flex-col items-center justify-center text-center"
+      <section className="relative flex items-center justify-center overflow-hidden min-h-[92vh]">
+        {/* Full-bleed background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={videoPoster.url}
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <span className="font-sans text-foreground/[0.06] leading-[0.85] text-[13vw] md:text-[10vw]">
-            Multicultural
-          </span>
-          <span className="font-sans text-foreground/[0.06] leading-[0.85] text-[13vw] md:text-[10vw]">
-            Youth Awards
-          </span>
-        </div>
+          <source src={videoAsset.url} type="video/mp4" />
+        </video>
+        {/* Dark overlay for legibility */}
+        <div aria-hidden="true" className="absolute inset-0 bg-navy/50" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="font-sans text-foreground text-3xl md:text-5xl leading-tight mb-10">
+          <div className="max-w-3xl mx-auto text-center bg-navy/40 backdrop-blur-[2px] px-6 py-14 md:px-12 md:py-16">
+            <h1 className="font-sans text-background text-3xl md:text-5xl leading-tight mb-10">
               Celebrating the incredible talents &amp; leadership of Australia&rsquo;s
               multicultural youth
             </h1>
