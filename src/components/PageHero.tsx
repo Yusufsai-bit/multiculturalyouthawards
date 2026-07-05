@@ -20,7 +20,7 @@ const PageHero = ({ eyebrow, title, subtitle, numeral, children }: PageHeroProps
       {numeral && (
         <div
           aria-hidden="true"
-          className="pointer-events-none select-none absolute inset-x-0 -bottom-10 text-center font-sans font-extrabold leading-none text-[24vw] md:text-[15rem] text-background/[0.04]"
+          className="pointer-events-none select-none absolute inset-x-0 -bottom-10 text-center font-numeral font-extrabold leading-none text-[24vw] md:text-[15rem] text-background/[0.04]"
         >
           {numeral}
         </div>
@@ -35,7 +35,7 @@ const PageHero = ({ eyebrow, title, subtitle, numeral, children }: PageHeroProps
 
           {/* Headline */}
           <h1
-            className="font-sans font-extrabold uppercase text-background text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight animate-fade-in"
+            className="font-display font-extrabold uppercase text-background text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight animate-fade-in"
             style={{ animationDelay: "0.15s" }}
           >
             {title}
