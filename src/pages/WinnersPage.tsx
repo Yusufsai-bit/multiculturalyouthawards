@@ -173,6 +173,17 @@ const WinnersPage = () => {
                   {/* Category header — booklet style */}
                   <div className="flex items-start gap-4 mb-4">
                     {(() => {
+                      const img = categoryImage(category.name);
+                      if (img) {
+                        return (
+                          <img
+                            src={img}
+                            alt=""
+                            aria-hidden="true"
+                            className="w-14 h-14 md:w-16 md:h-16 object-contain shrink-0 mt-1"
+                          />
+                        );
+                      }
                       const Icon = categoryIcon(category.name);
                       return <Icon className="w-12 h-12 md:w-14 md:h-14 text-gold shrink-0 mt-1" strokeWidth={1.5} />;
                     })()}
