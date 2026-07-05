@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Award } from "lucide-react";
 import { siteContent, getNominationButtonText } from "@/lib/siteContent";
 import { useSiteStatus } from "@/hooks/useSiteStatus";
-import SectionHeading from "@/components/SectionHeading";
 import CountUp from "@/components/CountUp";
 import videoAsset from "@/assets/mya-2025.mp4.asset.json";
 import videoPoster from "@/assets/mya-2025-poster.jpg.asset.json";
