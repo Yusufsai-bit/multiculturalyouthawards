@@ -32,7 +32,7 @@ const HomePage = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center bg-navy/40 backdrop-blur-[2px] px-6 py-14 md:px-12 md:py-16">
-            <h1 className="font-sans text-background text-3xl md:text-5xl leading-tight mb-10">
+            <h1 className="font-display text-background text-3xl md:text-5xl leading-tight mb-10">
               Celebrating the incredible talents &amp; leadership of Australia&rsquo;s
               multicultural youth
             </h1>
