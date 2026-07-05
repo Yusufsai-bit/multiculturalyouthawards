@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Award, ArrowRight } from "lucide-react";
 import { siteContent, getNominationButtonText } from "@/lib/siteContent";
+import { useSiteStatus } from "@/hooks/useSiteStatus";
 import SectionHeading from "@/components/SectionHeading";
 
 const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
 
 const HomePage = () => {
+  const { nominationsStatus, eventDate, eventLocation } = useSiteStatus();
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
@@ -31,7 +33,7 @@ const HomePage = () => {
               multicultural youth
             </h1>
             <Button variant="gold" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold" asChild>
-              <Link to="/nominations">{getNominationButtonText(siteContent.nominationsStatus)}</Link>
+              <Link to="/nominations">{getNominationButtonText(nominationsStatus)}</Link>
             </Button>
           </div>
         </div>
@@ -104,11 +106,11 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
             <div className="flex flex-col items-center">
               <Calendar className="w-8 h-8 text-gold mb-3" />
-              <p className="text-background font-semibold">{siteContent.eventDate}</p>
+              <p className="text-background font-semibold">{eventDate}</p>
             </div>
             <div className="flex flex-col items-center">
               <MapPin className="w-8 h-8 text-gold mb-3" />
-              <p className="text-background font-semibold">{siteContent.eventLocation}</p>
+              <p className="text-background font-semibold">{eventLocation}</p>
             </div>
             <div className="flex flex-col items-center">
               <Award className="w-8 h-8 text-gold mb-3" />
@@ -117,7 +119,7 @@ const HomePage = () => {
           </div>
           <div className="text-center mt-12">
             <Button variant="gold" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold" asChild>
-              <Link to="/nominations">{getNominationButtonText(siteContent.nominationsStatus)}</Link>
+              <Link to="/nominations">{getNominationButtonText(nominationsStatus)}</Link>
             </Button>
           </div>
         </div>

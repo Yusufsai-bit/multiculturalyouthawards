@@ -6,12 +6,14 @@ import {
 } from "@/components/ui/accordion";
 import { UserRound, CheckCircle2, CalendarCheck, CalendarX } from "lucide-react";
 import { siteContent, getNominationButtonText, areNominationsOpen } from "@/lib/siteContent";
+import { useSiteStatus } from "@/hooks/useSiteStatus";
 
 const NominationsPage = () => {
+  const { nominationsStatus } = useSiteStatus();
   const statusLabel =
-    siteContent.nominationsStatus === "open"
+    nominationsStatus === "open"
       ? "Open"
-      : siteContent.nominationsStatus === "closed"
+      : nominationsStatus === "closed"
       ? "Closed"
       : "Opening soon";
 
@@ -54,21 +56,21 @@ const NominationsPage = () => {
             ))}
           </ul>
 
-          {areNominationsOpen(siteContent.nominationsStatus) ? (
+          {areNominationsOpen(nominationsStatus) ? (
             <a
               href="https://forms.office.com/r/2eVszS9qWc?origin=lprLink"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-gold text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14"
             >
-              {getNominationButtonText(siteContent.nominationsStatus)}
+              {getNominationButtonText(nominationsStatus)}
             </a>
           ) : (
             <button
               disabled
               className="border border-navy/40 text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14 cursor-not-allowed"
             >
-              {getNominationButtonText(siteContent.nominationsStatus)}
+              {getNominationButtonText(nominationsStatus)}
             </button>
           )}
 

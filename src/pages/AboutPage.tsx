@@ -1,9 +1,10 @@
 import { Calendar, MapPin, List } from "lucide-react";
 import aboutGroup from "@/assets/about-group.jpg";
 import parliamentHouse from "@/assets/parliament-house.jpg";
-import { siteContent } from "@/lib/siteContent";
+import { useSiteStatus } from "@/hooks/useSiteStatus";
 
 const AboutPage = () => {
+  const { eventDate, eventLocation } = useSiteStatus();
   return (
     <div className="bg-navy text-background">
       {/* Hero */}
@@ -74,11 +75,11 @@ const AboutPage = () => {
             <div className="space-y-7">
               <div className="flex items-center gap-4">
                 <Calendar className="w-7 h-7 text-background shrink-0" strokeWidth={1.5} />
-                <span className="text-background text-lg">{siteContent.eventDate}</span>
+                <span className="text-background text-lg">{eventDate}</span>
               </div>
               <div className="flex items-center gap-4">
                 <MapPin className="w-7 h-7 text-background shrink-0" strokeWidth={1.5} />
-                <span className="text-background text-lg">{siteContent.eventLocation}</span>
+                <span className="text-background text-lg">{eventLocation}</span>
               </div>
               <div className="flex items-center gap-4">
                 <List className="w-7 h-7 text-background shrink-0" strokeWidth={1.5} />
