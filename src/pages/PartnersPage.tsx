@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useSponsors, usePartners } from "@/lib/queries";
-import SectionHeading from "@/components/SectionHeading";
 import videoAsset from "@/assets/mya-2025.mp4.asset.json";
 import videoPoster from "@/assets/mya-2025-poster.jpg.asset.json";
 
