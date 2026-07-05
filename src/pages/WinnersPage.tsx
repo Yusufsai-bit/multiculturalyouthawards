@@ -90,7 +90,7 @@ const WinnersPage = () => {
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             {isLoading && (
               <p className="text-center text-muted-foreground">Loading...</p>
             )}
@@ -108,65 +108,68 @@ const WinnersPage = () => {
               </div>
             )}
 
-            <div className="space-y-20">
+            <div className="space-y-24">
               {categories.map((category) => (
                 <article key={category.id}>
-                  {/* Category header — navy accent band */}
-                  <div className="bg-navy px-6 py-8 md:px-10 md:py-10 text-center">
-                    <h2 className="font-display text-2xl md:text-3xl text-background">
-                      {category.name}
-                    </h2>
-                    {category.description && (
-                      <p className="text-background/80 leading-relaxed mt-4 max-w-2xl mx-auto">
-                        {category.description}
-                      </p>
-                    )}
-                  </div>
+                  {/* Category header — booklet style */}
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-gold uppercase leading-tight mb-4">
+                    {category.name}
+                  </h2>
+                  {category.description && (
+                    <p className="text-navy leading-relaxed mb-10 max-w-2xl">
+                      {category.description}
+                    </p>
+                  )}
 
-                  {/* Winner */}
-                  {category.winners.map((winner) => (
-                    <div key={winner.id} className="pt-10 text-center">
-                      <p className="font-display text-gold uppercase tracking-[0.2em] text-sm mb-3">
+                  {/* Winner / Finalist columns */}
+                  <div className="grid md:grid-cols-2 gap-10 md:gap-12">
+                    {/* Winner column */}
+                    <div>
+                      <p className="font-display font-bold text-navy uppercase tracking-[0.15em] text-lg mb-4">
                         Winner
                       </p>
-                      {winner.image_url && (
-                        <img
-                          src={winner.image_url}
-                          alt={winner.name}
-                          className="w-28 h-28 rounded-full object-cover mx-auto mb-5"
-                        />
-                      )}
-                      <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-4">
-                        {winner.name}
-                      </h3>
-                      {winner.bio && (
-                        <p className="text-muted-foreground leading-relaxed text-left md:text-justify">
-                          {winner.bio}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-
-                  {/* Finalists */}
-                  {category.finalists.length > 0 && (
-                    <div className="pt-10 text-center">
-                      <p className="font-display text-gold uppercase tracking-[0.2em] text-sm mb-3">
-                        {category.finalists.length === 1 ? "Finalist" : "Finalists"}
-                      </p>
-                      {category.finalists.map((finalist) => (
-                        <div key={finalist.id} className="mb-8 last:mb-0">
-                          <h4 className="font-display text-lg md:text-xl font-semibold text-foreground mb-4">
-                            {finalist.name}
-                          </h4>
-                          {finalist.bio && (
-                            <p className="text-muted-foreground leading-relaxed text-left md:text-justify">
-                              {finalist.bio}
+                      {category.winners.map((winner) => (
+                        <div key={winner.id} className="mb-8 last:mb-0">
+                          {winner.image_url && (
+                            <img
+                              src={winner.image_url}
+                              alt={winner.name}
+                              className="w-24 h-24 rounded-full object-cover mb-4"
+                            />
+                          )}
+                          <span className="inline-block bg-gold text-navy font-semibold rounded-full px-6 py-2 mb-4">
+                            {winner.name}
+                          </span>
+                          {winner.bio && (
+                            <p className="text-muted-foreground leading-relaxed">
+                              {winner.bio}
                             </p>
                           )}
                         </div>
                       ))}
                     </div>
-                  )}
+
+                    {/* Finalist column */}
+                    {category.finalists.length > 0 && (
+                      <div>
+                        <p className="font-display font-bold text-navy uppercase tracking-[0.15em] text-lg mb-4">
+                          {category.finalists.length === 1 ? "Finalist" : "Finalists"}
+                        </p>
+                        {category.finalists.map((finalist) => (
+                          <div key={finalist.id} className="mb-8 last:mb-0">
+                            <p className="font-semibold text-navy text-lg mb-4">
+                              {finalist.name}
+                            </p>
+                            {finalist.bio && (
+                              <p className="text-muted-foreground leading-relaxed border-l-2 border-navy/20 pl-4">
+                                {finalist.bio}
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>
