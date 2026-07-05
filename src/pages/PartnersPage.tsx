@@ -134,51 +134,45 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
           </div>
         </section>
 
-        {/* Get involved — matches the home page */}
-        <section className="bg-gold py-20 md:py-28">
+        {/* Be part of the change */}
+        <section className="bg-background py-20 md:py-28">
           <div className="container mx-auto px-4 text-center">
             <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-5xl md:text-7xl leading-[0.95]">
-              Get Involved
+              Be part of the <span className="text-gold">change.</span>
             </h2>
-            <p className="mx-auto mt-10 mb-14 max-w-2xl text-center text-base md:text-lg leading-relaxed font-semibold text-navy/90">
-              We thank our sponsors and partners for their generous support. Learn more about how you
-              can support the Multicultural Youth Awards.
-            </p>
 
-            <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
+            <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
               <Button
                 size="xl"
-                className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
+                className="min-w-[220px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
                 asChild
               >
                 <a href={SPONSOR_FORM_URL} target="_blank" rel="noopener noreferrer">Sponsor</a>
               </Button>
               <Button
                 size="xl"
-                className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
+                className="min-w-[220px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
                 asChild
               >
-                <Link to="/nominations">Nomination</Link>
-              </Button>
-              <Button
-                size="xl"
-                className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
-                asChild
-              >
-                <Link to="/contact">Volunteer</Link>
+                <Link to="/contact">Contact us</Link>
               </Button>
             </div>
           </div>
         </section>
 
         {/* Partner Logos */}
-       <section className="py-24 bg-background">
+       <section className="pb-24 bg-background">
          <div className="container mx-auto px-4">
-          <PartnerGrid partners={majorPartners} title="2025 Partners" />
-          <div className="section-divider my-12" />
-          <PartnerGrid partners={sponsors} title="MYA Sponsors" />
-          <div className="section-divider my-12" />
-          <PartnerGrid partners={supporters} title="MYA Supporters" />
+           <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">2025 Partners</h2>
+           {partnerCards.length === 0 ? (
+             <p className="text-muted-foreground">Our 2026 partners will be announced soon.</p>
+           ) : (
+             <div className="grid gap-6 md:grid-cols-2">
+               {partnerCards.map((partner, index) => (
+                 <PartnerCard key={index} partner={partner} />
+               ))}
+             </div>
+           )}
          </div>
        </section>
  
