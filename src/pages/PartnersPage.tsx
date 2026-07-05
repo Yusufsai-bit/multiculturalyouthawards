@@ -164,16 +164,44 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
 
         {/* Partner Logos */}
        <section className="pb-24 bg-background">
-         <div className="container mx-auto px-4">
-           <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">2025 Partners</h2>
-           {partnerCards.length === 0 ? (
+         <div className="container mx-auto px-4 space-y-16">
+           {totalPartners === 0 ? (
              <p className="text-muted-foreground">Our 2026 partners will be announced soon.</p>
            ) : (
-             <div className="grid gap-6 md:grid-cols-2">
-               {partnerCards.map((partner, index) => (
-                 <PartnerCard key={index} partner={partner} />
-               ))}
-             </div>
+             <>
+               {majorPartners.length > 0 && (
+                 <div>
+                   <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">2025 Partners</h2>
+                   <div className="grid gap-6 md:grid-cols-2">
+                     {majorPartners.map((p) => (
+                       <MajorCard key={p.id} partner={p} />
+                     ))}
+                   </div>
+                 </div>
+               )}
+
+               {sponsors.length > 0 && (
+                 <div>
+                   <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">MYA Sponsors</h2>
+                   <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+                     {sponsors.map((p) => (
+                       <LogoTile key={p.id} partner={p} />
+                     ))}
+                   </div>
+                 </div>
+               )}
+
+               {supporters.length > 0 && (
+                 <div>
+                   <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">MYA Supporters</h2>
+                   <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+                     {supporters.map((p) => (
+                       <LogoTile key={p.id} partner={p} />
+                     ))}
+                   </div>
+                 </div>
+               )}
+             </>
            )}
          </div>
        </section>
