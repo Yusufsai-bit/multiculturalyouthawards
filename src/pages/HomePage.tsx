@@ -9,7 +9,7 @@ import videoPoster from "@/assets/mya-2025-poster.jpg.asset.json";
 const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
 
 const HomePage = () => {
-  const { nominationsStatus, eventDate, eventLocation } = useSiteStatus();
+  const { nominationsStatus } = useSiteStatus();
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
