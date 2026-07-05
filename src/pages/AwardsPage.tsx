@@ -49,7 +49,7 @@ const AwardsPage = () => {
                       <Icon className="w-6 h-6 text-gold" />
                     </div>
                     <div>
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-gold transition-colors">
+                      <h3 className="font-sans text-lg font-semibold text-foreground mb-2 group-hover:text-gold transition-colors">
                         {category.name}
                       </h3>
                       {category.description && (

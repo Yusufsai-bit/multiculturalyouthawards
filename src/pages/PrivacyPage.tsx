@@ -5,7 +5,7 @@
        <section className="py-16 hero-gradient">
          <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto text-center">
-             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+             <h1 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
                Privacy <span className="text-gold-gradient">Policy</span>
              </h1>
              <p className="text-muted-foreground">
@@ -21,14 +21,14 @@
             <div className="max-w-3xl mx-auto prose prose-invert">
               <div className="glass-card rounded-2xl p-8 border-gold-glow space-y-8">
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Who we are</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Who we are</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     Our website address is: https://multiculturalyouthawards.com.au.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">What personal data we collect and why we collect it</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">What personal data we collect and why we collect it</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     We collect personal information that you voluntarily provide to us, for example when you
                     contact us, submit a nomination, become a sponsor or partner, subscribe to updates, or
@@ -42,7 +42,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Nominations and event participation</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Nominations and event participation</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     When you submit a nomination or participate in the Multicultural Youth Awards, we collect
                     information about nominees, nominators, referees and organisations as required on the
@@ -63,7 +63,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Cookies</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Cookies</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     This site uses cookies and similar technologies to improve your browsing experience and
                     understand how our website is used. You can choose to block or delete cookies in your
@@ -72,7 +72,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Embedded content from other websites</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Embedded content from other websites</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     Pages on this site may include embedded content (for example videos, forms, images or
                     social media feeds). Embedded content from other websites behaves in the same way as if
@@ -83,7 +83,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Who we share your data with</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Who we share your data with</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     We do not sell your personal information. We may share your information with trusted
                     service providers and partners who help us operate this website and deliver the
@@ -94,7 +94,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">How long we retain your data</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">How long we retain your data</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     We keep personal information for as long as it is needed for the purposes for which it
                     was collected, or as required by law. Nomination and event records may be retained for
@@ -103,7 +103,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">What rights you have over your data</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">What rights you have over your data</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     Depending on where you live, you may have rights to request access to the personal
                     information we hold about you, to request corrections, or to ask that we delete certain
@@ -115,7 +115,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">How we protect your data</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">How we protect your data</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     We take reasonable steps to protect the personal information we hold from misuse, loss,
                     unauthorised access, modification or disclosure. However, no method of transmission or
@@ -124,7 +124,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Contact us</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Contact us</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     If you have any questions about this Privacy Policy or how we handle your personal
                     information, please contact us at{" "}

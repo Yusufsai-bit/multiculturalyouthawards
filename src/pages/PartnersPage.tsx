@@ -46,7 +46,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
   const PartnerGrid = ({ partners, title }: { partners: { name: string; logo_url: string | null; url: string | null }[]; title: string }) => (
     partners.length === 0 ? null : (
      <div className="mb-12">
-       <h3 className="font-display text-xl font-semibold text-foreground mb-6 text-center">{title}</h3>
+       <h3 className="font-sans text-xl font-semibold text-foreground mb-6 text-center">{title}</h3>
      <div className="flex flex-wrap justify-center gap-8">
          {partners.map((partner, index) => (
          partner.url ? (
@@ -65,7 +65,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
                    className="max-w-[80%] max-h-[70%] object-contain" 
                  />
                ) : (
-                 <span className="text-gold font-display text-3xl font-bold">
+                 <span className="text-gold font-sans text-3xl font-bold">
                    {partner.name.charAt(0)}
                  </span>
                )}
@@ -87,7 +87,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
                    className="max-w-[80%] max-h-[70%] object-contain" 
                  />
                ) : (
-                 <span className="text-gold font-display text-3xl font-bold">
+                 <span className="text-gold font-sans text-3xl font-bold">
                    {partner.name.charAt(0)}
                  </span>
                )}
@@ -108,7 +108,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
         {/* Navy editorial hero — matches the live site */}
         <section className="bg-navy pt-40 pb-20">
           <div className="container mx-auto px-4">
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-background text-center leading-tight">
+            <h1 className="font-sans text-3xl md:text-4xl lg:text-5xl text-background text-center leading-tight">
               Empowering youth through <span className="italic text-gold">meaningful</span> partnerships.
             </h1>
 
@@ -118,12 +118,12 @@ import { useSponsors, usePartners } from "@/lib/queries";
                 <div className="relative flex flex-col items-center">
                   <div className="relative w-28 h-28 flex items-center justify-center">
                     <span className="absolute inset-0 rounded-full border border-gold/70" />
-                    <span className="font-display text-5xl text-gold">M</span>
+                    <span className="font-sans text-5xl text-gold">M</span>
                   </div>
                   <div className="-mt-6 w-16 h-16 rounded-full border border-background/60 bg-navy/40 flex items-center justify-center">
                     <span className="ml-1 border-y-[8px] border-y-transparent border-l-[14px] border-l-background/80" />
                   </div>
-                  <p className="mt-3 font-display tracking-[0.25em] text-background/80 text-sm uppercase text-center leading-relaxed">
+                  <p className="mt-3 font-sans tracking-[0.25em] text-background/80 text-sm uppercase text-center leading-relaxed">
                     Multicultural<br />Youth Awards
                   </p>
                 </div>
@@ -188,7 +188,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
                  <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
                    <span className="text-gold text-3xl">✓</span>
                  </div>
-                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                 <h2 className="font-sans text-2xl font-bold text-foreground mb-4">
                    Enquiry Received
                  </h2>
                  <p className="text-muted-foreground mb-8">
@@ -200,7 +200,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
                </div>
              ) : (
                <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 border-gold-glow">
-                 <h2 className="font-display text-2xl font-bold text-foreground mb-2 text-center">
+                 <h2 className="font-sans text-2xl font-bold text-foreground mb-2 text-center">
                    Sponsor Enquiry
                  </h2>
                  <p className="text-muted-foreground text-center mb-8">

@@ -16,17 +16,17 @@ const HomePage = () => {
           aria-hidden="true"
           className="pointer-events-none select-none absolute inset-0 flex flex-col items-center justify-center text-center"
         >
-          <span className="font-display text-foreground/[0.06] leading-[0.85] text-[13vw] md:text-[10vw]">
+          <span className="font-sans text-foreground/[0.06] leading-[0.85] text-[13vw] md:text-[10vw]">
             Multicultural
           </span>
-          <span className="font-display text-foreground/[0.06] leading-[0.85] text-[13vw] md:text-[10vw]">
+          <span className="font-sans text-foreground/[0.06] leading-[0.85] text-[13vw] md:text-[10vw]">
             Youth Awards
           </span>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="font-display text-foreground text-3xl md:text-5xl leading-tight mb-10">
+            <h1 className="font-sans text-foreground text-3xl md:text-5xl leading-tight mb-10">
               Celebrating the incredible talents &amp; leadership of Australia&rsquo;s
               multicultural youth
             </h1>
@@ -42,7 +42,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div className="order-2 md:order-1">
-              <div className="font-numeral text-gold text-7xl mb-2">13</div>
+              <div className="font-sans font-extrabold text-gold text-7xl mb-2">13</div>
               <p className="uppercase tracking-[0.2em] text-sm text-muted-foreground mb-8">Awards</p>
               <p className="text-foreground text-lg leading-relaxed mb-8">
                 <strong>A national event</strong> devoted to{" "}

@@ -17,7 +17,7 @@ const Partners = () => {
           <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
             Our Partners
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
             Proudly Supported By
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -32,7 +32,7 @@ const Partners = () => {
               className="glass-card rounded-xl p-8 text-center border-gold-glow group hover:border-gold/50 transition-all duration-500"
             >
               <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gold/20 transition-colors duration-300">
-                <span className="text-gold font-display text-2xl font-bold">
+                <span className="text-gold font-sans text-2xl font-bold">
                   {partner.name.charAt(0)}
                 </span>
               </div>

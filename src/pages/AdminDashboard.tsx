@@ -50,7 +50,7 @@ const AdminDashboard = () => {
     <div className="min-h-screen bg-background flex flex-col lg:flex-row">
       {/* Sidebar */}
       <aside className="lg:w-64 border-b lg:border-b-0 lg:border-r border-border p-4 lg:min-h-screen">
-        <h1 className="font-display text-lg font-bold text-gold mb-1">MYA Admin</h1>
+        <h1 className="font-sans text-lg font-bold text-gold mb-1">MYA Admin</h1>
         <p className="text-xs text-muted-foreground mb-6">Content management</p>
         <nav className="flex lg:flex-col gap-1 flex-wrap">
           {nav.map((n) => (
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
       {/* Content */}
       <main className="flex-1 p-6 lg:p-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
-          <h2 className="font-display text-2xl font-bold text-foreground capitalize">
+          <h2 className="font-sans text-2xl font-bold text-foreground capitalize">
             {nav.find((n) => n.id === tab)?.label}
           </h2>
           {needsYear && (

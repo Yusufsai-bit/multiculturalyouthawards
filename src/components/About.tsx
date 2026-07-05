@@ -19,7 +19,7 @@ const About = () => {
             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
               About The Awards
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
               Honouring the Brilliance of{" "}
               <span className="text-gold-gradient">Multicultural Youth</span>
             </h2>
@@ -58,7 +58,7 @@ const About = () => {
                 className="award-card glass-card rounded-2xl p-8 text-center border-gold-glow group hover:border-gold/50 transition-all duration-500"
               >
                 <stat.icon className="w-8 h-8 text-gold mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <div className="text-3xl md:text-4xl font-display font-bold text-gold-gradient mb-2">
+                <div className="text-3xl md:text-4xl font-sans font-bold text-gold-gradient mb-2">
                   {stat.value}
                 </div>
                 <div className="text-muted-foreground text-sm">{stat.label}</div>

@@ -47,7 +47,7 @@ const ContactPage = () => {
       {/* Navy contact band */}
       <section className="bg-navy pt-40 pb-20">
         <div className="container mx-auto px-4">
-          <h1 className="font-numeral uppercase text-background text-5xl md:text-7xl text-center mb-14">
+          <h1 className="font-sans font-extrabold uppercase tracking-tight text-background text-5xl md:text-7xl text-center mb-14">
             Contact Us
           </h1>
 
@@ -97,7 +97,7 @@ const ContactPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto items-start">
             <div>
-              <h2 className="font-numeral uppercase text-navy text-5xl md:text-6xl mb-6">Got Questions?</h2>
+              <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-5xl md:text-6xl mb-6">Got Questions?</h2>
               <p className="text-muted-foreground text-lg max-w-md">
                 Send us a message! We&rsquo;re here to help and will get back to you as soon as possible.
               </p>
