@@ -55,8 +55,8 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <h3 className="font-sans text-[28px] font-semibold text-foreground">Stay up to date</h3>
-          <h3 className="font-sans text-[28px] font-semibold text-foreground">Get social</h3>
+          <h3 className="font-display text-[28px] font-semibold text-foreground">Stay up to date</h3>
+          <h3 className="font-display text-[28px] font-semibold text-foreground">Get social</h3>
         </div>
       </div>
 
@@ -114,7 +114,7 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
         <div className="grid md:grid-cols-3 gap-12">
           {/* Quick Links */}
           <div className="text-center">
-            <h4 className="font-sans text-base font-semibold uppercase text-muted-foreground mb-6">Quick Links</h4>
+            <h4 className="font-display text-base font-semibold uppercase text-muted-foreground mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm">
               <li><Link to="/about" className="text-foreground hover:text-gold transition-colors">About</Link></li>
               <li><Link to="/nominations" className="text-foreground hover:text-gold transition-colors">Nominations</Link></li>
@@ -126,7 +126,7 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
 
           {/* Event Partners */}
           <div className="text-center">
-            <h4 className="font-sans text-base font-semibold uppercase text-muted-foreground mb-6">Event Partners</h4>
+            <h4 className="font-display text-base font-semibold uppercase text-muted-foreground mb-6">Event Partners</h4>
             <div className="flex items-center justify-center gap-6 flex-wrap">
               {siteContent.partners2026.slice(0, 2).map((partner) => (
                 <a
@@ -144,7 +144,7 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
 
           {/* Acknowledgement of Country */}
           <div className="text-center">
-            <h4 className="font-sans text-base font-semibold uppercase text-muted-foreground mb-6">Acknowledgement of Country</h4>
+            <h4 className="font-display text-base font-semibold uppercase text-muted-foreground mb-6">Acknowledgement of Country</h4>
             <div className="flex justify-center gap-4 mb-5">
               <img src={torresStraitFlag.url} alt="Torres Strait Islander Flag" className="h-9 w-auto rounded shadow-sm" />
               <img src={aboriginalFlag.url} alt="Australian Aboriginal Flag" className="h-9 w-auto rounded shadow-sm" />

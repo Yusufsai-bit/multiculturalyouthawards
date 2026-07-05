@@ -34,7 +34,7 @@ const Winners = () => {
           <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
             2024 Award Winners
           </span>
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
             Celebrating Our{" "}
             <span className="text-gold-gradient">Champions</span>
           </h2>
@@ -54,7 +54,7 @@ const Winners = () => {
                 <Trophy className="w-10 h-10 text-gold" />
               </div>
               
-              <h3 className="text-foreground font-sans text-xl font-semibold mb-1">
+              <h3 className="text-foreground font-display text-xl font-semibold mb-1">
                 {winner.name}
               </h3>
               <p className="text-gold text-sm font-medium mb-2">{winner.category}</p>
