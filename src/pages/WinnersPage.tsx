@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {
   Trophy, Lightbulb, Medal, HeartHandshake, GraduationCap, Palette,
-  Feather, Award, Wrench, Users, Mountain, Megaphone, Heart, ChevronDown,
+  Feather, Award, Wrench, Users, Mountain, Megaphone, Heart,
   type LucideIcon,
 } from "lucide-react";
 import { useYears, useResultsByYear } from "@/lib/queries";
@@ -141,21 +141,34 @@ const WinnersPage = () => {
         numeral={selectedYear ? String(selectedYear.year) : undefined}
       >
         {years.length > 0 && (
-          <div className="relative inline-block">
-            <span className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-gold text-[10px] tracking-[0.3em] uppercase font-semibold">
-              Year
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-gold">
+              Select Year
             </span>
-            <select
-              value={yearId}
-              onChange={(e) => setYearId(e.target.value)}
+            <div
+              role="group"
               aria-label="Select awards year"
-              className="appearance-none cursor-pointer bg-transparent border-2 border-gold/60 hover:border-gold rounded-full pl-[4.5rem] pr-12 py-3 font-sans font-extrabold text-lg text-background uppercase tracking-wide transition-colors focus:outline-none focus:ring-2 focus:ring-gold/40 [&>option]:bg-navy [&>option]:text-background"
+              className="flex items-center gap-1 p-1.5 rounded-full border border-background/10 bg-background/5 backdrop-blur-xl shadow-2xl"
             >
-              {years.map((y) => (
-                <option key={y.id} value={y.id}>{y.year}</option>
-              ))}
-            </select>
-            <ChevronDown className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gold" />
+              {years.map((y) => {
+                const active = y.id === yearId;
+                return (
+                  <button
+                    key={y.id}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => setYearId(y.id)}
+                    className={
+                      active
+                        ? "px-8 py-2.5 rounded-full font-sans text-sm font-bold bg-gold text-navy shadow-[0_0_20px_hsl(var(--gold)/0.3)] transition-transform active:scale-95"
+                        : "px-6 py-2 rounded-full font-sans text-sm font-semibold text-background/50 hover:text-background transition-colors"
+                    }
+                  >
+                    {y.year}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         )}
       </PageHero>
