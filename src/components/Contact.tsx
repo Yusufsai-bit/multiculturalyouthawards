@@ -12,7 +12,7 @@ const Contact = () => {
             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
               Get In Touch
             </span>
-            <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
               Contact Us
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -76,7 +76,7 @@ const Contact = () => {
 
             {/* Quick Actions */}
             <div className="glass-card rounded-2xl p-8 border-gold-glow">
-              <h3 className="font-sans text-2xl font-bold text-foreground mb-6">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-6">
                 Get Involved
               </h3>
               <div className="space-y-4">

@@ -19,7 +19,7 @@ const About = () => {
             <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
               About The Awards
             </span>
-            <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
               Honouring the Brilliance of{" "}
               <span className="text-gold-gradient">Multicultural Youth</span>
             </h2>
