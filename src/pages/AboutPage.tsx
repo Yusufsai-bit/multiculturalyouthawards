@@ -9,7 +9,7 @@ const AboutPage = () => {
     <div className="bg-navy text-background">
       {/* Hero */}
       <section className="pt-40 pb-16 text-center">
-        <h1 className="font-sans font-bold text-background text-5xl md:text-[75px] leading-none">
+        <h1 className="font-display font-bold text-background text-5xl md:text-[75px] leading-none">
           About
         </h1>
       </section>
@@ -23,7 +23,7 @@ const AboutPage = () => {
               alt="Multicultural Youth Awards finalists and winners at Victorian Parliament House"
               className="w-full h-auto rounded-sm object-cover"
             />
-            <p className="font-sans text-background text-xl md:text-[23px] leading-[1.5]">
+            <p className="text-background text-xl md:text-[23px] leading-[1.5]">
               The Multicultural Youth Awards is a national event devoted to showcasing the
               outstanding achievements of multicultural youth. Steering away from current
               traditional awards, this initiative offers a unique and focused platform for
@@ -40,26 +40,26 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div>
-              <h2 className="font-sans font-bold uppercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
+              <h2 className="font-display font-bold uppercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
                 Mission
               </h2>
-              <p className="font-sans text-background text-xl md:text-[23px] leading-[1.5] mb-5">
+              <p className="text-background text-xl md:text-[23px] leading-[1.5] mb-5">
                 <span className="text-gold">Celebrate</span> the rich diversity of talents,
                 resilience, and positive impacts of multicultural youth.
               </p>
-              <p className="font-sans text-background text-xl md:text-[23px] leading-[1.5]">
+              <p className="text-background text-xl md:text-[23px] leading-[1.5]">
                 <span className="text-gold">Fostering inclusivity,</span> and showcasing their
                 accomplishments on a national stage
               </p>
             </div>
             <div>
-              <h2 className="font-sans font-bold uppercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
+              <h2 className="font-display font-bold uppercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
                 Vision
               </h2>
-              <p className="font-sans text-background text-xl md:text-[23px] leading-[1.5] mb-5">
+              <p className="text-background text-xl md:text-[23px] leading-[1.5] mb-5">
                 <span className="text-gold">Recognise</span> excellence across 13 categories.
               </p>
-              <p className="font-sans text-background text-xl md:text-[23px] leading-[1.5]">
+              <p className="text-background text-xl md:text-[23px] leading-[1.5]">
                 <span className="text-gold">Highlighting</span> the outstanding achievements and
                 contributions of young individuals from diverse backgrounds.
               </p>
