@@ -193,9 +193,22 @@ const WinnersPage = () => {
                       const Icon = categoryIcon(category.name);
                       return <Icon className="w-28 h-28 md:w-36 md:h-36 text-gold shrink-0" strokeWidth={1.25} />;
                     })()}
-                    <h2 className="font-display text-4xl md:text-6xl font-extrabold text-gold uppercase leading-[0.95] tracking-tight">
-                      {category.name}
-                    </h2>
+                    {(() => {
+                      // Strip a trailing "award" from the stored name so we can
+                      // render it as a separate lighter-weight line, matching the
+                      // printed booklet ("YOUNG LEADER OF THE YEAR" + "AWARD").
+                      const base = category.name.replace(/\s*award\s*$/i, "").trim();
+                      return (
+                        <h2 className="font-display text-gold uppercase leading-[0.9] tracking-tight">
+                          <span className="block text-4xl md:text-6xl font-extrabold">
+                            {base}
+                          </span>
+                          <span className="block text-3xl md:text-5xl font-light">
+                            Award
+                          </span>
+                        </h2>
+                      );
+                    })()}
                   </div>
                   {category.description && (
                     <p className="text-navy text-lg md:text-xl leading-relaxed mb-12 max-w-3xl">
