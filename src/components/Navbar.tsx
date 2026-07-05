@@ -24,7 +24,7 @@ import myaLogo from "@/assets/mya-logo.png.asset.json";
     { name: "Awards", href: "/awards" },
      { name: "Nominations", href: "/nominations" },
      { name: "Partners", href: "/partners" },
-    { name: "Winners 2024", href: "/winners" },
+    { name: "Winners", href: "/winners" },
      { name: "Contact", href: "/contact" },
    ];
  
