@@ -95,10 +95,17 @@ const NominationsPage = () => {
                   their consent before proceeding with the nomination.
                 </p>
                 <p>
-                  Step 3: Visit www.multiculturalyouthawards.com.au/nominations to access
-                  the nomination form. Fill out all necessary details accurately. Include
-                  the contact information of two independent referees who can confirm the
-                  accuracy of the submission and verify the nominee&rsquo;s eligibility.
+                  Step 3: Visit{" "}
+                  <Link
+                    to="/nominations"
+                    className="underline underline-offset-4 text-foreground hover:text-gold transition-colors"
+                  >
+                    www.multiculturalyouthawards.com.au/nominations
+                  </Link>{" "}
+                  to access the nomination form. Fill out all necessary details accurately.
+                  Include the contact information of two independent referees who can
+                  confirm the accuracy of the submission and verify the nominee&rsquo;s
+                  eligibility.
                 </p>
               </AccordionContent>
             </AccordionItem>
