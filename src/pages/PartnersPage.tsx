@@ -47,53 +47,55 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
     setSubmitted(true);
    };
  
-  const partnerCards = [
-    ...majorPartners.map((p) => ({ ...p, label: "Major Partners" })),
-    ...sponsors.map((p) => ({ name: p.name, logo_url: p.logo_url, url: p.url, label: "Sponsors" })),
-    ...supporters.map((p) => ({ ...p, label: "Supporters" })),
-  ];
+  const totalPartners = majorPartners.length + sponsors.length + supporters.length;
 
-  const PartnerCard = ({
-    partner,
-  }: {
-    partner: { name: string; logo_url: string | null; url: string | null; label: string };
-  }) => {
-    const inner = (
-      <>
-        <div className="flex h-28 w-28 shrink-0 items-center justify-center">
-          {partner.logo_url ? (
-            <img
-              src={partner.logo_url}
-              alt={partner.name}
-              className="max-h-full max-w-full object-contain"
-            />
-          ) : (
-            <span className="font-sans text-3xl font-bold text-gold">{partner.name.charAt(0)}</span>
-          )}
-        </div>
-        <div>
-          <h3 className="font-sans text-xl font-bold uppercase leading-tight text-navy md:text-2xl">
-            {partner.name}
-          </h3>
-          <p className="mt-2 font-sans text-sm font-bold text-navy">{partner.label}</p>
-        </div>
-      </>
-    );
-    const base =
-      "flex items-center gap-6 bg-secondary/40 p-6 md:p-8 transition-colors";
-    return partner.url ? (
-      <a
-        href={partner.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${base} hover:bg-secondary/70`}
-      >
-        {inner}
+  type Org = { name: string; logo_url: string | null; url: string | null };
+
+  const Wrap = ({ url, className, children }: { url: string | null; className: string; children: React.ReactNode }) =>
+    url ? (
+      <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
+        {children}
       </a>
     ) : (
-      <div className={base}>{inner}</div>
+      <div className={className}>{children}</div>
     );
-  };
+
+  const MajorCard = ({ partner }: { partner: Org }) => (
+    <Wrap
+      url={partner.url}
+      className="flex items-center gap-6 bg-secondary/40 p-8 md:p-10 transition-colors hover:bg-secondary/70"
+    >
+      <div className="flex h-24 w-24 shrink-0 items-center justify-center md:h-28 md:w-28">
+        {partner.logo_url ? (
+          <img src={partner.logo_url} alt={partner.name} className="max-h-full max-w-full object-contain" />
+        ) : (
+          <span className="font-sans text-3xl font-bold text-gold">{partner.name.charAt(0)}</span>
+        )}
+      </div>
+      <div>
+        <h3 className="font-sans text-xl font-bold uppercase leading-tight text-navy md:text-2xl">
+          {partner.name}
+        </h3>
+        <p className="mt-2 font-sans text-sm font-bold text-navy">Major Partners</p>
+      </div>
+    </Wrap>
+  );
+
+  const LogoTile = ({ partner }: { partner: Org }) => (
+    <div className="flex flex-col items-center text-center">
+      <Wrap
+        url={partner.url}
+        className="flex aspect-square w-full items-center justify-center rounded-xl bg-secondary/40 p-6 transition-colors hover:bg-secondary/70"
+      >
+        {partner.logo_url ? (
+          <img src={partner.logo_url} alt={partner.name} className="max-h-full max-w-full object-contain" />
+        ) : (
+          <span className="font-sans text-3xl font-bold text-gold">{partner.name.charAt(0)}</span>
+        )}
+      </Wrap>
+      <p className="mt-3 font-sans text-sm text-navy">{partner.name}</p>
+    </div>
+  );
  
     return (
       <div className="min-h-screen bg-background">
