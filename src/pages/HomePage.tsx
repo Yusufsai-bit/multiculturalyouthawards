@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Award, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Award } from "lucide-react";
 import { siteContent, getNominationButtonText } from "@/lib/siteContent";
 import { useSiteStatus } from "@/hooks/useSiteStatus";
 import SectionHeading from "@/components/SectionHeading";
