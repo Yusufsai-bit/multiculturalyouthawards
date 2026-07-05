@@ -51,7 +51,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
   const PartnerGrid = ({ partners, title }: { partners: { name: string; logo_url: string | null; url: string | null }[]; title: string }) => (
     partners.length === 0 ? null : (
      <div className="mb-12">
-       <h3 className="font-sans text-xl font-semibold text-foreground mb-6 text-center">{title}</h3>
+       <h3 className="font-display text-xl font-semibold text-foreground mb-6 text-center">{title}</h3>
      <div className="flex flex-wrap justify-center gap-8">
          {partners.map((partner, index) => (
          partner.url ? (
@@ -113,7 +113,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
         {/* Navy editorial hero — matches the live site */}
         <section className="bg-navy pt-40 pb-20">
           <div className="container mx-auto px-4">
-            <h1 className="font-sans text-3xl md:text-4xl lg:text-5xl text-background text-center leading-tight">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-background text-center leading-tight">
               Empowering youth through <span className="italic text-gold">meaningful</span> partnerships.
             </h1>
 
@@ -196,7 +196,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
                  <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
                    <span className="text-gold text-3xl">✓</span>
                  </div>
-                 <h2 className="font-sans text-2xl font-bold text-foreground mb-4">
+                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
                    Enquiry Received
                  </h2>
                  <p className="text-muted-foreground mb-8">
@@ -208,7 +208,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
                </div>
              ) : (
                <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 border-gold-glow">
-                 <h2 className="font-sans text-2xl font-bold text-foreground mb-2 text-center">
+                 <h2 className="font-display text-2xl font-bold text-foreground mb-2 text-center">
                    Sponsor Enquiry
                  </h2>
                  <p className="text-muted-foreground text-center mb-8">
