@@ -95,7 +95,7 @@ const WinnersPage = () => {
   useEffect(() => {
     if (!yearId && displayYears.length) {
       const defaultYear =
-        displayYears.find((y) => y.year === 2024) ?? displayYears[0];
+        displayYears.find((y) => y.year === 2025) ?? displayYears[0];
       setYearId(defaultYear.id);
     }
   }, [displayYears, yearId]);
@@ -147,14 +147,14 @@ const WinnersPage = () => {
         numeral={selectedYear ? String(selectedYear.year) : undefined}
       >
         {displayYears.length > 0 && (
-          <div className="flex flex-col items-center gap-5">
-            <span className="text-sm font-semibold tracking-[0.3em] uppercase text-gold">
+          <div className="flex flex-col items-center gap-6">
+            <span className="text-base font-semibold tracking-[0.3em] uppercase text-gold">
               Select Year
             </span>
             <div
               role="group"
               aria-label="Select awards year"
-              className="flex items-center gap-1.5 p-2 rounded-full border border-background/10 bg-background/5 backdrop-blur-xl shadow-2xl"
+              className="flex items-center gap-2 p-3 rounded-full border border-background/10 bg-background/5 backdrop-blur-xl shadow-2xl"
             >
               {displayYears.map((y) => {
                 const active = y.id === yearId;
@@ -166,8 +166,8 @@ const WinnersPage = () => {
                     onClick={() => setYearId(y.id)}
                     className={
                       active
-                        ? "px-10 py-3 rounded-full font-sans text-base font-bold bg-gold text-navy shadow-[0_0_24px_hsl(var(--gold)/0.35)] transition-transform active:scale-95"
-                        : "px-8 py-2.5 rounded-full font-sans text-base font-semibold text-background/50 hover:text-background transition-colors"
+                        ? "px-14 py-4 rounded-full font-sans text-lg font-bold bg-gold text-navy shadow-[0_0_32px_hsl(var(--gold)/0.45)] transition-transform active:scale-95"
+                        : "px-12 py-3.5 rounded-full font-sans text-lg font-semibold text-background/50 hover:text-background transition-colors"
                     }
                   >
                     {y.year}
