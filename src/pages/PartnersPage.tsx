@@ -146,7 +146,7 @@ import { useSponsors, usePartners } from "@/lib/queries";
         {/* Be part of the change CTA */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="font-numeral text-4xl md:text-6xl uppercase tracking-tight text-foreground">
+            <h2 className="font-sans font-extrabold text-4xl md:text-6xl uppercase tracking-tight text-foreground">
               Be part of the <span className="text-gold">change.</span>
             </h2>
             <div className="flex flex-wrap gap-4 justify-center mt-10">
