@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {
   Trophy, Lightbulb, Medal, HeartHandshake, GraduationCap, Palette,
-  Feather, Award, Wrench, Users, Mountain, Megaphone, Heart,
+  Feather, Award, Wrench, Users, Mountain, Megaphone, Heart, ChevronDown,
   type LucideIcon,
 } from "lucide-react";
 import { useYears, useResultsByYear } from "@/lib/queries";
