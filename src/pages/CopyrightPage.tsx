@@ -5,7 +5,7 @@
        <section className="py-16 hero-gradient">
          <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto text-center">
-             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+             <h1 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
                Copyright and <span className="text-gold-gradient">Disclaimer</span>
              </h1>
              <p className="text-muted-foreground">
@@ -21,7 +21,7 @@
            <div className="max-w-3xl mx-auto prose prose-invert">
               <div className="glass-card rounded-2xl p-8 border-gold-glow space-y-8">
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Copyright</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Copyright</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     © Multicultural Youth Awards, {new Date().getFullYear()}. All rights reserved.
                   </p>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Disclaimer</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Disclaimer</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     The information on this website is provided for general information purposes only. While
                     we aim to keep all content accurate and up to date, we make no representations or
@@ -49,7 +49,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">External links</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">External links</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     This website may contain links to external websites that are not operated by the
                     Multicultural Youth Awards. We have no control over the content or availability of those
@@ -59,7 +59,7 @@
                 </div>
 
                 <div>
-                  <h2 className="font-display text-xl font-bold text-gold mb-4">Contact</h2>
+                  <h2 className="font-sans text-xl font-bold text-gold mb-4">Contact</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     If you have any questions about this Copyright &amp; Disclaimer notice, please contact us
                     at{" "}

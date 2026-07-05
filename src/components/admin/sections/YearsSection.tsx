@@ -61,7 +61,7 @@ const YearsSection = ({ onSelectYear }: { onSelectYear: (id: string) => void }) 
       <div className="space-y-3">
         {years.map((y) => (
           <div key={y.id} className="glass-card rounded-xl p-4 border-gold-glow flex flex-wrap items-center gap-3">
-            <span className="font-display text-xl font-bold text-foreground">{y.year}</span>
+            <span className="font-sans text-xl font-bold text-foreground">{y.year}</span>
             {y.is_current && <span className="text-xs bg-gold/20 text-gold px-2 py-1 rounded">Current</span>}
             <div className="flex-1" />
             <select

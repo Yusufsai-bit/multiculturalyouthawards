@@ -17,7 +17,7 @@ const SectionHeading = ({ eyebrow, title, align = "center", className = "" }: Se
           {eyebrow}
         </span>
       )}
-      <h2 className="font-numeral uppercase text-3xl md:text-5xl leading-[0.95] text-foreground">
+      <h2 className="font-sans font-extrabold uppercase tracking-tight text-3xl md:text-5xl leading-[0.95] text-foreground">
         {title}
       </h2>
     </div>
