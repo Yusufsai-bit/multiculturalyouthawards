@@ -58,9 +58,9 @@ const HomePage = () => {
           <div className="text-center lg:text-left px-4 pt-14 lg:pt-0">
             <CountUp
               end={13}
-              className="block font-sans font-extrabold leading-none text-gold text-[130px] md:text-[210px] number-3d"
+              className="block font-numeral font-extrabold leading-none text-gold text-[130px] md:text-[210px] number-3d"
             />
-            <p className="font-sans font-extrabold uppercase tracking-wide text-background text-5xl md:text-7xl -mt-4 md:-mt-6">
+            <p className="font-display font-extrabold uppercase tracking-wide text-background text-5xl md:text-7xl -mt-4 md:-mt-6">
               Awards
             </p>
           </div>
