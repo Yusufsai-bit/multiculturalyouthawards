@@ -97,13 +97,10 @@ const HomePage = () => {
       {/* Get involved */}
       <section className="bg-gold py-20 md:py-28">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display font-extrabold uppercase tracking-tight text-navy text-4xl md:text-6xl leading-[0.95]">
+          <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-5xl md:text-7xl leading-[0.95]">
             Get Involved
           </h2>
-          <p className="mt-4 text-navy/80 text-lg md:text-xl font-semibold">
-            Be part of the <span className="italic">change</span>
-          </p>
-          <p className="mx-auto mt-8 mb-14 max-w-2xl text-center text-base md:text-lg leading-relaxed font-semibold text-navy/90">
+          <p className="mx-auto mt-10 mb-14 max-w-2xl text-center text-base md:text-lg leading-relaxed font-semibold text-navy/90">
             We thank our sponsors and partners for their generous support. Learn more about how you
             can support the Multicultural Youth Awards.
           </p>
