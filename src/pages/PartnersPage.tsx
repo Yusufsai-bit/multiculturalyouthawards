@@ -121,15 +121,37 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
             {/* Brand video */}
             <div className="mt-12 max-w-3xl mx-auto">
               <div className="relative aspect-video overflow-hidden bg-navy-light/60">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster={videoPoster.url}
-                  className="w-full h-full object-cover"
-                >
-                  <source src={videoAsset.url} type="video/mp4" />
-                </video>
+                {videoPlaying ? (
+                  <video
+                    autoPlay
+                    controls
+                    playsInline
+                    poster={videoPoster.url}
+                    className="w-full h-full object-cover"
+                  >
+                    <source src={videoAsset.url} type="video/mp4" />
+                  </video>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setVideoPlaying(true)}
+                    aria-label="Play the Multicultural Youth Awards video"
+                    className="group absolute inset-0 flex flex-col items-center justify-center"
+                  >
+                    <div className="relative flex flex-col items-center">
+                      <div className="relative w-28 h-28 flex items-center justify-center">
+                        <span className="absolute inset-0 rounded-full border border-gold/70" />
+                        <span className="font-sans text-5xl text-gold">M</span>
+                      </div>
+                      <div className="-mt-6 w-16 h-16 rounded-full border border-background/60 bg-navy/40 flex items-center justify-center transition-transform group-hover:scale-105">
+                        <span className="ml-1 border-y-[8px] border-y-transparent border-l-[14px] border-l-background/80" />
+                      </div>
+                      <p className="mt-3 font-sans tracking-[0.25em] text-background/80 text-sm uppercase text-center leading-relaxed">
+                        Multicultural<br />Youth Awards
+                      </p>
+                    </div>
+                  </button>
+                )}
               </div>
             </div>
 
