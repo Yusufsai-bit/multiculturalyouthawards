@@ -141,15 +141,22 @@ const WinnersPage = () => {
         numeral={selectedYear ? String(selectedYear.year) : undefined}
       >
         {years.length > 0 && (
-          <select
-            value={yearId}
-            onChange={(e) => setYearId(e.target.value)}
-            className="bg-background border border-border rounded-lg px-4 py-2 text-foreground"
-          >
-            {years.map((y) => (
-              <option key={y.id} value={y.id}>{y.year}</option>
-            ))}
-          </select>
+          <div className="relative inline-block">
+            <span className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-gold text-[10px] tracking-[0.3em] uppercase font-semibold">
+              Year
+            </span>
+            <select
+              value={yearId}
+              onChange={(e) => setYearId(e.target.value)}
+              aria-label="Select awards year"
+              className="appearance-none cursor-pointer bg-transparent border-2 border-gold/60 hover:border-gold rounded-full pl-[4.5rem] pr-12 py-3 font-sans font-extrabold text-lg text-background uppercase tracking-wide transition-colors focus:outline-none focus:ring-2 focus:ring-gold/40 [&>option]:bg-navy [&>option]:text-background"
+            >
+              {years.map((y) => (
+                <option key={y.id} value={y.id}>{y.year}</option>
+              ))}
+            </select>
+            <ChevronDown className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gold" />
+          </div>
         )}
       </PageHero>
 
