@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Award, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Award } from "lucide-react";
 import { siteContent, getNominationButtonText } from "@/lib/siteContent";
 import { useSiteStatus } from "@/hooks/useSiteStatus";
 import SectionHeading from "@/components/SectionHeading";
@@ -44,36 +44,53 @@ const HomePage = () => {
       </section>
 
       {/* About snapshot */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-            <div className="order-2 md:order-1">
-              <div className="font-sans font-extrabold text-gold text-7xl mb-2">13</div>
-              <p className="uppercase tracking-[0.2em] text-sm text-muted-foreground mb-8">Awards</p>
-              <p className="text-foreground text-lg leading-relaxed mb-8">
-                <strong>A national event</strong> devoted to{" "}
-                <strong>showcasing the outstanding achievements of multicultural youth</strong>.
-                Steering away from current traditional awards, this initiative offers a unique and
-                focused <strong>platform for recognition, emphasising the diverse talents,
-                resilience, and positive impact/contributions of young individuals</strong> from
-                multicultural backgrounds across Victoria and the nation.
-              </p>
-              <Button variant="goldOutline" size="lg" asChild>
-                <Link to="/about">
-                  Learn more
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
+      <section className="bg-navy border-b-8 border-gold">
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,220px)_auto_minmax(0,1fr)_minmax(0,240px)]">
+          {/* Left image (hugs edge) */}
+          <img
+            src="https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/Untitled-3.jpg"
+            alt="Guests seated at the Multicultural Youth Awards ceremony"
+            loading="lazy"
+            className="hidden lg:block w-full h-auto max-h-[520px] object-cover"
+          />
+
+          {/* Big number */}
+          <div className="text-center px-4 pt-14 lg:pt-0">
+            <div className="font-sans font-extrabold leading-none text-gold text-[120px] md:text-[180px]">
+              13
             </div>
-            <div className="order-1 md:order-2">
-              <img
-                src="https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/Youth-Awards-7-10-24-Robert-.jpg"
-                alt="Multicultural Youth Awards ceremony"
-                loading="lazy"
-                className="w-full h-full object-cover rounded-sm"
-              />
-            </div>
+            <p className="font-sans font-extrabold uppercase tracking-wide text-background text-4xl md:text-6xl -mt-2">
+              Awards
+            </p>
           </div>
+
+          {/* Text + button */}
+          <div className="px-6 py-14 lg:py-16 max-w-xl">
+            <p className="text-background/85 text-base md:text-lg leading-relaxed mb-8">
+              <strong className="text-background">A national event</strong> devoted to{" "}
+              <strong className="text-background">showcasing the outstanding achievements of
+              multicultural youth</strong>. Steering away from current traditional awards, this
+              initiative offers a unique and focused{" "}
+              <strong className="text-background">platform for recognition, emphasising the diverse
+              talents, resilience, and positive impact/contributions of young individuals</strong>{" "}
+              from multicultural backgrounds across Victoria and the nation.
+            </p>
+            <Button
+              size="xl"
+              className="rounded-full bg-background text-navy hover:bg-background/90 uppercase tracking-[0.18em] text-xs font-bold"
+              asChild
+            >
+              <Link to="/about">Learn more</Link>
+            </Button>
+          </div>
+
+          {/* Right image */}
+          <img
+            src="https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/Youth-Awards-7-10-24-Robert-.jpg"
+            alt="Presenters at the podium during the Multicultural Youth Awards"
+            loading="lazy"
+            className="hidden lg:block w-full h-auto max-h-[520px] object-cover justify-self-end"
+          />
         </div>
       </section>
 
