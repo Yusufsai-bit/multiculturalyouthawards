@@ -56,11 +56,12 @@ const HomePage = () => {
           />
 
           {/* Big number */}
-          <div className="text-center px-4 pt-14 lg:pt-0">
-            <div className="font-sans font-extrabold leading-none text-gold text-[120px] md:text-[180px]">
-              13
-            </div>
-            <p className="font-sans font-extrabold uppercase tracking-wide text-background text-4xl md:text-6xl -mt-2">
+          <div className="text-center lg:text-left px-4 pt-14 lg:pt-0">
+            <CountUp
+              end={13}
+              className="block font-sans font-extrabold leading-none text-gold text-[130px] md:text-[210px] number-3d"
+            />
+            <p className="font-sans font-extrabold uppercase tracking-wide text-background text-5xl md:text-7xl -mt-4 md:-mt-6">
               Awards
             </p>
           </div>
