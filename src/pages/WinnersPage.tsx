@@ -176,8 +176,8 @@ const WinnersPage = () => {
             <div className="space-y-24">
               {categories.map((category) => (
                 <article key={category.id}>
-                  {/* Category header — booklet style */}
-                  <div className="flex items-start gap-4 mb-4">
+                  {/* Category header — booklet style (icon + big title, matching printed guide) */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-6 md:gap-8 mb-6">
                     {(() => {
                       const img = categoryImage(category.name);
                       if (img) {
@@ -186,19 +186,19 @@ const WinnersPage = () => {
                             src={img}
                             alt=""
                             aria-hidden="true"
-                            className="w-14 h-14 md:w-16 md:h-16 object-contain shrink-0 mt-1"
+                            className="w-32 h-32 md:w-40 md:h-40 object-contain shrink-0"
                           />
                         );
                       }
                       const Icon = categoryIcon(category.name);
-                      return <Icon className="w-12 h-12 md:w-14 md:h-14 text-gold shrink-0 mt-1" strokeWidth={1.5} />;
+                      return <Icon className="w-28 h-28 md:w-36 md:h-36 text-gold shrink-0" strokeWidth={1.25} />;
                     })()}
-                    <h2 className="font-display text-3xl md:text-4xl font-bold text-gold uppercase leading-tight">
+                    <h2 className="font-display text-4xl md:text-6xl font-extrabold text-gold uppercase leading-[0.95] tracking-tight">
                       {category.name}
                     </h2>
                   </div>
                   {category.description && (
-                    <p className="text-navy leading-relaxed mb-10 max-w-2xl">
+                    <p className="text-navy text-lg md:text-xl leading-relaxed mb-12 max-w-3xl">
                       {category.description}
                     </p>
                   )}
