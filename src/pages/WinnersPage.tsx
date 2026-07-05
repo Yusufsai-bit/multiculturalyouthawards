@@ -146,17 +146,17 @@ const WinnersPage = () => {
         subtitle="Meet the exceptional young people recognised at the Multicultural Youth Awards"
         numeral={selectedYear ? String(selectedYear.year) : undefined}
       >
-        {years.length > 0 && (
-          <div className="flex flex-col items-center gap-4">
-            <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-gold">
+        {displayYears.length > 0 && (
+          <div className="flex flex-col items-center gap-5">
+            <span className="text-sm font-semibold tracking-[0.3em] uppercase text-gold">
               Select Year
             </span>
             <div
               role="group"
               aria-label="Select awards year"
-              className="flex items-center gap-1 p-1.5 rounded-full border border-background/10 bg-background/5 backdrop-blur-xl shadow-2xl"
+              className="flex items-center gap-1.5 p-2 rounded-full border border-background/10 bg-background/5 backdrop-blur-xl shadow-2xl"
             >
-              {years.map((y) => {
+              {displayYears.map((y) => {
                 const active = y.id === yearId;
                 return (
                   <button
@@ -166,8 +166,8 @@ const WinnersPage = () => {
                     onClick={() => setYearId(y.id)}
                     className={
                       active
-                        ? "px-8 py-2.5 rounded-full font-sans text-sm font-bold bg-gold text-navy shadow-[0_0_20px_hsl(var(--gold)/0.3)] transition-transform active:scale-95"
-                        : "px-6 py-2 rounded-full font-sans text-sm font-semibold text-background/50 hover:text-background transition-colors"
+                        ? "px-10 py-3 rounded-full font-sans text-base font-bold bg-gold text-navy shadow-[0_0_24px_hsl(var(--gold)/0.35)] transition-transform active:scale-95"
+                        : "px-8 py-2.5 rounded-full font-sans text-base font-semibold text-background/50 hover:text-background transition-colors"
                     }
                   >
                     {y.year}
