@@ -199,7 +199,7 @@ const WinnersPage = () => {
                       // printed booklet ("YOUNG LEADER OF THE YEAR" + "AWARD").
                       const base = category.name.replace(/\s*award\s*$/i, "").trim();
                       return (
-                        <h2 className="font-display text-gold uppercase leading-[0.9] tracking-tight">
+                        <h2 className="font-sans text-gold uppercase leading-[0.9] tracking-tight">
                           <span className="block text-4xl md:text-6xl font-extrabold">
                             {base}
                           </span>
