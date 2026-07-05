@@ -32,7 +32,7 @@ const HomePage = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center bg-navy/40 backdrop-blur-[2px] px-6 py-14 md:px-12 md:py-16">
-            <h1 className="font-sans text-background text-3xl md:text-5xl leading-tight mb-10">
+            <h1 className="font-display text-background text-3xl md:text-5xl leading-tight mb-10">
               Celebrating the incredible talents &amp; leadership of Australia&rsquo;s
               multicultural youth
             </h1>
@@ -58,9 +58,9 @@ const HomePage = () => {
           <div className="text-center lg:text-left px-4 pt-14 lg:pt-0">
             <CountUp
               end={13}
-              className="block font-sans font-extrabold leading-none text-gold text-[130px] md:text-[210px] number-3d"
+              className="block font-numeral font-extrabold leading-none text-gold text-[130px] md:text-[210px] number-3d"
             />
-            <p className="font-sans font-extrabold uppercase tracking-wide text-background text-5xl md:text-7xl -mt-4 md:-mt-6">
+            <p className="font-display font-extrabold uppercase tracking-wide text-background text-5xl md:text-7xl -mt-4 md:-mt-6">
               Awards
             </p>
           </div>
@@ -98,7 +98,7 @@ const HomePage = () => {
       {/* Get involved */}
       <section className="bg-gold py-20 md:py-28">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-4xl md:text-6xl leading-[0.95]">
+          <h2 className="font-display font-extrabold uppercase tracking-tight text-navy text-4xl md:text-6xl leading-[0.95]">
             Get Involved
           </h2>
           <p className="mt-4 text-navy/80 text-lg md:text-xl font-semibold">

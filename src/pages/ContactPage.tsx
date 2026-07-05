@@ -47,14 +47,14 @@ const ContactPage = () => {
       {/* Navy contact band */}
       <section className="bg-navy pt-40 pb-20">
         <div className="container mx-auto px-4">
-          <h1 className="font-sans font-extrabold uppercase tracking-tight text-background text-5xl md:text-7xl text-center mb-14">
+          <h1 className="font-display font-extrabold uppercase tracking-tight text-background text-5xl md:text-7xl text-center mb-14">
             Contact Us
           </h1>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Let's talk */}
             <div className="border border-background/25 p-8 md:p-10">
-              <h2 className="font-sans font-semibold text-background text-3xl mb-8">Let&rsquo;s talk</h2>
+              <h2 className="font-display font-semibold text-background text-3xl mb-8">Let&rsquo;s talk</h2>
               <div className="space-y-5">
                 <div className="flex items-start gap-4 text-background/85">
                   <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
@@ -71,7 +71,7 @@ const ContactPage = () => {
 
             {/* Get social */}
             <div className="border border-background/25 p-8 md:p-10">
-              <h2 className="font-sans font-semibold text-background text-3xl mb-8">Get social</h2>
+              <h2 className="font-display font-semibold text-background text-3xl mb-8">Get social</h2>
               <div className="flex items-center gap-6">
                 {socialLinks.map((social) => (
                   <a
@@ -97,7 +97,7 @@ const ContactPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto items-start">
             <div>
-              <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-5xl md:text-6xl mb-6">Got Questions?</h2>
+              <h2 className="font-display font-extrabold uppercase tracking-tight text-navy text-5xl md:text-6xl mb-6">Got Questions?</h2>
               <p className="text-muted-foreground text-lg max-w-md">
                 Send us a message! We&rsquo;re here to help and will get back to you as soon as possible.
               </p>

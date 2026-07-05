@@ -4,49 +4,7 @@
 
 /* Multicultural Youth Awards - Premium Award Ceremony Design System */
 
-/* TT Commons Pro (self-hosted, licensed) */
-@font-face {
-  font-family: 'TT Commons Pro';
-  src: url('/__l5e/assets-v1/a3560a0b-d6e2-4bd4-b3f5-028de07797e9/tt_commons_pro_regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'TT Commons Pro';
-  src: url('/__l5e/assets-v1/30874cc2-df32-4213-af65-3227fb912768/tt_commons_pro_italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'TT Commons Pro';
-  src: url('/__l5e/assets-v1/b6dd806c-c77c-4bc9-a902-ca29e5a3a628/tt_commons_pro_medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'TT Commons Pro';
-  src: url('/__l5e/assets-v1/41d35871-21a0-4db4-bd48-29c1681c1010/tt_commons_pro_demibold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'TT Commons Pro';
-  src: url('/__l5e/assets-v1/518d3072-802e-46c0-994f-b61a42c90014/tt_commons_pro_bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'TT Commons Pro';
-  src: url('/__l5e/assets-v1/fcd6a930-9fb6-42fe-9966-e03661c1b98a/tt_commons_pro_extrabold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
+/* Google Fonts loaded in index.html: Inter (body), Playfair Display (headings), Anton (numerals) */
 
 @layer base {
   :root {
@@ -105,11 +63,11 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Ovo', serif;
+    font-family: 'Playfair Display', serif;
   }
 }
 

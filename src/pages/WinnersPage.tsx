@@ -183,7 +183,7 @@ const WinnersPage = () => {
             {noResults && (
               <div className="text-center py-12">
                 <Trophy className="w-10 h-10 text-gold mx-auto mb-5" />
-                <h2 className="font-sans font-extrabold uppercase text-2xl text-foreground mb-3">
+                <h2 className="font-display font-extrabold uppercase text-2xl text-foreground mb-3">
                   Winners {selectedYear ? selectedYear.year : ""} to be announced
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -219,7 +219,7 @@ const WinnersPage = () => {
                       // printed booklet ("YOUNG LEADER OF THE YEAR" + "AWARD").
                       const base = category.name.replace(/\s*award\s*$/i, "").trim();
                       return (
-                        <h2 className="font-sans text-gold uppercase leading-[0.9] tracking-tight">
+                        <h2 className="font-display text-gold uppercase leading-[0.9] tracking-tight">
                           <span className="block text-4xl md:text-6xl font-extrabold">
                             {base}
                           </span>

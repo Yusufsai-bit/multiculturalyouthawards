@@ -17,7 +17,7 @@ const Partners = () => {
           <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
             Our Partners
           </span>
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
             Proudly Supported By
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

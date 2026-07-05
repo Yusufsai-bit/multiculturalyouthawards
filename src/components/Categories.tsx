@@ -38,7 +38,7 @@ const Categories = () => {
           <span className="text-gold text-sm font-semibold tracking-wider uppercase mb-4 block">
             Award Categories
           </span>
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
             13 Categories of{" "}
             <span className="text-gold-gradient">Excellence</span>
           </h2>
