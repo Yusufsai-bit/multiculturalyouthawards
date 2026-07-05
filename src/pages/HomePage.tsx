@@ -74,26 +74,26 @@ const HomePage = () => {
       </section>
 
       {/* Get involved */}
-      <section className="py-20 md:py-28 bg-secondary/40">
+      <section className="bg-background py-20 md:py-28">
         <div className="container mx-auto px-4">
           <SectionHeading
             eyebrow="Get Involved"
             title={<>Be part of the <span className="italic text-gold">change</span></>}
-            className="mb-4"
+            className="mb-5"
           />
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+          <p className="mx-auto mb-14 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
             We thank our sponsors and partners for their generous support. Learn more about how you
             can support the Multicultural Youth Awards.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <Button variant="gold" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold min-w-[200px]" asChild>
+          <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
+            <Button variant="gold" size="xl" className="min-w-[250px] uppercase tracking-[0.18em] text-xs font-bold" asChild>
               <a href={SPONSOR_FORM_URL} target="_blank" rel="noopener noreferrer">Sponsor</a>
             </Button>
-            <Button variant="goldOutline" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold min-w-[200px]" asChild>
+            <Button variant="goldOutline" size="xl" className="min-w-[250px] uppercase tracking-[0.18em] text-xs font-bold" asChild>
               <Link to="/nominations">Nomination</Link>
             </Button>
-            <Button variant="goldOutline" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold min-w-[200px]" asChild>
+            <Button variant="goldOutline" size="xl" className="min-w-[250px] uppercase tracking-[0.18em] text-xs font-bold" asChild>
               <Link to="/contact">Volunteer</Link>
             </Button>
           </div>
