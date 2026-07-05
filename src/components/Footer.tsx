@@ -51,7 +51,7 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
       {/* Top: Logo + section headers */}
       <div className="container mx-auto px-4 pt-12">
         <Link to="/" className="inline-flex items-center mb-10">
-          <img src={myaLogo.url} alt="Multicultural Youth Awards" className="h-16 w-auto" />
+          <img src={myaLogo.url} alt="Multicultural Youth Awards" className="h-20 md:h-24 w-auto" />
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8">
