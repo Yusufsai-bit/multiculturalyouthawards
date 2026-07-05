@@ -47,65 +47,53 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
     setSubmitted(true);
    };
  
-  const PartnerGrid = ({ partners, title }: { partners: { name: string; logo_url: string | null; url: string | null }[]; title: string }) => (
-    partners.length === 0 ? null : (
-     <div className="mb-12">
-       <h3 className="font-display text-xl font-semibold text-foreground mb-6 text-center">{title}</h3>
-     <div className="flex flex-wrap justify-center gap-8">
-         {partners.map((partner, index) => (
-         partner.url ? (
-           <a
-             key={index}
-             href={partner.url}
-             target="_blank"
-             rel="noopener noreferrer"
-             className="group flex flex-col items-center"
-           >
-             <div className="w-40 h-24 rounded-xl bg-white flex items-center justify-center border border-border group-hover:border-gold/50 transition-all group-hover:shadow-lg group-hover:shadow-gold/10">
-              {partner.logo_url ? (
-                 <img 
-                  src={partner.logo_url} 
-                   alt={partner.name} 
-                   className="max-w-[80%] max-h-[70%] object-contain" 
-                 />
-               ) : (
-                 <span className="text-gold font-sans text-3xl font-bold">
-                   {partner.name.charAt(0)}
-                 </span>
-               )}
-             </div>
-             <span className="text-muted-foreground text-xs mt-2 text-center max-w-[140px] group-hover:text-gold transition-colors">
-               {partner.name}
-             </span>
-           </a>
-         ) : (
-           <div
-             key={index}
-             className="flex flex-col items-center"
-           >
-             <div className="w-40 h-24 rounded-xl bg-white flex items-center justify-center border border-border">
-              {partner.logo_url ? (
-                 <img 
-                  src={partner.logo_url} 
-                   alt={partner.name} 
-                   className="max-w-[80%] max-h-[70%] object-contain" 
-                 />
-               ) : (
-                 <span className="text-gold font-sans text-3xl font-bold">
-                   {partner.name.charAt(0)}
-                 </span>
-               )}
-             </div>
-             <span className="text-muted-foreground text-xs mt-2 text-center max-w-[140px]">
-               {partner.name}
-             </span>
-           </div>
-         )
-         ))}
-       </div>
-     </div>
-    )
-   );
+  const partnerCards = [
+    ...majorPartners.map((p) => ({ ...p, label: "Major Partners" })),
+    ...sponsors.map((p) => ({ name: p.name, logo_url: p.logo_url, url: p.url, label: "Sponsors" })),
+    ...supporters.map((p) => ({ ...p, label: "Supporters" })),
+  ];
+
+  const PartnerCard = ({
+    partner,
+  }: {
+    partner: { name: string; logo_url: string | null; url: string | null; label: string };
+  }) => {
+    const inner = (
+      <>
+        <div className="flex h-28 w-28 shrink-0 items-center justify-center">
+          {partner.logo_url ? (
+            <img
+              src={partner.logo_url}
+              alt={partner.name}
+              className="max-h-full max-w-full object-contain"
+            />
+          ) : (
+            <span className="font-sans text-3xl font-bold text-gold">{partner.name.charAt(0)}</span>
+          )}
+        </div>
+        <div>
+          <h3 className="font-sans text-xl font-bold uppercase leading-tight text-navy md:text-2xl">
+            {partner.name}
+          </h3>
+          <p className="mt-2 font-sans text-sm font-bold text-navy">{partner.label}</p>
+        </div>
+      </>
+    );
+    const base =
+      "flex items-center gap-6 bg-secondary/40 p-6 md:p-8 transition-colors";
+    return partner.url ? (
+      <a
+        href={partner.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${base} hover:bg-secondary/70`}
+      >
+        {inner}
+      </a>
+    ) : (
+      <div className={base}>{inner}</div>
+    );
+  };
  
     return (
       <div className="min-h-screen bg-background">
@@ -146,51 +134,45 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
           </div>
         </section>
 
-        {/* Get involved — matches the home page */}
-        <section className="bg-gold py-20 md:py-28">
+        {/* Be part of the change */}
+        <section className="bg-background py-20 md:py-28">
           <div className="container mx-auto px-4 text-center">
             <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-5xl md:text-7xl leading-[0.95]">
-              Get Involved
+              Be part of the <span className="text-gold">change.</span>
             </h2>
-            <p className="mx-auto mt-10 mb-14 max-w-2xl text-center text-base md:text-lg leading-relaxed font-semibold text-navy/90">
-              We thank our sponsors and partners for their generous support. Learn more about how you
-              can support the Multicultural Youth Awards.
-            </p>
 
-            <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
+            <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
               <Button
                 size="xl"
-                className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
+                className="min-w-[220px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
                 asChild
               >
                 <a href={SPONSOR_FORM_URL} target="_blank" rel="noopener noreferrer">Sponsor</a>
               </Button>
               <Button
                 size="xl"
-                className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
+                className="min-w-[220px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
                 asChild
               >
-                <Link to="/nominations">Nomination</Link>
-              </Button>
-              <Button
-                size="xl"
-                className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
-                asChild
-              >
-                <Link to="/contact">Volunteer</Link>
+                <Link to="/contact">Contact us</Link>
               </Button>
             </div>
           </div>
         </section>
 
         {/* Partner Logos */}
-       <section className="py-24 bg-background">
+       <section className="pb-24 bg-background">
          <div className="container mx-auto px-4">
-          <PartnerGrid partners={majorPartners} title="2025 Partners" />
-          <div className="section-divider my-12" />
-          <PartnerGrid partners={sponsors} title="MYA Sponsors" />
-          <div className="section-divider my-12" />
-          <PartnerGrid partners={supporters} title="MYA Supporters" />
+           <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">2025 Partners</h2>
+           {partnerCards.length === 0 ? (
+             <p className="text-muted-foreground">Our 2026 partners will be announced soon.</p>
+           ) : (
+             <div className="grid gap-6 md:grid-cols-2">
+               {partnerCards.map((partner, index) => (
+                 <PartnerCard key={index} partner={partner} />
+               ))}
+             </div>
+           )}
          </div>
        </section>
  
