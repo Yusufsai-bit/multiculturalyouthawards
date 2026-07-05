@@ -20,6 +20,9 @@ import iconVocational from "@/assets/category-icons/vocational-skills.png.asset.
 import iconInfluencer from "@/assets/category-icons/influencer-people.png.asset.json";
 import iconLeadership from "@/assets/category-icons/leadership-steps.png.asset.json";
 import iconVolunteer from "@/assets/category-icons/volunteer-hands.png.asset.json";
+import iconInspirational from "@/assets/category-icons/inspirational-perseverance.png.asset.json";
+import iconYoungWoman from "@/assets/category-icons/young-woman-voice.png.asset.json";
+import iconMinister from "@/assets/category-icons/minister-laurel.png.asset.json";
 
 /** Custom uploaded icon per category, matched on keywords. Returns the image
  *  URL when one has been supplied, otherwise null (falls back to a lucide icon). */
@@ -33,6 +36,9 @@ const categoryImage = (name: string): string | null => {
   if (n.includes("aboriginal") || n.includes("indigenous")) return iconAboriginal.url;
   if (n.includes("apprentice") || n.includes("vocational")) return iconVocational.url;
   if (n.includes("influencer")) return iconInfluencer.url;
+  if (n.includes("inspirational")) return iconInspirational.url;
+  if (n.includes("woman")) return iconYoungWoman.url;
+  if (n.includes("minister")) return iconMinister.url;
   if (n.includes("leader")) return iconLeadership.url;
   if (n.includes("volunteer")) return iconVolunteer.url;
   return null;
