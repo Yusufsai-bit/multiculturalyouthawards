@@ -19,7 +19,7 @@ const AdminGuard = ({ children }: { children: ReactNode }) => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
         <div className="max-w-md text-center">
-          <h1 className="font-sans text-2xl font-bold text-foreground mb-3">Access denied</h1>
+          <h1 className="font-display text-2xl font-bold text-foreground mb-3">Access denied</h1>
           <p className="text-muted-foreground">
             Your account does not have administrator access. Please contact an existing administrator.
           </p>
