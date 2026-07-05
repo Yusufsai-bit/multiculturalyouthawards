@@ -163,7 +163,7 @@ const WinnersPage = () => {
             {noResults && (
               <div className="text-center py-12">
                 <Trophy className="w-10 h-10 text-gold mx-auto mb-5" />
-                <h2 className="font-display text-2xl text-foreground mb-3">
+                <h2 className="font-sans font-extrabold uppercase text-2xl text-foreground mb-3">
                   Winners {selectedYear ? selectedYear.year : ""} to be announced
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -220,7 +220,7 @@ const WinnersPage = () => {
                   <div className="grid md:grid-cols-2 gap-10 md:gap-12">
                     {/* Winner column */}
                     <div>
-                      <p className="font-display font-bold text-navy uppercase tracking-[0.15em] text-lg mb-4">
+                      <p className="font-sans font-bold text-navy uppercase tracking-[0.15em] text-lg mb-4">
                         Winner
                       </p>
                       {category.winners.map((winner) => (
@@ -247,7 +247,7 @@ const WinnersPage = () => {
                     {/* Finalist column */}
                     {category.finalists.length > 0 && (
                       <div>
-                        <p className="font-display font-bold text-navy uppercase tracking-[0.15em] text-lg mb-4">
+                        <p className="font-sans font-bold text-navy uppercase tracking-[0.15em] text-lg mb-4">
                           {category.finalists.length === 1 ? "Finalist" : "Finalists"}
                         </p>
                         {category.finalists.map((finalist) => (
