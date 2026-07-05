@@ -95,7 +95,7 @@ const WinnersPage = () => {
   useEffect(() => {
     if (!yearId && displayYears.length) {
       const defaultYear =
-        displayYears.find((y) => y.year === 2024) ?? displayYears[0];
+        displayYears.find((y) => y.year === 2025) ?? displayYears[0];
       setYearId(defaultYear.id);
     }
   }, [displayYears, yearId]);
