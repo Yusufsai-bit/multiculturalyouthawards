@@ -51,6 +51,7 @@
    
    // 2025 Winners
    winners2025: Record<string, Winner>;
+   winners2024: Record<string, Winner>;
    
    // Partners
    partners2026: Partner[];
@@ -297,6 +298,78 @@
       finalists: [],
     },
   },
+
+  // ============================================
+  // 2024 WINNERS (inaugural year)
+  // ============================================
+  winners2024: {
+    'Young Influencer of the Year': {
+      name: 'Atena Kashani',
+      bio: 'Atena Kashani, an Iranian refugee, is a dedicated advocate for refugee rights with extensive experience in activism and community engagement. Since age 15, she has addressed issues affecting refugees and asylum seekers, using her personal journey to inform her advocacy. Atena is establishing "Refugee Hope Assistant", a nonprofit for migrants, and serves as an ambassador for the Refugee Council of Australia through the "Refugee Stories for Change" program. As a Youth Advisor for the Brotherhood of St Laurence, she promotes youth development initiatives, ensuring their voices are heard.',
+      finalists: [{ name: 'Nhat Minh Hoang' }],
+    },
+    'Inspirational Young Person of the Year': {
+      name: 'Lutfiye Kavci',
+      bio: 'Lutfiye Kavci is a courageous survivor of domestic violence who channels her trauma into advocacy. After suffering severe injuries, she became a powerful voice against domestic abuse. Lutfiye has participated in events like "Th!s is me" in Melbourne, sharing her story and serving as a keynote speaker. She advocates for housing support for victims, attends rallies to raise awareness, and uses articles and podcasts to educate and empower those unable to speak out.',
+      finalists: [{ name: 'Fatima Mursal Sadat' }],
+    },
+    'Volunteer of the Year': {
+      name: 'Mohammad Azeem',
+      bio: 'Mohammad Azeem Ibrahimi, a 21-year-old who arrived in Australia from Afghanistan in 2021, is pursuing a diploma in Community Services at RMIT University. With experience in youth advocacy and community engagement, he serves as a Youth Advisor with the Brotherhood of St Laurence, focusing on public speaking and content creation. His bilingual skills in English and Persian/Dari enhance his ability to support young people in achieving their potential.',
+      finalists: [{ name: 'William Yin' }],
+    },
+    'Young Leader of the Year': {
+      name: 'Daisy Wu',
+      bio: 'Daisy Wu, a multi-award-winning mentor, author, and TEDx speaker, empowers non-native speakers and CALD migrants to connect and succeed by leveraging their unique strengths. Her work with Multilingual Connectors earned her recognition as one of Victoria\u2019s Top 100 Asia Innovation Business Leaders in 2024. As the youngest recipient of the Australian Multicultural Women Association\u2019s Women in Leadership Award, Daisy\u2019s book won the 2023 ABLE Golden Book Awards for Best in Education.',
+      finalists: [{ name: 'Mamuch Chuol' }, { name: 'Tony Luo' }],
+    },
+    'Young Woman of the Year': {
+      name: 'Sarah Hanoona',
+      bio: 'Sarah Hanoona, a 21-year-old Assyrian Iraqi woman, advocates for migrant and refugee youth in Australia. As a Youth Development Officer at Arabic Welfare, she mentors newcomers and designs programs to help them adapt. Fluent in four languages, Sarah has received the 2023 Young Achiever Award and was named Hume Young Leader of the Year. She is currently studying a Bachelor of Psychological Science at La Trobe University.',
+      finalists: [{ name: 'Aayushi Khillan' }, { name: 'Daisy Truong' }],
+    },
+    'Young Apprentice or Vocational Award': {
+      name: 'Eizar Bee',
+      bio: 'Eizar joined Cultivating Community in 2023 through the "Hear Me See Me Employ Me" program, developing a strong growth mindset alongside horticulture skills. Despite employment barriers, Eizar demonstrates enthusiasm and confidence, often stepping outside their comfort zone. As a valued team member, they manage indoor plants and irrigation at the Burwood rooftop farm, showcasing resilience and determination as a member of the Deaf community while inspiring those around them.',
+      finalists: [{ name: 'Silva Wartan' }],
+    },
+    'Implementing Aboriginal Self Determination Award': {
+      name: 'Braydon Saunders',
+      bio: 'Braydon Saunders, a proud Gunditjmara man from Heywood, is dedicated to preserving his culture through Black Swan Cultural Tourism, offering immersive Gunditjmara heritage tours. At Parks Victoria, he promotes the Budj Bim Cultural Landscape. He co-created the Native Nations project, winning a New Zealand Tourism Award for Indigenous youth cultural exchange, and mentors the Indigenous dance group Koondoom Yarkeen while serving on the board of Winda-Mara Aboriginal Corporation.',
+      finalists: [{ name: 'Lashay Blurton' }],
+    },
+    'Academic Excellence Award': {
+      name: 'Arya Sadeghi',
+      bio: 'Arya, a 19-year-old Computer Science student at Monash University, moved to Australia with their family six years ago. Instilled with a strong work ethic by their father, Arya developed a passion for Computer Science at 14 and achieved top scores in their faculty among 7,000 students. Committed to excellence, they value humility and believe that every experience contributes to personal growth.',
+      finalists: [{ name: 'Ahmad Reza Amani' }],
+    },
+    'Outstanding Contribution to the Community Award': {
+      name: 'Towheed Altahir',
+      bio: 'Towheed, a 22-year-old Sudanese Muslim from Melbourne, is a Senior Youth Advisor at the Brotherhood of St Laurence, supporting youth through projects on career development, education, and recreation. She has led community events, organised workshops, and mentored young people, fostering growth and social cohesion. Passionate about increasing diverse leadership, Towheed remains dedicated to empowering young people from diverse backgrounds to become future leaders.',
+      finalists: [{ name: 'Cyndi Makabory' }],
+    },
+    'Sportsperson of the Year': {
+      name: 'Adem Savran',
+      bio: 'Adem Savran, a Year 12 student and Deputy School Captain, is an active leader and talented athlete, excelling in cricket, basketball, and football, with accolades like the 2023 Impact Player Award. He founded "SportsComments", interviewing sports figures such as Patrick Cripps, with some videos surpassing 100K views. Adem also volunteers at ICMG Dandenong, mentoring children and fostering community belonging.',
+      finalists: [{ name: 'Nabeera Khan' }],
+    },
+    'Creative and Performing Arts Award': {
+      name: 'Celine Khoury',
+      bio: 'Celine Khoury is a pioneering artist and criminal defence lawyer who has transformed the Australian theatre landscape. In 2019, she founded Thespian Theatre Company, the nation\u2019s first theatre company dedicated to multilingual and multicultural stories. Her productions explore themes of migration, cultural identity, and social justice, and her recent work "Love With No Remorse" achieved a sold-out season.',
+      finalists: [{ name: 'Lakshmi Ganapathy' }],
+    },
+    'Entrepreneur of the Year': {
+      name: 'Sagalee Omer',
+      bio: 'Sagalee Aba-Omer founded Shooters Shoot, an African youth-led organisation that raises funds through basketball events to address community issues, raising over $66,000 to support well-being programs, therapy sessions, and bikes for youth. Sagalee is also an award-winning photographer and street journalist, sharing 200+ stories of strangers in Melbourne through Locationest, with 45k followers.',
+      finalists: [{ name: 'Ejaz Hussain' }],
+    },
+    'Australian Youth Minister Award': {
+      name: 'Sagalee Omer',
+      bio: 'Selected by the Federal Minister for Youth, this award recognised Sagalee Aba-Omer, founder of Shooters Shoot, an African youth-led organisation that raises funds through basketball events to address community issues. Shooters Shoot has raised over $66,000 to support well-being programs, therapy sessions, and bikes for youth, and now focuses on knife harm awareness.',
+      finalists: [],
+    },
+  },
+
 
   // ============================================
    // PARTNERS (Placeholder content)

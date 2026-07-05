@@ -1,8 +1,30 @@
 import { useState, useEffect } from "react";
-import { Trophy } from "lucide-react";
+import {
+  Trophy, Lightbulb, Medal, HeartHandshake, GraduationCap, Palette,
+  Feather, Award, Wrench, Users, Mountain, Megaphone, Heart,
+  type LucideIcon,
+} from "lucide-react";
 import { useYears, useResultsByYear } from "@/lib/queries";
 import PageHero from "@/components/PageHero";
 import { siteContent } from "@/lib/siteContent";
+
+/** Icon per award category, matched on keywords so it works for every year. */
+const categoryIcon = (name: string): LucideIcon => {
+  const n = name.toLowerCase();
+  if (n.includes("entrepreneur")) return Lightbulb;
+  if (n.includes("sports")) return Medal;
+  if (n.includes("community")) return HeartHandshake;
+  if (n.includes("academic")) return GraduationCap;
+  if (n.includes("creative") || n.includes("performing")) return Palette;
+  if (n.includes("aboriginal") || n.includes("indigenous")) return Feather;
+  if (n.includes("minister")) return Award;
+  if (n.includes("apprentice") || n.includes("vocational")) return Wrench;
+  if (n.includes("woman")) return Users;
+  if (n.includes("leader")) return Mountain;
+  if (n.includes("influencer")) return Megaphone;
+  if (n.includes("volunteer")) return Heart;
+  return Trophy;
+};
 
 interface DisplayFinalist {
   id: string;
@@ -40,13 +62,20 @@ const WinnersPage = () => {
   const selectedYear = years.find((y) => y.id === yearId);
   const dbCategories = results.filter((c) => c.winners.length > 0);
 
-  // Fallback: only for 2025, and only when the database has no published
-  // results for it, render the cohort from siteContent so the page matches
-  // the live site. Database results always take precedence once published.
-  const useFallback =
-    !isLoading && dbCategories.length === 0 && selectedYear?.year === 2025;
-  const fallbackCategories: DisplayCategory[] = useFallback
-    ? Object.entries(siteContent.winners2025).map(([categoryName, w], i) => {
+  // Fallback: when the database has no published results for the selected
+  // year, render that year's cohort from siteContent (2024 and 2025 are
+  // available). Database results always take precedence once published.
+  const fallbackByYear: Record<number, Record<string, { name: string; bio: string; finalists: { name: string; bio?: string }[] }>> = {
+    2024: siteContent.winners2024,
+    2025: siteContent.winners2025,
+  };
+  const fallbackSource =
+    selectedYear && fallbackByYear[selectedYear.year]
+      ? fallbackByYear[selectedYear.year]
+      : null;
+  const useFallback = !isLoading && dbCategories.length === 0 && !!fallbackSource;
+  const fallbackCategories: DisplayCategory[] = useFallback && fallbackSource
+    ? Object.entries(fallbackSource).map(([categoryName, w], i) => {
         const cat = siteContent.categories.find((c) => c.name === categoryName);
         return {
           id: `sc-${i}`,
@@ -112,9 +141,15 @@ const WinnersPage = () => {
               {categories.map((category) => (
                 <article key={category.id}>
                   {/* Category header — booklet style */}
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-gold uppercase leading-tight mb-4">
-                    {category.name}
-                  </h2>
+                  <div className="flex items-start gap-4 mb-4">
+                    {(() => {
+                      const Icon = categoryIcon(category.name);
+                      return <Icon className="w-12 h-12 md:w-14 md:h-14 text-gold shrink-0 mt-1" strokeWidth={1.5} />;
+                    })()}
+                    <h2 className="font-display text-3xl md:text-4xl font-bold text-gold uppercase leading-tight">
+                      {category.name}
+                    </h2>
+                  </div>
                   {category.description && (
                     <p className="text-navy leading-relaxed mb-10 max-w-2xl">
                       {category.description}
