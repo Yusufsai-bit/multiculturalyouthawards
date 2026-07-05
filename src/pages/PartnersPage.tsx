@@ -8,6 +8,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useSponsors, usePartners } from "@/lib/queries";
 import SectionHeading from "@/components/SectionHeading";
+import videoAsset from "@/assets/mya-2025.mp4.asset.json";
+import videoPoster from "@/assets/mya-2025-poster.jpg.asset.json";
 
 const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
  
@@ -115,21 +117,18 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
               Empowering youth through <span className="italic text-gold">meaningful</span> partnerships.
             </h1>
 
-            {/* Brand video poster */}
+            {/* Brand video */}
             <div className="mt-12 max-w-3xl mx-auto">
-              <div className="relative aspect-video bg-navy-light/60 flex flex-col items-center justify-center overflow-hidden">
-                <div className="relative flex flex-col items-center">
-                  <div className="relative w-28 h-28 flex items-center justify-center">
-                    <span className="absolute inset-0 rounded-full border border-gold/70" />
-                    <span className="font-sans text-5xl text-gold">M</span>
-                  </div>
-                  <div className="-mt-6 w-16 h-16 rounded-full border border-background/60 bg-navy/40 flex items-center justify-center">
-                    <span className="ml-1 border-y-[8px] border-y-transparent border-l-[14px] border-l-background/80" />
-                  </div>
-                  <p className="mt-3 font-sans tracking-[0.25em] text-background/80 text-sm uppercase text-center leading-relaxed">
-                    Multicultural<br />Youth Awards
-                  </p>
-                </div>
+              <div className="relative aspect-video overflow-hidden bg-navy-light/60">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster={videoPoster.url}
+                  className="w-full h-full object-cover"
+                >
+                  <source src={videoAsset.url} type="video/mp4" />
+                </video>
               </div>
             </div>
 
