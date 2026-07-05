@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Award } from "lucide-react";
 import { siteContent, getNominationButtonText } from "@/lib/siteContent";
 import { useSiteStatus } from "@/hooks/useSiteStatus";
 import CountUp from "@/components/CountUp";
@@ -135,32 +134,5 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Event info */}
-      <section className="py-20 bg-navy">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
-            <div className="flex flex-col items-center">
-              <Calendar className="w-8 h-8 text-gold mb-3" />
-              <p className="text-background font-semibold">{eventDate}</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <MapPin className="w-8 h-8 text-gold mb-3" />
-              <p className="text-background font-semibold">{eventLocation}</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Award className="w-8 h-8 text-gold mb-3" />
-              <p className="text-background font-semibold">13 Award Categories</p>
-            </div>
-          </div>
-          <div className="text-center mt-12">
-            <Button variant="gold" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold" asChild>
-              <Link to="/nominations">{getNominationButtonText(nominationsStatus)}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
 
 export default HomePage;
