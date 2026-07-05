@@ -8,6 +8,36 @@ import { useYears, useResultsByYear } from "@/lib/queries";
 import PageHero from "@/components/PageHero";
 import { siteContent } from "@/lib/siteContent";
 
+// Custom gold icons supplied for each award category. Matched on keywords so
+// they work for every year regardless of exact naming.
+import iconIdea from "@/assets/category-icons/idea-innovation.png.asset.json";
+import iconArts from "@/assets/category-icons/performing-arts.png.asset.json";
+import iconSports from "@/assets/category-icons/sports.png.asset.json";
+import iconCommunity from "@/assets/category-icons/community-heart.png.asset.json";
+import iconAcademic from "@/assets/category-icons/academic.png.asset.json";
+import iconAboriginal from "@/assets/category-icons/aboriginal-boomerang.png.asset.json";
+import iconVocational from "@/assets/category-icons/vocational-skills.png.asset.json";
+import iconInfluencer from "@/assets/category-icons/influencer-people.png.asset.json";
+import iconLeadership from "@/assets/category-icons/leadership-steps.png.asset.json";
+import iconVolunteer from "@/assets/category-icons/volunteer-hands.png.asset.json";
+
+/** Custom uploaded icon per category, matched on keywords. Returns the image
+ *  URL when one has been supplied, otherwise null (falls back to a lucide icon). */
+const categoryImage = (name: string): string | null => {
+  const n = name.toLowerCase();
+  if (n.includes("entrepreneur")) return iconIdea.url;
+  if (n.includes("creative") || n.includes("performing")) return iconArts.url;
+  if (n.includes("sports")) return iconSports.url;
+  if (n.includes("community") || n.includes("contribution")) return iconCommunity.url;
+  if (n.includes("academic")) return iconAcademic.url;
+  if (n.includes("aboriginal") || n.includes("indigenous")) return iconAboriginal.url;
+  if (n.includes("apprentice") || n.includes("vocational")) return iconVocational.url;
+  if (n.includes("influencer")) return iconInfluencer.url;
+  if (n.includes("leader")) return iconLeadership.url;
+  if (n.includes("volunteer")) return iconVolunteer.url;
+  return null;
+};
+
 /** Icon per award category, matched on keywords so it works for every year. */
 const categoryIcon = (name: string): LucideIcon => {
   const n = name.toLowerCase();
