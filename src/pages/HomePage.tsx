@@ -98,7 +98,7 @@ const HomePage = () => {
       {/* Get involved */}
       <section className="bg-gold py-20 md:py-28">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-4xl md:text-6xl leading-[0.95]">
+          <h2 className="font-display font-extrabold uppercase tracking-tight text-navy text-4xl md:text-6xl leading-[0.95]">
             Get Involved
           </h2>
           <p className="mt-4 text-navy/80 text-lg md:text-xl font-semibold">
