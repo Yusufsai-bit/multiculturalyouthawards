@@ -7,6 +7,7 @@ import {
 import { UserRound, CheckCircle2, CalendarCheck, CalendarX } from "lucide-react";
 import { siteContent, getNominationButtonText, areNominationsOpen } from "@/lib/siteContent";
 import { useSiteStatus } from "@/hooks/useSiteStatus";
+import PageHero from "@/components/PageHero";
 
 const NominationsPage = () => {
   const { nominationsStatus } = useSiteStatus();
@@ -37,13 +38,15 @@ const NominationsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background pt-40 pb-24">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="font-sans font-bold text-navy text-4xl md:text-5xl mb-8">
-            Multicultural Youth Awards
-          </h1>
-
+    <div className="min-h-screen bg-background">
+      <PageHero
+        eyebrow="Nominations"
+        title={<>Nominate a <span className="italic text-gold">changemaker</span></>}
+        subtitle="Recognise an outstanding young person making a difference in their community"
+      />
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
           {/* Info list */}
           <ul className="space-y-4 mb-8">
             {info.map((item) => (
@@ -184,6 +187,7 @@ const NominationsPage = () => {
           </Accordion>
         </div>
       </div>
+      </section>
     </div>
   );
 };
