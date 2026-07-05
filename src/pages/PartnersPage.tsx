@@ -27,6 +27,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
    });
    const [isSubmitting, setIsSubmitting] = useState(false);
    const [submitted, setSubmitted] = useState(false);
+   const [videoPlaying, setVideoPlaying] = useState(false);
  
    const handleSubmit = async (e: React.FormEvent) => {
      e.preventDefault();
