@@ -87,12 +87,18 @@ const WinnersPage = () => {
   const { data: years = [] } = useYears();
   const [yearId, setYearId] = useState<string>("");
 
+  // Only show 2024 and 2025 in the selector, with 2024 first (left).
+  const displayYears = years
+    .filter((y) => y.year === 2024 || y.year === 2025)
+    .sort((a, b) => a.year - b.year);
+
   useEffect(() => {
-    if (!yearId && years.length) {
-      const withResults = years.find((y) => !y.is_current) ?? years[0];
-      setYearId(withResults.id);
+    if (!yearId && displayYears.length) {
+      const defaultYear =
+        displayYears.find((y) => y.year === 2024) ?? displayYears[0];
+      setYearId(defaultYear.id);
     }
-  }, [years, yearId]);
+  }, [displayYears, yearId]);
 
   const { data: results = [], isLoading } = useResultsByYear(yearId);
   const selectedYear = years.find((y) => y.id === yearId);
