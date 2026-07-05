@@ -97,26 +97,39 @@ const HomePage = () => {
       </section>
 
       {/* Get involved */}
-      <section className="bg-background py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Get Involved"
-            title={<>Be part of the <span className="italic text-gold">change</span></>}
-            className="mb-5"
-          />
-          <p className="mx-auto mb-14 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
+      <section className="bg-gold py-20 md:py-28">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-4xl md:text-6xl leading-[0.95]">
+            Get Involved
+          </h2>
+          <p className="mt-4 text-navy/80 text-lg md:text-xl font-semibold">
+            Be part of the <span className="italic">change</span>
+          </p>
+          <p className="mx-auto mt-8 mb-14 max-w-2xl text-center text-base md:text-lg leading-relaxed font-semibold text-navy/90">
             We thank our sponsors and partners for their generous support. Learn more about how you
             can support the Multicultural Youth Awards.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <Button variant="gold" size="xl" className="min-w-[250px] uppercase tracking-[0.18em] text-xs font-bold" asChild>
+            <Button
+              size="xl"
+              className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
+              asChild
+            >
               <a href={SPONSOR_FORM_URL} target="_blank" rel="noopener noreferrer">Sponsor</a>
             </Button>
-            <Button variant="goldOutline" size="xl" className="min-w-[250px] uppercase tracking-[0.18em] text-xs font-bold" asChild>
+            <Button
+              size="xl"
+              className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
+              asChild
+            >
               <Link to="/nominations">Nomination</Link>
             </Button>
-            <Button variant="goldOutline" size="xl" className="min-w-[250px] uppercase tracking-[0.18em] text-xs font-bold" asChild>
+            <Button
+              size="xl"
+              className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
+              asChild
+            >
               <Link to="/contact">Volunteer</Link>
             </Button>
           </div>
