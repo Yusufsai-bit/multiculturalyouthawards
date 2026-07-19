@@ -1,0 +1,2 @@
+UPDATE public.partners SET logo_url = '/__l5e/assets-v1/a4a8b500-5e3e-4307-9650-6c35d490adce/mav.png' WHERE name = 'Multicultural Arts Victoria';
+UPDATE public.partners SET logo_url = '/__l5e/assets-v1/1a70cf6d-c550-4a4e-98e3-de209028ee52/myg.jpg' WHERE name = 'Multicultural Youth Group';
