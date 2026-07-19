@@ -22,18 +22,53 @@ type Tab =
 
 const yearTabs: Tab[] = ["event", "categories", "winners", "finalists"];
 
-const nav: { id: Tab; label: string; icon: React.ElementType }[] = [
-  { id: "years", label: "Award Years", icon: CalendarDays },
-  { id: "event", label: "Event Details", icon: CalendarClock },
-  { id: "categories", label: "Categories", icon: Tag },
-  { id: "winners", label: "Winners", icon: Trophy },
-  { id: "finalists", label: "Finalists", icon: Medal },
-  { id: "sponsors", label: "Sponsors", icon: Building2 },
-  { id: "partners", label: "Partners", icon: Handshake },
-  { id: "media", label: "Media Library", icon: Image },
-  { id: "submissions", label: "Contact Messages", icon: Mail },
-  { id: "subscribers", label: "Subscribers", icon: Users },
+type NavItem = { id: Tab; label: string; icon: React.ElementType };
+type NavGroup = { page: string; description: string; items: NavItem[] };
+
+const navGroups: NavGroup[] = [
+  {
+    page: "Home Page",
+    description: "Award year and event info shown on the homepage",
+    items: [
+      { id: "years", label: "Award Years", icon: CalendarDays },
+      { id: "event", label: "Event Details", icon: CalendarClock },
+    ],
+  },
+  {
+    page: "Winners Page",
+    description: "Categories, winners and finalists for each year",
+    items: [
+      { id: "categories", label: "Categories", icon: Tag },
+      { id: "winners", label: "Winners", icon: Trophy },
+      { id: "finalists", label: "Finalists", icon: Medal },
+    ],
+  },
+  {
+    page: "Partners Page",
+    description: "Sponsors and partner organisations",
+    items: [
+      { id: "sponsors", label: "Sponsors", icon: Building2 },
+      { id: "partners", label: "Partners", icon: Handshake },
+    ],
+  },
+  {
+    page: "Contact Page",
+    description: "Messages and newsletter subscribers",
+    items: [
+      { id: "submissions", label: "Contact Messages", icon: Mail },
+      { id: "subscribers", label: "Subscribers", icon: Users },
+    ],
+  },
+  {
+    page: "Shared",
+    description: "Images and files used across the site",
+    items: [
+      { id: "media", label: "Media Library", icon: Image },
+    ],
+  },
 ];
+
+const allNavItems: NavItem[] = navGroups.flatMap((g) => g.items);
 
 const AdminDashboard = () => {
   const { signOut } = useAuth();
@@ -49,17 +84,29 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col lg:flex-row">
       {/* Sidebar */}
-      <aside className="lg:w-64 border-b lg:border-b-0 lg:border-r border-border p-4 lg:min-h-screen">
+      <aside className="lg:w-72 border-b lg:border-b-0 lg:border-r border-border p-4 lg:min-h-screen">
         <h1 className="font-display text-lg font-bold text-gold mb-1">MYA Admin</h1>
         <p className="text-xs text-muted-foreground mb-6">Content management</p>
-        <nav className="flex lg:flex-col gap-1 flex-wrap">
-          {nav.map((n) => (
-            <button key={n.id} onClick={() => setTab(n.id)}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors ${
-                tab === n.id ? "bg-gold/15 text-gold" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-              }`}>
-              <n.icon className="w-4 h-4" /> {n.label}
-            </button>
+        <nav className="flex flex-col gap-5">
+          {navGroups.map((group) => (
+            <div key={group.page}>
+              <p className="px-3 mb-1 text-[11px] font-semibold uppercase tracking-wider text-gold/80">
+                {group.page}
+              </p>
+              <p className="px-3 mb-2 text-[11px] text-muted-foreground leading-snug">
+                {group.description}
+              </p>
+              <div className="flex flex-col gap-1">
+                {group.items.map((n) => (
+                  <button key={n.id} onClick={() => setTab(n.id)}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors text-left ${
+                      tab === n.id ? "bg-gold/15 text-gold" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                    }`}>
+                    <n.icon className="w-4 h-4 shrink-0" /> {n.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </nav>
         <div className="mt-6 space-y-2">
@@ -76,7 +123,7 @@ const AdminDashboard = () => {
       <main className="flex-1 p-6 lg:p-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <h2 className="font-display text-2xl font-bold text-foreground capitalize">
-            {nav.find((n) => n.id === tab)?.label}
+            {allNavItems.find((n) => n.id === tab)?.label}
           </h2>
           {needsYear && (
             <select value={effectiveYearId} onChange={(e) => setYearId(e.target.value)}
