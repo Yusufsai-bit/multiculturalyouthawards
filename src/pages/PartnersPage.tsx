@@ -51,6 +51,15 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
 
   type Org = { name: string; logo_url: string | null; url: string | null };
 
+  // Cache-buster: appends a build-time version so incognito/CDN caches don't
+  // serve stale sponsor/supporter logos after we swap image URLs.
+  const CACHE_VERSION = "20260720";
+  const bust = (url: string | null) => {
+    if (!url) return url;
+    const sep = url.includes("?") ? "&" : "?";
+    return `${url}${sep}v=${CACHE_VERSION}`;
+  };
+
   const Wrap = ({ url, className, children }: { url: string | null; className: string; children: React.ReactNode }) =>
     url ? (
       <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
@@ -67,7 +76,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
     >
       <div className="flex h-24 w-24 shrink-0 items-center justify-center md:h-28 md:w-28">
         {partner.logo_url ? (
-          <img src={partner.logo_url} alt={partner.name} className="max-h-full max-w-full object-contain" />
+          <img src={bust(partner.logo_url) ?? undefined} alt={partner.name} className="max-h-full max-w-full object-contain" />
         ) : (
           <span className="font-sans text-3xl font-bold text-gold">{partner.name.charAt(0)}</span>
         )}
@@ -88,7 +97,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
         className="flex aspect-square w-full items-center justify-center rounded-xl bg-secondary/40 p-6 transition-colors hover:bg-secondary/70"
       >
         {partner.logo_url ? (
-          <img src={partner.logo_url} alt={partner.name} className="max-h-full max-w-full object-contain" />
+          <img src={bust(partner.logo_url) ?? undefined} alt={partner.name} className="max-h-full max-w-full object-contain" />
         ) : (
           <span className="font-sans text-3xl font-bold text-gold">{partner.name.charAt(0)}</span>
         )}
