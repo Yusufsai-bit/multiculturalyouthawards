@@ -62,7 +62,7 @@ const NominationsPage = () => {
 
           {areNominationsOpen(nominationsStatus) ? (
             <a
-              href="https://forms.office.com/r/2eVszS9qWc?origin=lprLink"
+              href="https://forms.cloud.microsoft/r/2Pi9H4jZLU"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-gold text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14"
