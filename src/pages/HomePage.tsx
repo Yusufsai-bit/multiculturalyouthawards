@@ -47,7 +47,7 @@ const HomePage = () => {
         <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,220px)_auto_minmax(0,1fr)_minmax(0,240px)]">
           {/* Left image (hugs edge) */}
           <img
-            src="https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/Untitled-3.jpg"
+            src="/__l5e/assets-v1/96c686e8-9606-4378-ad49-8861493a1adb/mya-2025-poster.jpg"
             alt="Guests seated at the Multicultural Youth Awards ceremony"
             loading="lazy"
             className="hidden lg:block w-full h-auto max-h-[520px] object-cover"
@@ -86,7 +86,7 @@ const HomePage = () => {
 
           {/* Right image */}
           <img
-            src="https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/Youth-Awards-7-10-24-Robert-.jpg"
+            src="/__l5e/assets-v1/96c686e8-9606-4378-ad49-8861493a1adb/mya-2025-poster.jpg"
             alt="Presenters at the podium during the Multicultural Youth Awards"
             loading="lazy"
             className="hidden lg:block w-full h-auto max-h-[520px] object-cover justify-self-end"

@@ -378,12 +378,12 @@
    partners2026: [
      { 
        name: 'Multicultural Youth Group', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/myg-2.png',
+        logo: '/__l5e/assets-v1/1a70cf6d-c550-4a4e-98e3-de209028ee52/myg.jpg',
        url: 'https://myg.org.au/'
      },
      { 
        name: 'Multicultural Arts Victoria', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2024/06/mav.png',
+        logo: '/__l5e/assets-v1/2b0bb360-6ee6-4204-a040-4aee814ba0b4/mav.png',
        url: 'https://www.mav.org.au/'
      },
    ],
@@ -391,32 +391,32 @@
    sponsors: [
      { 
        name: 'Department of Jobs, Skills, Industry and Regions', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/VIC_GOV_EDUCATION_LOGO_GOV_BLUE_RGB-01.png',
+        logo: '/__l5e/assets-v1/fee67c71-b7eb-401e-9c62-a83c7f20ee71/vic-gov.jpeg',
        url: 'https://www.vic.gov.au/education'
      },
      { 
        name: 'Cultura', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/culture-6.png',
+        logo: '/__l5e/assets-v1/a4f4b21d-83e5-4ca2-b9a1-6f35200f01c5/cultura.jpg',
        url: 'https://www.cultura.org.au/'
      },
      { 
        name: 'TAFE Victoria', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/10/tafe-victoria.png',
+        logo: '/__l5e/assets-v1/6fd08f1b-dad4-4e43-a367-3cd8757950ed/tafe-victoria.png',
        url: 'https://www.vic.gov.au/tafe'
      },
      { 
        name: 'City of Melbourne', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/city-of-melbourne.png',
+        logo: '/__l5e/assets-v1/7ab76ad2-dc12-4ab8-b85c-d8bea7c6d3bc/city-of-melbourne.png',
        url: 'https://www.melbourne.vic.gov.au/'
      },
      { 
        name: 'Centre for Multicultural Youth', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/cmy.png',
+        logo: '/__l5e/assets-v1/531d2dca-bec6-47f3-9984-5902fa4b9548/cmy.jpeg',
        url: 'https://www.cmy.net.au/'
      },
      { 
        name: 'Victorian Government', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/10/victoria-1.png',
+        logo: '/__l5e/assets-v1/fee67c71-b7eb-401e-9c62-a83c7f20ee71/vic-gov.jpeg',
        url: 'https://www.vic.gov.au/'
      },
    ],
@@ -424,27 +424,27 @@
    supporters: [
      { 
        name: 'Brotherhood of St Laurence', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/brohterhood.png',
+        logo: '/__l5e/assets-v1/fbb05465-dab4-4de7-9937-de8621fae072/brotherhood-st-laurence.png',
        url: 'https://www.bsl.org.au/'
      },
      { 
        name: 'Melbourne Polytechnic', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/melbourne.png',
+        logo: '/__l5e/assets-v1/27dd0b2e-9e0b-4797-ac9d-f752bc5025c9/melbourne-polytechnic.png',
        url: 'https://www.melbournepolytechnic.edu.au/'
      },
      { 
        name: 'Australian Multicultural Media Centre', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/ammc.png',
+        logo: '/__l5e/assets-v1/ce8df91b-b7ce-4a26-a8bf-37815e6ac05c/ammc.jpg',
        url: 'https://ammc.org.au/'
      },
      { 
        name: 'Third Culture', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/3rd-culture.png',
+        logo: '/__l5e/assets-v1/43d872cc-76fe-4e57-9e6e-e30ebe07c9c1/third-culture.webp',
        url: 'https://www.thirdculture.net.au/'
      },
      { 
        name: 'Commission for Children and Young People', 
-       logo: 'https://multiculturalyouthawards.com.au/wp-content/uploads/2025/07/commission.png',
+        logo: '/__l5e/assets-v1/bd6c6fbf-feca-4f59-bc10-7a1dc985b917/ccyp.png',
        url: 'https://ccyp.vic.gov.au/'
      },
    ],
