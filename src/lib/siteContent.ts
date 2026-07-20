@@ -457,10 +457,10 @@
        return 'Nominate now';
      case 'closed':
        return 'Nominations closed';
-     case 'coming_soon':
-       return 'Nominations open soon';
-   }
- };
+      case 'coming_soon':
+        return 'Nominations open';
+    }
+  };
  
  // Helper function to check if nominations are open
  export const areNominationsOpen = (status: SiteContent['nominationsStatus']): boolean => {
