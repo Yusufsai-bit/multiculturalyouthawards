@@ -17,7 +17,7 @@ const NominationsPage = () => {
       ? "Open"
       : nominationsStatus === "closed"
       ? "Closed"
-      : "Opening soon";
+      : "Open";
 
   const info = [
     {

@@ -15,7 +15,7 @@ const iconCycle: React.ElementType[] = [
 
 const nominationLabel = (status?: string) => {
   if (status === "open") return "Nominate Now";
-  if (status === "coming_soon") return "Nominations Opening Soon";
+  if (status === "coming_soon") return "Nominations Open";
   return "Nominations Closed";
 };
 
