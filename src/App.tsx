@@ -8,6 +8,7 @@ import AdminGuard from "@/components/admin/AdminGuard";
 import Auth from "@/pages/Auth";
 import AdminDashboard from "@/pages/AdminDashboard";
  import Layout from "@/components/Layout";
+import ScrollToTop from "@/components/ScrollToTop";
  import HomePage from "@/pages/HomePage";
  import AboutPage from "@/pages/AboutPage";
  import AwardsPage from "@/pages/AwardsPage";
@@ -28,6 +29,7 @@ import AdminDashboard from "@/pages/AdminDashboard";
        <Sonner />
        <BrowserRouter>
         <AuthProvider>
+        <ScrollToTop />
         <Routes>
            <Route path="/" element={<Layout><HomePage /></Layout>} />
            <Route path="/about" element={<Layout><AboutPage /></Layout>} />

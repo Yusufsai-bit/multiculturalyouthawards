@@ -72,17 +72,17 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
   const MajorCard = ({ partner }: { partner: Org }) => (
     <Wrap
       url={partner.url}
-      className="flex items-center gap-6 bg-secondary/40 p-8 md:p-10 transition-colors hover:bg-secondary/70"
+      className="flex h-full flex-col items-center gap-4 rounded-xl bg-secondary/40 p-6 text-center transition-colors hover:bg-secondary/70 sm:flex-row sm:items-center sm:gap-6 sm:text-left md:p-10"
     >
-      <div className="flex h-24 w-24 shrink-0 items-center justify-center md:h-28 md:w-28">
+      <div className="flex h-20 w-20 shrink-0 items-center justify-center sm:h-24 sm:w-24 md:h-28 md:w-28">
         {partner.logo_url ? (
           <img src={bust(partner.logo_url) ?? undefined} alt={partner.name} className="max-h-full max-w-full object-contain" />
         ) : (
           <span className="font-sans text-3xl font-bold text-gold">{partner.name.charAt(0)}</span>
         )}
       </div>
-      <div>
-        <h3 className="font-sans text-xl font-bold uppercase leading-tight text-navy md:text-2xl">
+      <div className="min-w-0">
+        <h3 className="font-sans text-lg font-bold uppercase leading-tight text-navy break-words sm:text-xl md:text-2xl">
           {partner.name}
         </h3>
         <p className="mt-2 font-sans text-sm font-bold text-navy">Major Partners</p>
@@ -91,18 +91,25 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
   );
 
   const LogoTile = ({ partner }: { partner: Org }) => (
-    <div className="flex flex-col items-center text-center">
+    <div className="flex h-full flex-col items-center text-center">
       <Wrap
         url={partner.url}
-        className="flex aspect-square w-full items-center justify-center rounded-xl bg-secondary/40 p-6 transition-colors hover:bg-secondary/70"
+        className="flex aspect-square w-full items-center justify-center rounded-xl bg-secondary/40 p-4 transition-colors hover:bg-secondary/70 sm:p-6"
       >
         {partner.logo_url ? (
-          <img src={bust(partner.logo_url) ?? undefined} alt={partner.name} className="max-h-full max-w-full object-contain" />
+          <img
+            src={bust(partner.logo_url) ?? undefined}
+            alt={partner.name}
+            loading="lazy"
+            className="max-h-full max-w-full object-contain"
+          />
         ) : (
           <span className="font-sans text-3xl font-bold text-gold">{partner.name.charAt(0)}</span>
         )}
       </Wrap>
-      <p className="mt-3 font-sans text-sm text-navy">{partner.name}</p>
+      <p className="mt-3 font-sans text-xs sm:text-sm text-navy break-words leading-snug">
+        {partner.name}
+      </p>
     </div>
   );
  
@@ -181,7 +188,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
                {majorPartners.length > 0 && (
                  <div>
                    <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">2025 Partners</h2>
-                   <div className="grid gap-6 md:grid-cols-2">
+                   <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 items-stretch">
                      {majorPartners.map((p) => (
                        <MajorCard key={p.id} partner={p} />
                      ))}
@@ -192,7 +199,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
                {sponsors.length > 0 && (
                  <div>
                    <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">MYA Sponsors</h2>
-                   <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+                   <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-4 items-stretch">
                      {sponsors.map((p) => (
                        <LogoTile key={p.id} partner={p} />
                      ))}
@@ -203,7 +210,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
                {supporters.length > 0 && (
                  <div>
                    <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">MYA Supporters</h2>
-                   <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+                   <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-4 items-stretch">
                      {supporters.map((p) => (
                        <LogoTile key={p.id} partner={p} />
                      ))}
