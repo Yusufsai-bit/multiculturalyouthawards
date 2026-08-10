@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://multiculturalyouthawards.com.au/sitemap.xml
