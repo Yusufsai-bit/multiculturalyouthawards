@@ -118,7 +118,7 @@ const NominationsPage = () => {
                 <p className="mb-3">A nominee is eligible if they:</p>
                 <ol className="list-decimal list-inside space-y-2">
                   <li>have a culturally diverse background.</li>
-                  <li>are within the age range of 16 &ndash; 30 years old.</li>
+                  <li>are within the age range of 16 &ndash; 25 years old.</li>
                   <li>reside in Australia (for individuals); or</li>
                   <li>
                     are part of a community or volunteer organisation, service provider,
