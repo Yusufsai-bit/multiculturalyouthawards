@@ -21,7 +21,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 mb-8 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-gold animate-glow-pulse" />
-            <span className="text-gold text-sm font-medium">Nominations Now Open for 2025</span>
+            <span className="text-gold text-sm font-medium">Nominations Closed for 2026</span>
           </div>
 
           {/* Main Title */}

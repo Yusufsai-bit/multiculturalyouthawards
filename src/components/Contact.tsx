@@ -91,7 +91,7 @@ const Contact = () => {
                 </Button>
               </div>
               <p className="text-muted-foreground text-sm text-center mt-6">
-                Nominations for the 2025 awards are now open!
+                Nominations for the 2026 awards have now closed.
               </p>
             </div>
           </div>
