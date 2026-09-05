@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { siteContent, getNominationButtonText } from "@/lib/siteContent";
+import { Calendar, Clock, MapPin, Ticket } from "lucide-react";
 import { useSiteStatus } from "@/hooks/useSiteStatus";
 import CountUp from "@/components/CountUp";
 import videoAsset from "@/assets/mya-2025.mp4.asset.json";
 import videoPoster from "@/assets/mya-2025-poster.jpg.asset.json";
 
 const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
+const TICKETS_URL = "https://events.humanitix.com/multicultural-youth-awards-2026";
 
 const HomePage = () => {
-  const { nominationsStatus } = useSiteStatus();
+  const { eventDate, eventLocation } = useSiteStatus();
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}

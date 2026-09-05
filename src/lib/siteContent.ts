@@ -64,8 +64,8 @@
    // SITE-WIDE SETTINGS
    // ============================================
   nominationsStatus: 'closed', // 'open' | 'closed' | 'coming_soon'
- eventDate: 'Saturday 3rd October 2026',
- eventLocation: 'Victorian Parliament House',
+eventDate: 'Sunday 4th October 2026',
+eventLocation: "Members' Dining Room, MCG",
  nominationsOpenDate: '13 July 2026',
  nominationsCloseDate: '31 August 2026',
    
