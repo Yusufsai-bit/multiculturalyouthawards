@@ -31,12 +31,17 @@ const HomePage = () => {
         <div aria-hidden="true" className="absolute inset-0 bg-navy/50" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center bg-navy/40 backdrop-blur-[2px] px-6 py-14 md:px-12 md:py-16">
-            <h1 className="font-display text-background text-3xl md:text-5xl leading-tight mb-10">
+          <div className="relative max-w-4xl mx-auto text-center bg-navy/40 backdrop-blur-[2px] px-6 py-14 md:px-14 md:py-16 border border-background/10">
+            <h1 className="font-sans font-extrabold uppercase text-background text-4xl md:text-6xl leading-[0.95] mb-10">
               Celebrating the incredible talents &amp; leadership of Australia&rsquo;s
               multicultural youth
             </h1>
-            <Button variant="gold" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold" asChild>
+            <Button
+              variant="gold"
+              size="xl"
+              className="min-w-[220px] h-14 rounded-none px-10 uppercase tracking-[0.15em] text-xs font-extrabold shadow-xl transition-transform hover:-translate-y-0.5 active:translate-y-0"
+              asChild
+            >
               <a href={TICKETS_URL} target="_blank" rel="noopener noreferrer">Get Tickets</a>
             </Button>
           </div>
