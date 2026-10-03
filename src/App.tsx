@@ -20,6 +20,7 @@ import ScrollToTop from "@/components/ScrollToTop";
  import CopyrightPage from "@/pages/CopyrightPage";
   import NotFound from "@/pages/NotFound";
 import SeatingPage from "@/pages/SeatingPage";
+import SeatingGate from "@/components/SeatingGate";
  
  const queryClient = new QueryClient();
  
@@ -43,7 +44,7 @@ import SeatingPage from "@/pages/SeatingPage";
            <Route path="/copyright" element={<Layout><CopyrightPage /></Layout>} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<AdminGuard><AdminDashboard /></AdminGuard>} />
-          <Route path="/seating" element={<AdminGuard><SeatingPage /></AdminGuard>} />
+          <Route path="/seating" element={<SeatingGate><SeatingPage /></SeatingGate>} />
            <Route path="*" element={<NotFound />} />
         </Routes>
         </AuthProvider>

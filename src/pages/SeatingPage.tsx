@@ -15,8 +15,8 @@ const SeatingPage = () => {
   return (
     <div className="h-screen flex flex-col bg-background">
       <div className="flex items-center justify-between px-4 py-2 border-b border-border text-sm">
-        <span className="font-semibold text-foreground">MYA 2026 Seating Plan — staff only</span>
-        <Link to="/admin" className="text-gold hover:underline">Back to admin</Link>
+        <span className="font-semibold text-foreground">MYA 2026 Seating Plan — private</span>
+        <span />
       </div>
       <iframe title="Seating plan" srcDoc={seatingHtml} className="flex-1 w-full border-0" />
     </div>
