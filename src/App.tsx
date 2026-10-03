@@ -18,7 +18,8 @@ import ScrollToTop from "@/components/ScrollToTop";
  import ContactPage from "@/pages/ContactPage";
  import PrivacyPage from "@/pages/PrivacyPage";
  import CopyrightPage from "@/pages/CopyrightPage";
- import NotFound from "@/pages/NotFound";
+  import NotFound from "@/pages/NotFound";
+import SeatingPage from "@/pages/SeatingPage";
  
  const queryClient = new QueryClient();
  
