@@ -25,7 +25,7 @@ const SeatingPage = () => {
         <span className="font-semibold text-foreground">MYA 2026 Seating Plan — private</span>
         <span />
       </div>
-      <iframe title="Seating plan" srcDoc={seatingHtml} className="flex-1 w-full border-0" />
+      <iframe title="Seating plan" srcDoc={seatingDoc} className="flex-1 w-full border-0" />
     </div>
   );
 };
