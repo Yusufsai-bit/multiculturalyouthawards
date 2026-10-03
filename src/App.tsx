@@ -42,6 +42,7 @@ import ScrollToTop from "@/components/ScrollToTop";
            <Route path="/copyright" element={<Layout><CopyrightPage /></Layout>} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<AdminGuard><AdminDashboard /></AdminGuard>} />
+          <Route path="/seating" element={<AdminGuard><SeatingPage /></AdminGuard>} />
            <Route path="*" element={<NotFound />} />
         </Routes>
         </AuthProvider>
