@@ -43,7 +43,7 @@ const NominationsPage = () => {
     <div className="min-h-screen bg-background">
       <PageHero
         eyebrow="Nominations"
-        title={<>Nominate a <span className="italic text-gold">changemaker</span></>}
+        title={<>Nominate a <span className="italic text-gold normal-case">Changemaker</span></>}
         subtitle="Recognise an outstanding young person making a difference in their community"
       />
       <section className="py-20">

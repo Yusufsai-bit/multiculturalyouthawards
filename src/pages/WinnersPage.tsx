@@ -200,7 +200,7 @@ const WinnersPage = () => {
     <div className="min-h-screen bg-background">
       <PageHero
         eyebrow={`Winners${selectedYear ? ` ${selectedYear.year}` : ""}`}
-        title={<>Celebrating our <span className="italic text-gold">champions</span></>}
+        title={<>Celebrating our <span className="italic text-gold normal-case">Champions</span></>}
         subtitle="Meet the exceptional young people recognised at the Multicultural Youth Awards"
         numeral={selectedYear ? String(selectedYear.year) : undefined}
       >
@@ -212,7 +212,7 @@ const WinnersPage = () => {
             <div
               role="group"
               aria-label="Select awards year"
-              className="flex items-center gap-2 p-3 rounded-full border border-background/10 bg-background/5 backdrop-blur-xl shadow-2xl"
+              className="flex items-center border border-background/25 bg-navy"
             >
               {displayYears.map((y) => {
                 const active = y.id === yearId;
@@ -224,8 +224,8 @@ const WinnersPage = () => {
                     onClick={() => setYearId(y.id)}
                     className={
                       active
-                        ? "px-10 sm:px-12 py-4 rounded-full font-sans text-lg font-bold bg-gold text-navy shadow-[0_0_32px_hsl(var(--gold)/0.45)] transition-transform active:scale-95"
-                        : "px-10 sm:px-12 py-4 rounded-full font-sans text-lg font-semibold text-background/50 hover:text-background transition-colors"
+                        ? "px-10 sm:px-12 py-4 font-sans text-lg font-bold bg-gold text-navy"
+                        : "px-10 sm:px-12 py-4 font-sans text-lg font-semibold text-background/50 hover:text-background transition-colors"
                     }
                   >
                     {y.year}

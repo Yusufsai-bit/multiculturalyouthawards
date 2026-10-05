@@ -46,7 +46,7 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
-      <div className="w-full max-w-md glass-card rounded-2xl p-8 border-gold-glow">
+      <div className="w-full max-w-md border border-border bg-card rounded-none p-8 border-gold-glow">
         <h1 className="font-display text-2xl font-bold text-foreground mb-2 text-center">
           Admin {mode === "signin" ? "Sign In" : "Sign Up"}
         </h1>
