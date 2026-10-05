@@ -143,7 +143,7 @@ const ContactPage = () => {
                 placeholder="Tell Us How We Can Help"
                 className="w-full bg-transparent border-0 border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors resize-none"
               />
-              <Button type="submit" variant="gold" size="lg" disabled={isSubmitting}>
+              <Button type="submit" variant="gold" size="lg" className="rounded-none" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : submitted ? "Sent" : "Submit"}
               </Button>
             </form>
