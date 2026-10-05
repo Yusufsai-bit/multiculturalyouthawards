@@ -99,7 +99,7 @@ const ContactPage = () => {
             <div>
               <h2 className="font-display font-extrabold uppercase tracking-tight text-navy text-5xl md:text-6xl mb-6">Got Questions?</h2>
               <p className="text-muted-foreground text-lg max-w-md">
-                Ask about the awards, tickets, volunteering or partnerships. Our team will respond as soon as possible.
+                Ask about the awards, volunteering or partnerships. Our team will respond as soon as possible.
               </p>
             </div>
 

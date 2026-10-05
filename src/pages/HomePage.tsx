@@ -1,16 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, MapPin, Ticket } from "lucide-react";
-import { useSiteStatus } from "@/hooks/useSiteStatus";
 import CountUp from "@/components/CountUp";
 import videoAsset from "@/assets/mya-2025.mp4.asset.json";
 import videoPoster from "@/assets/mya-2025-poster.jpg.asset.json";
 
 const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
-const TICKETS_URL = "https://events.humanitix.com/multicultural-youth-awards-2026";
 
 const HomePage = () => {
-  const { eventDate, eventLocation } = useSiteStatus();
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
@@ -42,7 +38,7 @@ const HomePage = () => {
               className="min-w-[220px] h-14 rounded-none px-10 uppercase tracking-[0.15em] text-xs font-extrabold shadow-xl transition-transform hover:-translate-y-0.5 active:translate-y-0"
               asChild
             >
-              <a href={TICKETS_URL} target="_blank" rel="noopener noreferrer">Get Tickets</a>
+              <Link to="/winners">View 2026 Winners</Link>
             </Button>
           </div>
         </div>
@@ -97,47 +93,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Tickets */}
-      <section className="bg-background py-20 md:py-28">
-        <div className="container mx-auto px-4 text-center">
-          <span className="block text-gold text-[11px] tracking-[0.4em] uppercase font-semibold mb-3">
-            Tickets Now On Sale
-          </span>
-          <h2 className="font-display font-extrabold uppercase tracking-tight text-foreground text-5xl md:text-7xl leading-[0.95] mb-10">
-            Get Your Tickets
-          </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground text-base md:text-lg leading-relaxed mb-12">
-            Join the 2026 ceremony at the MCG as we recognise the winners and finalists across all
-            13 award categories.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
-            <div className="rounded-xl border border-border bg-card p-6">
-              <Calendar className="w-6 h-6 text-gold mx-auto mb-3" />
-              <p className="text-foreground font-semibold">{eventDate}</p>
-              <p className="text-muted-foreground text-sm">Event date</p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-6">
-              <Clock className="w-6 h-6 text-gold mx-auto mb-3" />
-              <p className="text-foreground font-semibold">5:00pm Arrival</p>
-              <p className="text-muted-foreground text-sm">Arrival time</p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-6">
-              <MapPin className="w-6 h-6 text-gold mx-auto mb-3" />
-              <p className="text-foreground font-semibold">{eventLocation}</p>
-              <p className="text-muted-foreground text-sm">Melbourne Cricket Ground</p>
-            </div>
-          </div>
-
-          <Button variant="gold" size="xl" className="rounded-none uppercase tracking-[0.15em] text-xs font-bold" asChild>
-            <a href={TICKETS_URL} target="_blank" rel="noopener noreferrer">
-              <Ticket className="w-4 h-4 mr-2" />
-              Buy Tickets
-            </a>
-          </Button>
-        </div>
-      </section>
-
       {/* Get involved */}
       <section className="bg-gold py-20 md:py-28">
         <div className="container mx-auto px-4 text-center">
@@ -156,13 +111,6 @@ const HomePage = () => {
               asChild
             >
               <a href={SPONSOR_FORM_URL} target="_blank" rel="noopener noreferrer">Sponsor</a>
-            </Button>
-            <Button
-              size="xl"
-              className="min-w-[250px] rounded-none border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-background uppercase tracking-[0.18em] text-xs font-bold"
-              asChild
-            >
-              <a href={TICKETS_URL} target="_blank" rel="noopener noreferrer">Get Tickets</a>
             </Button>
             <Button
               size="xl"
