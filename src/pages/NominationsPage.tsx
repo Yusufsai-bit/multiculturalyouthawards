@@ -9,6 +9,7 @@ import { UserRound, CheckCircle2, CalendarCheck, CalendarX } from "lucide-react"
 import { siteContent, getNominationButtonText, areNominationsOpen } from "@/lib/siteContent";
 import { useSiteStatus } from "@/hooks/useSiteStatus";
 import PageHero from "@/components/PageHero";
+import { Button } from "@/components/ui/button";
 
 const NominationsPage = () => {
   const { nominationsStatus } = useSiteStatus();
@@ -17,13 +18,13 @@ const NominationsPage = () => {
       ? "Open"
       : nominationsStatus === "closed"
       ? "Closed"
-      : "Open";
+      : "Opening soon";
 
   const info = [
     {
       icon: UserRound,
-      label: "Who can apply:",
-      value: "Individuals, Organisations, Self nominations are encouraged",
+      label: "Who can be nominated:",
+      value: "Individuals and organisations; self-nominations are welcome",
     },
     { icon: CheckCircle2, label: "Status:", value: statusLabel },
     {
@@ -60,22 +61,22 @@ const NominationsPage = () => {
             ))}
           </ul>
 
+          {nominationsStatus === "closed" && (
+            <p className="mb-8 border-l-4 border-gold bg-secondary/40 px-5 py-4 text-foreground">
+              Nominations for the 2026 awards closed on {siteContent.nominationsCloseDate}. The nomination guide remains below for reference.
+            </p>
+          )}
+
           {areNominationsOpen(nominationsStatus) ? (
-            <a
-              href="https://forms.cloud.microsoft/r/2Pi9H4jZLU"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-gold text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14"
-            >
-              {getNominationButtonText(nominationsStatus)}
-            </a>
+            <Button variant="gold" size="lg" className="mb-14 rounded-none uppercase tracking-[0.15em]" asChild>
+              <a href="https://forms.cloud.microsoft/r/2Pi9H4jZLU" target="_blank" rel="noopener noreferrer">
+                {getNominationButtonText(nominationsStatus)}
+              </a>
+            </Button>
           ) : (
-            <button
-              disabled
-              className="border border-navy/40 text-navy uppercase tracking-[0.15em] text-sm font-semibold px-8 py-4 mb-14 cursor-not-allowed"
-            >
-              {getNominationButtonText(nominationsStatus)}
-            </button>
+            <Button variant="outline" size="lg" className="mb-14 rounded-none uppercase tracking-[0.15em]" asChild>
+              <Link to="/winners">View 2026 Winners</Link>
+            </Button>
           )}
 
           {/* Accordion */}
@@ -86,8 +87,8 @@ const NominationsPage = () => {
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed space-y-4 pb-6">
                 <p>
-                  Step 1: Read through the nomination guide, along with the terms and
-                  conditions, and understand the entry requirements for the awards.
+                  Step 1: Read the nomination guide, terms and conditions, and entry
+                  requirements.
                 </p>
                 <p>
                   Step 2: Choose a nominee, either an individual or a team, ensuring they
@@ -118,7 +119,7 @@ const NominationsPage = () => {
                 <p className="mb-3">A nominee is eligible if they:</p>
                 <ol className="list-decimal list-inside space-y-2">
                   <li>have a culturally diverse background.</li>
-                  <li>are within the age range of 16 &ndash; 25 years old.</li>
+                  <li>are aged 16&ndash;25.</li>
                   <li>reside in Australia (for individuals); or</li>
                   <li>
                     are part of a community or volunteer organisation, service provider,
@@ -150,7 +151,7 @@ const NominationsPage = () => {
                   <br />
                   Prior to reaching the judging panel, all nominations for the Multicultural
                   Youth Awards will undergo a comprehensive pre-evaluation and screening led
-                  by the MYG team and relevant stakeholders. This assessment will adhere to
+                  by the Multicultural Youth Awards team and relevant stakeholders. This assessment will adhere to
                   strict eligibility requirements to determine the nominees eligible to
                   proceed to the shortlisting stage. The evaluation process ensures a
                   comprehensive and impartial consideration of each nomination.

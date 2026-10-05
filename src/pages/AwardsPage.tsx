@@ -13,12 +13,6 @@ const iconCycle: React.ElementType[] = [
   GraduationCap, HandHeart, Trophy, Palette, Rocket, Award,
 ];
 
-const nominationLabel = (status?: string) => {
-  if (status === "open") return "Nominate Now";
-  if (status === "coming_soon") return "Nominations Open";
-  return "Nominations Closed";
-};
-
 const AwardsPage = () => {
   const { data: currentYear } = useCurrentYear();
   const { data: categories = [] } = useCategories(currentYear?.id);
@@ -31,8 +25,8 @@ const AwardsPage = () => {
         title={<>{categories.length || 13} categories of <span className="italic text-gold">excellence</span></>}
         subtitle="Recognising outstanding achievements across diverse fields of talent, leadership and contribution"
       >
-        <Button variant="gold" size="xl" className="min-w-[220px] tracking-[0.2em] uppercase text-xs font-bold" asChild disabled={closed}>
-          <Link to="/nominations">{nominationLabel(currentYear?.nominations_status)}</Link>
+        <Button variant="gold" size="xl" className="min-w-[220px] rounded-none tracking-[0.2em] uppercase text-xs font-bold" asChild>
+          <Link to={closed ? "/winners" : "/nominations"}>{closed ? "View 2026 Winners" : "Nominate Now"}</Link>
         </Button>
       </PageHero>
 
@@ -70,15 +64,17 @@ const AwardsPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <SectionHeading
-              eyebrow="Make a Nomination"
-              title={<>Know someone <span className="italic text-gold">deserving?</span></>}
+              eyebrow={closed ? "2026 Awards" : "Make a Nomination"}
+              title={closed ? <>Meet this year&rsquo;s <span className="italic text-gold">winners</span></> : <>Know someone <span className="italic text-gold">deserving?</span></>}
               className="mb-6"
             />
             <p className="text-muted-foreground mb-8">
-              Nominate an outstanding young person who is making a difference in their community.
+              {closed
+                ? "Nominations have closed. Discover the young people recognised across this year’s 13 categories."
+                : "Nominate an outstanding young person who is making a difference in their community."}
             </p>
-            <Button variant="gold" size="lg" asChild disabled={closed}>
-              <Link to="/nominations">{nominationLabel(currentYear?.nominations_status)}</Link>
+            <Button variant="gold" size="lg" className="rounded-none" asChild>
+              <Link to={closed ? "/winners" : "/nominations"}>{closed ? "View Winners" : "Nominate Now"}</Link>
             </Button>
           </div>
         </div>

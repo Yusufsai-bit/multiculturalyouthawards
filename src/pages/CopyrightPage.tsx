@@ -1,6 +1,6 @@
 const CopyrightPage = () => {
   return (
-    <div className="min-h-screen bg-background pt-32">
+    <div className="min-h-screen bg-background pt-40 md:pt-32">
       {/* Hero Section */}
       <section className="py-16 hero-gradient">
         <div className="container mx-auto px-4">

@@ -51,7 +51,7 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
       {/* Top: Logo + section headers */}
       <div className="container mx-auto px-4 pt-12">
         <Link to="/" className="inline-flex items-center mb-10">
-          <img src={myaLogo.url} alt="Multicultural Youth Awards" className="h-24 md:h-40 w-auto" />
+          <img src={myaLogo.url} alt="Multicultural Youth Awards" className="h-20 md:h-24 w-auto" />
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -69,7 +69,9 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
                 <p className="text-gold font-medium">Thank you for subscribing!</p>
               ) : (
                 <form onSubmit={handleNewsletterSubmit} className="max-w-md space-y-5">
+                  <label htmlFor="newsletter-email" className="sr-only">Email address</label>
                   <input
+                    id="newsletter-email"
                     type="email"
                     placeholder="Email Address"
                     value={newsletterEmail}
@@ -77,7 +79,9 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
                     required
                     className="w-full bg-transparent border-0 border-b border-white/30 text-white placeholder:text-white/50 pb-2 focus:outline-none focus:border-gold transition-colors"
                   />
-                  <input
+                   <label htmlFor="newsletter-name" className="sr-only">Name</label>
+                   <input
+                    id="newsletter-name"
                     type="text"
                     placeholder="Name"
                     value={newsletterName}
@@ -165,7 +169,7 @@ import torresStraitFlag from "@/assets/torres-strait-flag.jpg.asset.json";
       {/* Copyright */}
       <div className="container mx-auto px-4 pb-8">
         <p className="text-center text-muted-foreground text-sm">
-          © 2024 Multicultural Youth Awards | All Rights Reserved
+          © {new Date().getFullYear()} Multicultural Youth Awards | All Rights Reserved
         </p>
       </div>
     </footer>

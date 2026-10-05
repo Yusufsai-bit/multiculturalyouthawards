@@ -16,7 +16,7 @@ interface PageHeroProps {
  */
 const PageHero = ({ eyebrow, title, subtitle, numeral, children }: PageHeroProps) => {
   return (
-    <section className="relative overflow-hidden bg-navy pt-40 pb-20">
+    <section className="relative overflow-hidden bg-navy pt-48 md:pt-40 pb-20">
       {numeral && (
         <div
           aria-hidden="true"

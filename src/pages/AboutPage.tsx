@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <div className="bg-navy text-background">
       {/* Hero */}
-      <section className="pt-40 pb-16 text-center">
+      <section className="pt-48 md:pt-40 pb-16 text-center">
         <h1 className="font-display font-bold text-background text-5xl md:text-[75px] leading-none">
           About
         </h1>
@@ -17,19 +17,17 @@ const AboutPage = () => {
       {/* Intro: group photo + paragraph */}
       <section className="pb-20">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
             <img
               src={aboutGroup}
               alt="Multicultural Youth Awards finalists and winners at Victorian Parliament House"
               className="w-full h-auto rounded-sm object-cover"
             />
             <p className="text-background text-xl md:text-[23px] leading-[1.5]">
-              The Multicultural Youth Awards is a national event devoted to showcasing the
-              outstanding achievements of multicultural youth. Steering away from current
-              traditional awards, this initiative offers a unique and focused platform for
-              recognition, emphasising the diverse talents, resilience, and positive
-              impact/contributions of young individuals from multicultural backgrounds across
-              Victoria and the nation.
+              The Multicultural Youth Awards recognises young people from multicultural
+              communities whose talent, leadership and service are making a difference. The
+              national program gives their achievements a dedicated stage and brings families,
+              communities and sector leaders together to celebrate them.
             </p>
           </div>
         </div>
@@ -38,18 +36,18 @@ const AboutPage = () => {
       {/* Mission & Vision */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div>
               <h2 className="font-display font-bold uppercase text-5xl md:text-[60px] text-gold mb-6 leading-none">
                 Mission
               </h2>
               <p className="text-background text-xl md:text-[23px] leading-[1.5] mb-5">
-                <span className="text-gold">Celebrate</span> the rich diversity of talents,
-                resilience, and positive impacts of multicultural youth.
+                <span className="text-gold">Celebrate</span> the talent, resilience and positive
+                contributions of multicultural young people.
               </p>
               <p className="text-background text-xl md:text-[23px] leading-[1.5]">
-                <span className="text-gold">Fostering inclusivity,</span> and showcasing their
-                accomplishments on a national stage
+                <span className="text-gold">Build inclusion</span> by showcasing their
+                achievements on a national stage.
               </p>
             </div>
             <div>
@@ -60,8 +58,8 @@ const AboutPage = () => {
                 <span className="text-gold">Recognise</span> excellence across 13 categories.
               </p>
               <p className="text-background text-xl md:text-[23px] leading-[1.5]">
-                <span className="text-gold">Highlighting</span> the outstanding achievements and
-                contributions of young individuals from diverse backgrounds.
+                <span className="text-gold">Highlight</span> achievements that strengthen
+                communities and inspire other young people.
               </p>
             </div>
           </div>
@@ -71,7 +69,7 @@ const AboutPage = () => {
       {/* Event details + Parliament House image */}
       <section className="pb-24">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="space-y-7">
               <div className="flex items-center gap-4">
                 <Calendar className="w-7 h-7 text-background shrink-0" strokeWidth={1.5} />
