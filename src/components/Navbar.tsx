@@ -80,7 +80,7 @@ import myaLogo from "@/assets/mya-logo.png.asset.json";
              <Link
                key={link.name}
                to={link.href}
-               className={`text-sm font-medium transition-colors duration-200 ${
+               className={`text-base font-medium transition-colors duration-200 ${
                  isActive(link.href) 
                    ? "text-gold underline decoration-2 underline-offset-8" 
                    : "text-muted-foreground hover:text-foreground"
