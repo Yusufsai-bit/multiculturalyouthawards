@@ -19,7 +19,7 @@ const CopyrightPage = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto prose prose-invert">
-            <div className="glass-card rounded-2xl p-8 border-gold-glow space-y-8">
+            <div className="border border-border bg-card rounded-none p-8 border-gold-glow space-y-8">
               <div>
                 <h2 className="font-display text-xl font-bold text-gold mb-4">Copyright</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">

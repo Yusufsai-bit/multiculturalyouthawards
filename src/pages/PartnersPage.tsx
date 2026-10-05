@@ -229,7 +229,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
          <div className="container mx-auto px-4">
            <div className="max-w-xl mx-auto">
              {submitted ? (
-               <div className="glass-card rounded-2xl p-12 border-gold-glow text-center">
+               <div className="border border-border bg-card rounded-none p-12 border-gold-glow text-center">
                  <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
                    <span className="text-gold text-3xl">✓</span>
                  </div>
@@ -244,7 +244,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
                  </Button>
                </div>
              ) : (
-               <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 border-gold-glow">
+               <form onSubmit={handleSubmit} className="border border-border bg-card rounded-none p-8 border-gold-glow">
                  <h2 className="font-display text-2xl font-bold text-foreground mb-2 text-center">
                    Sponsor Enquiry
                  </h2>
