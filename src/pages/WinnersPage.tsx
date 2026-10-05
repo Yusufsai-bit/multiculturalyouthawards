@@ -224,8 +224,8 @@ const WinnersPage = () => {
                     onClick={() => setYearId(y.id)}
                     className={
                       active
-                        ? "px-14 py-4 rounded-full font-sans text-lg font-bold bg-gold text-navy shadow-[0_0_32px_hsl(var(--gold)/0.45)] transition-transform active:scale-95"
-                        : "px-12 py-3.5 rounded-full font-sans text-lg font-semibold text-background/50 hover:text-background transition-colors"
+                        ? "px-10 sm:px-12 py-4 rounded-full font-sans text-lg font-bold bg-gold text-navy shadow-[0_0_32px_hsl(var(--gold)/0.45)] transition-transform active:scale-95"
+                        : "px-10 sm:px-12 py-4 rounded-full font-sans text-lg font-semibold text-background/50 hover:text-background transition-colors"
                     }
                   >
                     {y.year}
@@ -251,8 +251,7 @@ const WinnersPage = () => {
                   Winners {selectedYear ? selectedYear.year : ""} to be announced
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  The {selectedYear?.year} winners will be announced following the
-                  awards ceremony on {siteContent.eventDate} at {siteContent.eventLocation}.
+                  Results for {selectedYear?.year} are not currently available. Please check back for updates.
                 </p>
               </div>
             )}
@@ -275,7 +274,7 @@ const WinnersPage = () => {
                         );
                       }
                       const Icon = categoryIcon(category.name);
-                      return <Icon className="w-28 h-28 md:w-36 md:h-36 text-gold shrink-0" strokeWidth={1.25} />;
+                      return <Icon aria-hidden="true" className="w-28 h-28 md:w-36 md:h-36 text-gold shrink-0" strokeWidth={1.25} />;
                     })()}
                     {(() => {
                       // Strip a trailing "award" from the stored name so we can
@@ -318,6 +317,9 @@ const WinnersPage = () => {
                             <img
                               src={winner.image_url}
                               alt={winner.name}
+                              loading="lazy"
+                              width={96}
+                              height={96}
                               className="w-24 h-24 rounded-full object-cover mb-4"
                             />
                           )}

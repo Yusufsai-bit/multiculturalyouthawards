@@ -17,6 +17,19 @@ import myaLogo from "@/assets/mya-logo.png.asset.json";
      window.addEventListener("scroll", handleScroll);
      return () => window.removeEventListener("scroll", handleScroll);
    }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isMobileMenuOpen]);
  
    const navLinks = [
      { name: "Home", href: "/" },
@@ -36,6 +49,13 @@ import myaLogo from "@/assets/mya-logo.png.asset.json";
    };
  
    return (
+    <>
+      <a
+        href="#main-content"
+        className="fixed left-4 top-4 z-[60] -translate-y-24 bg-navy px-4 py-3 text-sm font-semibold text-background transition-transform focus:translate-y-0"
+      >
+        Skip to main content
+      </a>
      <nav
        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-background border-b border-border"
@@ -62,9 +82,10 @@ import myaLogo from "@/assets/mya-logo.png.asset.json";
                to={link.href}
                className={`text-sm font-medium transition-colors duration-200 ${
                  isActive(link.href) 
-                   ? "text-gold" 
+                   ? "text-gold underline decoration-2 underline-offset-8" 
                    : "text-muted-foreground hover:text-foreground"
                }`}
+              aria-current={isActive(link.href) ? "page" : undefined}
              >
                {link.name}
              </Link>
@@ -72,20 +93,22 @@ import myaLogo from "@/assets/mya-logo.png.asset.json";
          </div>
  
          {/* Mobile Menu Button */}
-         <div className="lg:hidden flex justify-between items-center pb-4">
-           <div /> {/* Spacer */}
-           <button
-             className="text-foreground p-2"
+         <div className="lg:hidden flex justify-end items-center pb-4">
+           <Button
+             variant="ghost"
+             size="icon"
              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
            >
              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-           </button>
+           </Button>
          </div>
  
          {/* Mobile Menu */}
          {isMobileMenuOpen && (
-           <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border">
+           <div id="mobile-navigation" className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border">
              <div className="flex flex-col py-4 gap-2">
                {navLinks.map((link) => (
                  <Link
@@ -96,21 +119,16 @@ import myaLogo from "@/assets/mya-logo.png.asset.json";
                        ? "text-gold bg-secondary/50"
                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                    }`}
+                  aria-current={isActive(link.href) ? "page" : undefined}
                    onClick={() => setIsMobileMenuOpen(false)}
                  >
                    {link.name}
                  </Link>
                ))}
                <div className="px-4 pt-4">
-                 <Button 
-                   variant="gold" 
-                   size="default" 
-                   className="w-full"
-                   asChild
-                   disabled={siteContent.nominationsStatus === 'closed'}
-                 >
-                   <Link to="/nominations" onClick={() => setIsMobileMenuOpen(false)}>
-                     {getNominationButtonText(siteContent.nominationsStatus)}
+                 <Button variant="gold" size="default" className="w-full" asChild>
+                   <Link to={siteContent.nominationsStatus === "open" ? "/nominations" : "/winners"} onClick={() => setIsMobileMenuOpen(false)}>
+                     {siteContent.nominationsStatus === "open" ? getNominationButtonText(siteContent.nominationsStatus) : "View Winners"}
                    </Link>
                  </Button>
                </div>
@@ -119,6 +137,7 @@ import myaLogo from "@/assets/mya-logo.png.asset.json";
          )}
        </div>
      </nav>
+    </>
    );
  };
  

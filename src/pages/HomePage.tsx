@@ -73,17 +73,14 @@ const HomePage = () => {
           {/* Text + button */}
           <div className="px-6 py-14 lg:py-16 max-w-xl">
             <p className="text-background/85 text-base md:text-lg leading-relaxed mb-8">
-              <strong className="text-background">A national event</strong> devoted to{" "}
-              <strong className="text-background">showcasing the outstanding achievements of
-              multicultural youth</strong>. Steering away from current traditional awards, this
-              initiative offers a unique and focused{" "}
-              <strong className="text-background">platform for recognition, emphasising the diverse
-              talents, resilience, and positive impact/contributions of young individuals</strong>{" "}
-              from multicultural backgrounds across Victoria and the nation.
+              <strong className="text-background">A national celebration</strong> recognising the
+              achievements of multicultural young people. Across 13 categories, the Awards honour
+              talent, leadership, resilience and service from communities throughout Victoria and
+              across Australia.
             </p>
             <Button
               size="xl"
-              className="rounded-full bg-background text-navy hover:bg-background/90 uppercase tracking-[0.18em] text-xs font-bold"
+              className="rounded-none bg-background text-navy hover:bg-background/90 uppercase tracking-[0.18em] text-xs font-bold"
               asChild
             >
               <Link to="/about">Learn more</Link>
@@ -106,33 +103,33 @@ const HomePage = () => {
           <span className="block text-gold text-[11px] tracking-[0.4em] uppercase font-semibold mb-3">
             Tickets Now On Sale
           </span>
-          <h2 className="font-sans font-extrabold uppercase tracking-tight text-foreground text-5xl md:text-7xl leading-[0.95] mb-10">
+          <h2 className="font-display font-extrabold uppercase tracking-tight text-foreground text-5xl md:text-7xl leading-[0.95] mb-10">
             Get Your Tickets
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground text-base md:text-lg leading-relaxed mb-12">
-            Join us for an evening of recognition, connection and celebration as we honour the
-            young people shaping stronger, more inclusive communities.
+            Join the 2026 ceremony at the MCG as we recognise the winners and finalists across all
+            13 award categories.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
             <div className="rounded-xl border border-border bg-card p-6">
               <Calendar className="w-6 h-6 text-gold mx-auto mb-3" />
               <p className="text-foreground font-semibold">{eventDate}</p>
-              <p className="text-muted-foreground text-sm">Save the Date</p>
+              <p className="text-muted-foreground text-sm">Event date</p>
             </div>
             <div className="rounded-xl border border-border bg-card p-6">
               <Clock className="w-6 h-6 text-gold mx-auto mb-3" />
               <p className="text-foreground font-semibold">5:00pm Arrival</p>
-              <p className="text-muted-foreground text-sm">Doors Open</p>
+              <p className="text-muted-foreground text-sm">Arrival time</p>
             </div>
             <div className="rounded-xl border border-border bg-card p-6">
               <MapPin className="w-6 h-6 text-gold mx-auto mb-3" />
               <p className="text-foreground font-semibold">{eventLocation}</p>
-              <p className="text-muted-foreground text-sm">Richmond, Victoria</p>
+              <p className="text-muted-foreground text-sm">Melbourne Cricket Ground</p>
             </div>
           </div>
 
-          <Button variant="gold" size="xl" className="uppercase tracking-[0.15em] text-xs font-bold" asChild>
+          <Button variant="gold" size="xl" className="rounded-none uppercase tracking-[0.15em] text-xs font-bold" asChild>
             <a href={TICKETS_URL} target="_blank" rel="noopener noreferrer">
               <Ticket className="w-4 h-4 mr-2" />
               Buy Tickets
@@ -144,7 +141,7 @@ const HomePage = () => {
       {/* Get involved */}
       <section className="bg-gold py-20 md:py-28">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-5xl md:text-7xl leading-[0.95]">
+          <h2 className="font-display font-extrabold uppercase tracking-tight text-navy text-5xl md:text-7xl leading-[0.95]">
             Get Involved
           </h2>
           <p className="mx-auto mt-10 mb-14 max-w-2xl text-center text-base md:text-lg leading-relaxed font-semibold text-navy/90">

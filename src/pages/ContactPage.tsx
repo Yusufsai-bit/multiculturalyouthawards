@@ -99,12 +99,14 @@ const ContactPage = () => {
             <div>
               <h2 className="font-display font-extrabold uppercase tracking-tight text-navy text-5xl md:text-6xl mb-6">Got Questions?</h2>
               <p className="text-muted-foreground text-lg max-w-md">
-                Send us a message! We&rsquo;re here to help and will get back to you as soon as possible.
+                Ask about the awards, tickets, volunteering or partnerships. Our team will respond as soon as possible.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="lg:border-l lg:border-border lg:pl-12 space-y-8">
+              <label htmlFor="contact-name" className="sr-only">First name</label>
               <input
+                id="contact-name"
                 type="text"
                 value={form.firstName}
                 onChange={(e) => setForm({ ...form, firstName: e.target.value })}
@@ -112,7 +114,9 @@ const ContactPage = () => {
                 placeholder="First Name"
                 className="w-full bg-transparent border-0 border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
               />
+              <label htmlFor="contact-email" className="sr-only">Email address</label>
               <input
+                id="contact-email"
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -120,14 +124,18 @@ const ContactPage = () => {
                 placeholder="Email Address"
                 className="w-full bg-transparent border-0 border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
               />
+              <label htmlFor="contact-phone" className="sr-only">Contact number</label>
               <input
+                id="contact-phone"
                 type="tel"
                 value={form.contactNo}
                 onChange={(e) => setForm({ ...form, contactNo: e.target.value })}
                 placeholder="Contact No"
                 className="w-full bg-transparent border-0 border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
               />
+              <label htmlFor="contact-message" className="sr-only">How can we help?</label>
               <textarea
+                id="contact-message"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required

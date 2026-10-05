@@ -143,10 +143,10 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
 
             <div className="max-w-2xl mx-auto text-center space-y-6">
               <p className="text-background/80 leading-relaxed">
-                The Multicultural Youth Awards wouldn't be possible without the support of incredible partners and sponsors who believe in the power of young people from multicultural backgrounds.
+                The Multicultural Youth Awards is made possible by partners and sponsors who believe in the potential of young people from multicultural backgrounds.
               </p>
               <p className="text-background/80 leading-relaxed">
-                We're currently finalising our 2026 partners and are excited to share them with you soon.
+                We are proud to recognise the organisations supporting the 2026 awards.
               </p>
             </div>
           </div>
@@ -155,7 +155,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
         {/* Be part of the change */}
         <section className="bg-background py-20 md:py-28">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="font-sans font-extrabold uppercase tracking-tight text-navy text-5xl md:text-7xl leading-[0.95]">
+            <h2 className="font-display font-extrabold uppercase tracking-tight text-navy text-5xl md:text-7xl leading-[0.95]">
               Be part of the <span className="text-gold">change.</span>
             </h2>
 
@@ -187,7 +187,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
              <>
                {majorPartners.length > 0 && (
                  <div>
-                   <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">2025 Partners</h2>
+                   <h2 className="font-sans font-bold text-navy text-2xl md:text-3xl mb-8">2026 Major Partners</h2>
                    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 items-stretch">
                      {majorPartners.map((p) => (
                        <MajorCard key={p.id} partner={p} />
@@ -302,7 +302,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
                        onChange={(e) => setForm({...form, message: e.target.value})}
                        rows={4}
                        className="bg-background border-border mt-1"
-                       placeholder="Tell us about your interest in partnering..."
+                       placeholder="Tell us about your interest in partnering"
                      />
                    </div>
                  </div>
