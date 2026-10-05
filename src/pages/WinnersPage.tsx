@@ -23,6 +23,64 @@ import iconVolunteer from "@/assets/category-icons/volunteer-hands.png.asset.jso
 import iconInspirational from "@/assets/category-icons/inspirational-perseverance.png.asset.json";
 import iconYoungWoman from "@/assets/category-icons/young-woman-voice.png.asset.json";
 import iconMinister from "@/assets/category-icons/minister-laurel.png.asset.json";
+import qrMougadam from "@/assets/winner-qr-2026/mougadam-and-mobeen-mougadam.png";
+import qrQiqiLu from "@/assets/winner-qr-2026/qiqi-lu.png";
+import qrJaydenNguyen from "@/assets/winner-qr-2026/jayden-nguyen.png";
+import qrDanishRizal from "@/assets/winner-qr-2026/danish-rizal.png";
+import qrVeronicaTan from "@/assets/winner-qr-2026/veronica-tan.png";
+import qrNicholasStefanadakis from "@/assets/winner-qr-2026/nicholas-stefanadakis.png";
+import qrRumaysaSalman from "@/assets/winner-qr-2026/rumaysa-salman.png";
+import qrAdrielAppathurai from "@/assets/winner-qr-2026/adriel-appathurai.png";
+import qrMahsaNabizada from "@/assets/winner-qr-2026/mahsa-nabizada.png";
+import qrAmeyaJaurigue from "@/assets/winner-qr-2026/ameya-jaurigue.png";
+import qrLadanAhmed from "@/assets/winner-qr-2026/ladan-ahmed.png";
+
+const winnerQrCodes: Record<string, { image: string; url: string }> = {
+  "mougadam and mobeen mougadam": {
+    image: qrMougadam,
+    url: "https://www.instagram.com/duxacademy/",
+  },
+  "qiqi lu": {
+    image: qrQiqiLu,
+    url: "https://www.instagram.com/qiqimusic_/",
+  },
+  "jayden nguyen": {
+    image: qrJaydenNguyen,
+    url: "https://www.instagram.com/jayden_nguy3n/?hl=en",
+  },
+  "danish rizal": {
+    image: qrDanishRizal,
+    url: "https://www.instagram.com/danish.rizal/",
+  },
+  "veronica tan": {
+    image: qrVeronicaTan,
+    url: "https://www.linkedin.com/in/tan-veronica/",
+  },
+  "nicholas stefanadakis": {
+    image: qrNicholasStefanadakis,
+    url: "https://www.instagram.com/southmelbournefc/",
+  },
+  "rumaysa salman": {
+    image: qrRumaysaSalman,
+    url: "https://www.instagram.com/rumaysasalman/",
+  },
+  "adriel appathurai": {
+    image: qrAdrielAppathurai,
+    url: "https://www.linkedin.com/in/adrielappa/",
+  },
+  "mahsa nabizada": {
+    image: qrMahsaNabizada,
+    url: "https://www.linkedin.com/in/mahsanabizada/",
+  },
+  "ameya jaurigue": {
+    image: qrAmeyaJaurigue,
+    url: "https://www.instagram.com/keeping.brisbane.alive/",
+  },
+  "ladan ahmed": {
+    image: qrLadanAhmed,
+    url: "https://www.linkedin.com/in/ladan-ahmed-369113381/",
+  },
+};
 
 /** Custom uploaded icon per category, matched on keywords. Returns the image
  *  URL when one has been supplied, otherwise null (falls back to a lucide icon). */
@@ -249,7 +307,12 @@ const WinnersPage = () => {
                       <p className="font-sans font-bold text-navy uppercase tracking-[0.15em] text-lg mb-4">
                         Winner
                       </p>
-                      {category.winners.map((winner) => (
+                      {category.winners.map((winner) => {
+                        const qrCode = selectedYear?.year === 2026
+                          ? winnerQrCodes[winner.name.toLowerCase().trim()]
+                          : undefined;
+
+                        return (
                         <div key={winner.id} className="mb-8 last:mb-0">
                           {winner.image_url && (
                             <img
@@ -266,8 +329,27 @@ const WinnersPage = () => {
                               {winner.bio}
                             </p>
                           )}
+                          {qrCode && (
+                            <a
+                              href={qrCode.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-6 inline-flex items-center gap-4 border border-border p-3 transition-colors hover:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+                              aria-label={`Connect with ${winner.name}`}
+                            >
+                              <img
+                                src={qrCode.image}
+                                alt={`QR code to connect with ${winner.name}`}
+                                className="h-24 w-24 shrink-0 object-contain"
+                              />
+                              <span className="max-w-24 font-sans text-xs font-semibold uppercase leading-snug text-navy">
+                                Connect with {winner.name}
+                              </span>
+                            </a>
+                          )}
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
 
                     {/* Finalist column */}
