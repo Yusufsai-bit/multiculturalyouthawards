@@ -200,7 +200,7 @@ const WinnersPage = () => {
     <div className="min-h-screen bg-background">
       <PageHero
         eyebrow={`Winners${selectedYear ? ` ${selectedYear.year}` : ""}`}
-        title={<>Celebrating our <span className="italic text-gold">champions</span></>}
+        title={<>Celebrating our <span className="italic text-gold normal-case">Champions</span></>}
         subtitle="Meet the exceptional young people recognised at the Multicultural Youth Awards"
         numeral={selectedYear ? String(selectedYear.year) : undefined}
       >

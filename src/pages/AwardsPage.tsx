@@ -13,7 +13,7 @@ const AwardsPage = () => {
     <div className="min-h-screen bg-background">
       <PageHero
         eyebrow="The Awards"
-        title={<>{categories.length || 13} categories of <span className="italic text-gold">excellence</span></>}
+        title={<>{categories.length || 13} categories of <span className="italic text-gold normal-case">Excellence</span></>}
         subtitle="Recognising outstanding achievements across diverse fields of talent, leadership and contribution"
       >
         <Button variant="gold" size="xl" className="min-w-[220px] rounded-none tracking-[0.2em] uppercase text-xs font-bold" asChild>
@@ -54,7 +54,7 @@ const AwardsPage = () => {
           <div className="max-w-2xl mx-auto text-center">
             <SectionHeading
               eyebrow={closed ? "2026 Awards" : "Make a Nomination"}
-              title={closed ? <>Meet this year&rsquo;s <span className="italic text-gold">winners</span></> : <>Know someone <span className="italic text-gold">deserving?</span></>}
+              title={closed ? <>Meet this year&rsquo;s <span className="italic text-gold normal-case">Winners</span></> : <>Know someone <span className="italic text-gold normal-case">Deserving?</span></>}
               className="mb-6"
             />
             <p className="text-muted-foreground mb-8">
