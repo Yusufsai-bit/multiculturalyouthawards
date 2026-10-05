@@ -36,7 +36,7 @@ const PageHero = ({ eyebrow, title, subtitle, numeral, children }: PageHeroProps
           {/* Headline */}
           <h1
             className="font-display font-extrabold uppercase text-background text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight animate-fade-in"
-            style={{ animationDelay: "0.15s", fontVariantLigatures: "none" }}
+            style={{ animationDelay: "0.15s", fontVariantLigatures: "none", fontFeatureSettings: "'calt' 0, 'liga' 0, 'dlig' 0" }}
           >
             {title}
           </h1>
