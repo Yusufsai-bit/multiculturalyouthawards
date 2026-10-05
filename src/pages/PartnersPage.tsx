@@ -116,7 +116,7 @@ const SPONSOR_FORM_URL = "https://forms.cloud.microsoft/r/NRe8dxVEs6";
     return (
       <div className="min-h-screen bg-background">
         {/* Navy editorial hero — matches the live site */}
-        <section className="bg-navy pt-40 pb-20">
+        <section className="bg-navy pt-48 md:pt-40 pb-20">
           <div className="container mx-auto px-4">
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-background text-center leading-tight">
               Empowering youth through <span className="italic text-gold">meaningful</span> partnerships.

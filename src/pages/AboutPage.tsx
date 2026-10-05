@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <div className="bg-navy text-background">
       {/* Hero */}
-      <section className="pt-40 pb-16 text-center">
+      <section className="pt-48 md:pt-40 pb-16 text-center">
         <h1 className="font-display font-bold text-background text-5xl md:text-[75px] leading-none">
           About
         </h1>

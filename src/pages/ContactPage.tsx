@@ -45,7 +45,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navy contact band */}
-      <section className="bg-navy pt-40 pb-20">
+      <section className="bg-navy pt-48 md:pt-40 pb-20">
         <div className="container mx-auto px-4">
           <h1 className="font-display font-extrabold uppercase tracking-tight text-background text-5xl md:text-7xl text-center mb-14">
             Contact Us

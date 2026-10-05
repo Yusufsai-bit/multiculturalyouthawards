@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative mt-[164px] flex items-center justify-center overflow-hidden min-h-[80vh]">
+      <section className="relative mt-[190px] md:mt-[164px] flex items-center justify-center overflow-hidden min-h-[80vh]">
         {/* Full-bleed background video */}
         <video
           autoPlay
